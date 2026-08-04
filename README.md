@@ -7,9 +7,10 @@
 I create this repository for submitting assignments and coursework in subject Advanced Topics in Computer Software  
 
 ## 📚 Course Assignments
+✅ Complete 🔴 Pending ⏳ In Progress
 | No. | Assignment | Status |
 |---|---|---|
-| 01. | LAB1 | ✅ Complete |
+| 01. | LAB1 | 🔴 Pending |
 | 02. | LAB2 | 🔴 Pending |
 | 03. | LAB3 | 🔴 Pending |
 | 04. | LAB4 | 🔴 Pending |
