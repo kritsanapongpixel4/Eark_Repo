@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pad Krapao RAG Chatbot - ผัดกะเพราเลิฟเวอร์ 🌿🍳🌶️</title>
+    <!-- Google Fonts: Kanit and Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation / Information Panel -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">🌿🍳</div>
+                <div class="brand-text">
+                    <h1>กะเพรา RAG Bot</h1>
+                    <span class="badge-tag">Pad Krapao AI</span>
+                </div>
+            </div>
+
+            <div class="status-card">
+                <div class="status-header">
+                    <span class="pulse-dot active" id="system-status-dot"></span>
+                    <span id="system-status-text">กำลังเชื่อมต่อระบบ...</span>
+                </div>
+                <div class="status-details">
+                    <div class="stat-item">
+                        <span class="stat-label"><i class="fa-solid fa-cube"></i> Embedding Model</span>
+                        <span class="stat-value" id="model-name">MiniLM-L12-v2</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label"><i class="fa-solid fa-database"></i> FAISS Chunks</span>
+                        <span class="stat-value" id="total-chunks">-- Chunks</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-card">
+                <h3><i class="fa-solid fa-sliders"></i> ตั้งค่าการค้นหา</h3>
+                <div class="setting-group">
+                    <div class="setting-label">
+                        <span>จำนวนผลลัพธ์ (Top-K)</span>
+                        <span id="top-k-val" class="setting-badge">1</span>
+                    </div>
+                    <input type="range" id="top-k-slider" min="1" max="5" value="1" step="1">
+                    <p class="setting-hint">แสดงผลคำตอบที่ตรงที่สุด k อันดับแรก</p>
+                </div>
+            </div>
+
+            <div class="quick-prompts-section">
+                <h3><i class="fa-solid fa-lightbulb"></i> คำถามยอดฮิต 🌶️</h3>
+                <div class="quick-prompt-buttons">
+                    <button class="prompt-btn" data-query="กำเนิดผัดกะเพรามีประวัติความเป็นมาอย่างไร?">
+                        <i class="fa-solid fa-book-open"></i> ประวัติผัดกะเพรา
+                    </button>
+                    <button class="prompt-btn" data-query="สูตรการทำผัดกะเพราโบราณให้อร่อยต้องทำอย่างไร?">
+                        <i class="fa-solid fa-fire-burner"></i> สูตรเด็ดกะเพราโบราณ
+                    </button>
+                    <button class="prompt-btn" data-query="ทำไมผัดกะเพราแท้ถึงไม่ควรใส่หอมใหญ่และถั่วฝักยาว?">
+                        <i class="fa-solid fa-pepper-hot"></i> ผัดกะเพราแท้ใส่อะไรบ้าง?
+                    </button>
+                    <button class="prompt-btn" data-query="ทำไมต้องใส่ใบกะเพราเป็นขั้นตอนสุดท้ายของการผัด?">
+                        <i class="fa-solid fa-leaf"></i> เคล็ดลับใบกะเพรา
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button id="clear-chat-btn" class="btn-secondary">
+                    <i class="fa-solid fa-trash-can"></i> ล้างประวัติการคุย
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <!-- Top Navbar -->
+            <header class="chat-header">
+                <div class="header-title">
+                    <h2><i class="fa-solid fa-utensils"></i> ถามตอบเรื่องผัดกะเพรา 🌿🍳</h2>
+                    <p>ระบบค้นหาคำตอบอัจฉริยะ (RAG System for Pad Krapao Lovers)</p>
+                </div>
+                <div class="header-actions">
+                    <span class="info-pill"><i class="fa-solid fa-shield-halved"></i> Retrieval-Based QA</span>
+                </div>
+            </header>
+
+            <!-- Messages Transcript Container -->
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome Bot Message -->
+                <div class="message bot-message">
+                    <div class="avatar">🌿</div>
+                    <div class="message-content">
+                        <div class="message-header">
+                            <span class="author">กะเพรา RAG Bot</span>
+                            <span class="time">เมื่อสักครู่</span>
+                        </div>
+                        <div class="message-body">
+                            <p>สวัสดีครับ! วันนี้อยากกินกะเพราอีกแล้วใช่มั้ย 🌿🍳🌶️🍚</p>
+                            <p>สงสัยเรื่องประวัติ สูตร เคล็ดลับ หรือวัตถุดิบผัดกะเพรา ถามมาได้เลยครับ!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator (Hidden by default) -->
+            <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                <div class="avatar">🌿</div>
+                <div class="typing-bubble">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="typing-text">กำลังค้นหาข้อมูลใน Vector DB...</span>
+                </div>
+            </div>
+
+            <!-- Input Bar -->
+            <div class="chat-input-area">
+                <form id="chat-form" class="chat-input-form">
+                    <div class="input-wrapper">
+                        <input type="text" id="user-input" placeholder="ถามเกี่ยวกับผัดกะเพราที่นี่... (เช่น สูตรกะเพราหมูสับ, ประวัติกะเพรา)" autocomplete="off" required>
+                        <button type="submit" id="send-btn" title="ส่งคำถาม">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="input-footer">
+                    <span><i class="fa-solid fa-circle-info"></i> ข้อมูลดึงมาจากคลังความรู้ `sex_q_a.txt` และ FAISS Database</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>

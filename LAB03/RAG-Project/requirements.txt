@@ -1,0 +1,6 @@
+numpy
+sentence-transformers
+faiss-cpu
+tqdm
+flask
+flask-cors
