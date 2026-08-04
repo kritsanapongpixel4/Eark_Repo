@@ -1,7 +1,13 @@
 # Eark_Repo 
-**Student Name:** Kritsanapong Pornphoo (Eark)  
-**Student ID:** 116730462018-6  
-**Course:** Advanced Topics in Computer Software
+<p align="center">
+  <img width="150" alt="skeleton2" src="https://github.com/user-attachments/assets/0aecc415-dae0-43ec-93ee-a4ccafbe0798" />
+</p>
+
+<p align="center">
+  <b>Student Name:</b> Kritsanapong Pornphoo (Eark)<br>
+  <b>Student ID:</b> 116730462018-6<br>
+  <b>Course:</b> Advanced Topics in Computer Software
+</p>
 
 ## 📌 About This Repository
 I create this repository for submitting assignments and coursework in subject Advanced Topics in Computer Software  
