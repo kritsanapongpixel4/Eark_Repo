@@ -51,7 +51,7 @@ CHUNK_OVERLAP = 80
 EMBEDDING_MODEL_NAME = "intfloat/e5-base-v2"
 
 # RAG setting for the retrieval process
-TOP_K = 1
+TOP_K = 3
 
 # create output folders in advance if they don't exist
 for _dir in (OUTPUT_DIR, VECTOR_DB_DIR):

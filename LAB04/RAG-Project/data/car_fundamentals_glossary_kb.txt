@@ -66,6 +66,12 @@ SECTION 1: VEHICLE BODY TYPES & CONFIGURATIONS
 SECTION 2: POWERTRAIN & FUEL TECHNOLOGIES
 ========================================================================================================================================
 
+2.0 Electric Vehicle (EV / Pure EV / BEV)
+- Definition: An Electric Vehicle (EV) is a motor vehicle propelled by one or more electric traction motors powered by energy stored in rechargeable battery packs or onboard fuel cells.
+- Primary EV Categories: Battery Electric Vehicle (BEV / 100% Pure EV), Plug-in Hybrid (PHEV), Full Hybrid (HEV), and Fuel Cell Electric Vehicle (FCEV).
+- Key Characteristics: Zero tailpipe emissions for pure EVs, instant electric motor torque from standstill, silent and smooth operation, and up to 40% lower routine maintenance costs.
+- Popular Examples: Tesla Model 3/Y, Volkswagen ID.4, BYD Seal, Porsche Taycan, BMW i4.
+
 2.1 Internal Combustion Engine (ICE) - Gasoline & Diesel
 - Definition: Vehicles powered purely by liquid fossil fuels (Petrol/Gasoline or Diesel) through internal combustion.
 - Features: Refueling takes 3-5 minutes, widespread gas station infrastructure, high energy density.
