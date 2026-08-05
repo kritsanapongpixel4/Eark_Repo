@@ -30,7 +30,7 @@ def main():
         return
 
     print("==========================================================================")
-    print(" 🚗⚡ AUTOMOTIVE & CAR KNOWLEDGE RAG SYSTEM (2025-2026 Edition)")
+    print(" 🚗⚡CAR KNOWLEDGE RAG SYSTEM (2025-2026 Edition)")
     print("==========================================================================")
     print(" Ask any question about vehicle specs, body types, powertrains, or EV tech!")
     print(" Enter 'exit', 'quit', or 'q' to quit.\n")
