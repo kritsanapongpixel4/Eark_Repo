@@ -1,0 +1,155 @@
+========================================================================================================================================
+AUTOMOTIVE FUNDAMENTALS, BODY TYPES & POWERTRAIN GLOSSARY - KNOWLEDGE BASE DOCUMENT
+========================================================================================================================================
+This document serves as a comprehensive reference guide for general automotive concepts, vehicle body configurations,
+powertrain technologies, performance metrics, safety systems, and market segments. It is designed for embedding into 
+Vector Databases and Retrieval-Augmented Generation (RAG) systems to answer fundamental domain-specific inquiries.
+
+========================================================================================================================================
+SECTION 1: VEHICLE BODY TYPES & CONFIGURATIONS
+========================================================================================================================================
+
+1.1 Sedan (Saloon)
+- Definition: A traditional 3-box passenger car with separate compartments for the engine, passengers, and cargo/trunk.
+- Characteristics: 4 doors, fixed roof, lower ground clearance, emphasis on smooth handling and highway comfort.
+- Ideal For: Daily commuting, long-distance highway travel, business executives.
+- Examples: BMW 3 Series, Mercedes-Benz C-Class, Audi A4, Toyota Camry.
+
+1.2 SUV (Sport Utility Vehicle)
+- Definition: A rugged, high-riding vehicle built on a truck or reinforced chassis, often equipped with All-Wheel Drive (AWD) or 4WD.
+- Characteristics: Elevated seating position, high ground clearance, spacious cabin, excellent off-road and all-weather capability.
+- Ideal For: Families, outdoor activities, off-road driving, heavy towing.
+- Examples: Volkswagen Touareg, Mercedes-Benz G-Class, BMW X5, Land Rover Defender.
+
+1.3 Crossover (CUV - Crossover Utility Vehicle)
+- Definition: A vehicle that blends SUV design features (high ride height) with a passenger car platform (unibody construction).
+- Characteristics: Smoother ride and better fuel efficiency than traditional body-on-frame SUVs, easier urban maneuverability.
+- Ideal For: Urban drivers who want higher visibility and ground clearance with car-like comfort.
+- Examples: Nissan Qashqai, Toyota RAV4, Honda CR-V, Hyundai Tucson.
+
+1.4 Hatchback
+- Definition: A compact or subcompact car with a rear door (hatch) that swings upward to access the cargo area, which is integrated into the cabin.
+- Characteristics: 3-door or 5-door configuration, shorter overall length, highly flexible cargo space by folding rear seats.
+- Ideal For: City driving, tight parking, budget-conscious buyers, first-time car owners.
+- Examples: Volkswagen Golf, Mini Cooper, Honda Civic Hatchback, Toyota Yaris.
+
+1.5 Hot Hatch
+- Definition: A high-performance variant of a standard hatchback equipped with a powerful turbocharged engine, sport-tuned suspension, and aggressive styling.
+- Examples: Volkswagen Golf GTI / Golf R, Honda Civic Type R, Audi RS 3 Sportback, BMW M135i.
+
+1.6 Coupe
+- Definition: A sporty 2-door car featuring a sloping rear roofline and compact rear seating area.
+- Characteristics: Low center of gravity, aerodynamic design, driver-focused performance.
+- Ideal For: Drivers prioritizing style, speed, and handling over rear passenger space.
+- Examples: BMW M2 / M4 Coupe, Porsche 911, Nissan Z, Ford Mustang.
+
+1.7 Estate Wagon (Station Wagon / Avant / Touring / Shooting Brake)
+- Definition: A passenger car variant with a roofline extending all the way to the rear of the vehicle, maximizing cargo capacity while maintaining sedan handling.
+- Characteristics: 5 doors, low loading lip, large boot capacity (often 500L–750L+), lower height than an SUV.
+- Ideal For: Families needing maximum cargo room without the higher fuel consumption of an SUV.
+- Examples: BMW M3 Touring, Audi RS 6 Avant, Mercedes-Benz E-Class Estate, Volvo V90.
+
+1.8 MPV (Multi-Purpose Vehicle / Minivan / Van)
+- Definition: A boxy passenger vehicle designed to maximize interior volume and seating capacity for 6 to 9 passengers.
+- Characteristics: Flexible seating arrangements, sliding side doors, high ceiling, spacious legroom.
+- Ideal For: Large families, shuttle services, commercial transport.
+- Examples: Volkswagen ID. Buzz, Lexus LM, Toyota Alphard / Sienna.
+
+1.9 Convertible (Cabriolet / Roadster)
+- Definition: A passenger car featuring a retractable soft-top (fabric) or hard-top roof.
+- Characteristics: Open-air driving experience, 2-seat (Roadster) or 4-seat layout.
+- Examples: Mazda MX-5 Miata, BMW Z4, Porsche 718 Boxster.
+
+========================================================================================================================================
+SECTION 2: POWERTRAIN & FUEL TECHNOLOGIES
+========================================================================================================================================
+
+2.1 Internal Combustion Engine (ICE) - Gasoline & Diesel
+- Definition: Vehicles powered purely by liquid fossil fuels (Petrol/Gasoline or Diesel) through internal combustion.
+- Features: Refueling takes 3-5 minutes, widespread gas station infrastructure, high energy density.
+- Diesel vs Gasoline: Diesel engines deliver higher torque at low RPMs and better highway fuel economy, while gasoline engines offer smoother performance and higher RPM range.
+
+2.2 Mild Hybrid Electric Vehicle (MHEV)
+- Definition: A vehicle equipped with a small electric starter-generator and 48-volt battery that assists the internal combustion engine.
+- Key Functions: Cannot drive on pure electricity; helps start the engine smoothly, recovers energy during braking, and improves fuel economy during acceleration.
+- Examples: BMW 330i (Mild Hybrid), Mercedes-Benz C 300 MHEV, Audi A4 45 TFSI.
+
+2.3 Full Hybrid Electric Vehicle (HEV)
+- Definition: A vehicle containing both a gasoline engine and an electric motor with a self-charging battery pack.
+- Key Functions: Drives automatically on pure electric power at low speeds, seamlessly switches between gas engine and electric motor. Does NOT require plugging into an outlet (battery charges via engine and regenerative braking).
+- Examples: Toyota Prius, Toyota RAV4 Hybrid, Honda Civic e:HEV.
+
+2.4 Plug-in Hybrid Electric Vehicle (PHEV)
+- Definition: A hybrid vehicle with a larger battery pack that can be charged via an external electrical outlet or EV charger.
+- Key Functions: Offers an all-electric driving range (typically 40–90 km) for daily commutes without burning gasoline. When the battery drains, it functions as a regular full hybrid.
+- Examples: BMW 330e, Volvo XC60 Recharge T8, Porsche Cayenne E-Hybrid.
+
+2.5 Battery Electric Vehicle (BEV / Pure EV)
+- Definition: A 100% fully electric vehicle powered solely by high-voltage traction battery packs and electric motors. Zero tailpipe emissions.
+- Key Functions: Requires external charging (AC Home Charging or DC Fast Charging). Features instant electric torque, silent operation, low center of gravity, and lower routine maintenance costs.
+- Examples: Tesla Model 3/Y, Volkswagen ID.4, Porsche Taycan, BMW i4, Hyundai IONIQ 5.
+
+2.6 Fuel Cell Electric Vehicle (FCEV)
+- Definition: An electric vehicle that generates electricity onboard using compressed hydrogen gas stored in fuel tanks and an electrochemical fuel cell stack.
+- Key Functions: Emits only pure water vapor. Refuels in 3–5 minutes at hydrogen stations, providing long driving range.
+- Examples: Toyota Mirai, Honda CR-V e:FCEV, Hyundai NEXO.
+
+========================================================================================================================================
+SECTION 3: KEY PERFORMANCE & TECHNICAL METRICS
+========================================================================================================================================
+
+3.1 Horsepower (HP / PS / kW)
+- Definition: Measurement of engine power output, determining maximum vehicle speed and top-end acceleration.
+- Unit Conversion: 1 kW = 1.341 HP; 1 HP = 1.014 PS.
+
+3.2 Torque (Nm / lb-ft)
+- Definition: The rotational force generated by the engine/motor. High torque provides quick initial acceleration and towing capability.
+
+3.3 Acceleration (0 to 100 km/h in seconds)
+- Definition: Time taken for a vehicle to accelerate from a complete standstill to 100 km/h (62 mph).
+- Benchmark: Sports cars < 4.0 seconds; Standard cars 7.0–10.0 seconds; Budget cars > 11.0 seconds.
+
+3.4 Usable Battery Capacity (kWh)
+- Definition: The net amount of electrical energy stored in a BEV/PHEV battery that is accessible for driving.
+- Typical Range: PHEVs 10–25 kWh; Compact EVs 40–60 kWh; Long-range EVs 75–120 kWh.
+
+3.5 Real-World Driving Range (km)
+- Definition: Estimated distance an electric vehicle can travel on a full single charge under real driving conditions.
+
+3.6 Energy Efficiency (Wh/km & kWh/100km)
+- Definition: Energy consumed per distance traveled. Lower values indicate higher energy efficiency.
+- Typical EV Rating: Efficient EVs consume 130–160 Wh/km; Large performance electric SUVs consume 220–300 Wh/km.
+
+3.7 Max Charging Power (kW) & Fast Charging Time (min)
+- Definition: Maximum DC fast-charging rate supported by the vehicle battery architecture (e.g., 150 kW, 250 kW, 350 kW 800V architecture). Determines 10% to 80% charging duration.
+
+3.8 Towing Capacity (kg)
+- Definition: Maximum trailer or load weight a vehicle is rated to safely pull.
+
+========================================================================================================================================
+SECTION 4: SAFETY RATINGS & DRIVER ASSISTANCE (ADAS)
+========================================================================================================================================
+
+4.1 Euro NCAP Safety Rating (1 to 5 Stars)
+- Definition: European New Car Assessment Programme rating assessing adult protection, child occupant protection, vulnerable road user protection, and safety assist technologies.
+- 5 Stars: Overall excellent performance in crash protection and collision avoidance technology.
+
+4.2 ADAS Autonomy Levels (Level 0 to Level 5)
+- Level 0: No automation; human driver controls all functions (warnings only).
+- Level 1: Driver Assistance; single system assists with steering OR acceleration/braking (e.g., standard Cruise Control).
+- Level 2: Partial Automation; system controls steering AND acceleration simultaneously under driver supervision (e.g., Adaptive Cruise Control with Lane Centering).
+- Level 3: Conditional Automation; vehicle handles driving tasks in specific conditions (e.g., traffic jam pilot), driver must be ready to take over.
+- Level 4: High Automation; vehicle drives autonomously in designated areas without driver intervention.
+- Level 5: Full Automation; complete driverless vehicle in all conditions.
+
+========================================================================================================================================
+SECTION 5: MARKET SEGMENTS (A-SEGMENT TO F-SEGMENT)
+========================================================================================================================================
+
+- Segment A (City Cars / Microcars): Ultra-compact urban cars (e.g., Fiat 500, Hyundai i10, Toyota Aygo).
+- Segment B (Subcompact / Small Cars): Small hatchbacks and crossovers (e.g., VW Polo, Renault Clio, Ford Fiesta).
+- Segment C (Compact / Medium Cars): Family hatchbacks, sedans, compact SUVs (e.g., VW Golf, Toyota Corolla, Honda Civic).
+- Segment D (Midsize / Executive Cars): Midsize sedans and crossovers (e.g., BMW 3 Series, Audi A4, VW Passat).
+- Segment E (Full-size Executive / Luxury Cars): Large luxury sedans (e.g., BMW 5 Series, Mercedes-Benz E-Class, Audi A6).
+- Segment F (Ultra-Luxury / Flagship / Supercars): Flagship luxury sedans, supercars, hypercars (e.g., Mercedes-Maybach, BMW 7 Series, Porsche 911, Ferrari, Lamborghini).
+========================================================================================================================================

@@ -1,123 +1,162 @@
 ========================================================================================================================================
-KNOWLEDGE BASE EXTRACTABLE Q&A DATASET (QUESTIONS ONLY) - EUROPEAN & JAPANESE CARS (2025-2026)
+KNOWLEDGE BASE EXTRACTABLE Q&A DATASET (QUESTIONS ONLY) - COMBINED CAR DATASETS & AUTOMOTIVE FUNDAMENTALS (2025-2026)
 ========================================================================================================================================
-This document contains 100 structured English inquiry questions designed for embedding into Knowledge Bases, Vector Databases,
-or RAG (Retrieval-Augmented Generation) systems to query vehicle attributes from the European & Japanese Cars Dataset.
+This document contains 140 structured English inquiry questions designed for embedding into Knowledge Bases, Vector Databases,
+or RAG (Retrieval-Augmented Generation) systems. The questions cover both vehicle records and automotive domain fundamentals:
+1. CARS_DATASET.xlsx (6,000 extended vehicle records with comprehensive metrics)
+2. eu_and_jp_cars_dataset.txt (421 European & Japanese vehicle records with country, region, and MSRP specs)
+3. car_fundamentals_glossary_kb.txt (Automotive concepts, body types, powertrain technologies, safety & technical terms)
 
-Total Questions: 112
+Total Questions: 140
 ========================================================================================================================================
 
-Q001: What is the total number of vehicles listed in the dataset?
-Q002: Which geographic regions are covered in this car dataset?
-Q003: Which countries of origin are represented in the European and Japanese car dataset?
-Q004: What attributes or fields are included for each car entry in the database?
-Q005: What currency is used for the estimated base MSRP prices in this dataset?
-Q006: What is the base price and horsepower of the Volkswagen Golf GTI?
-Q007: What powertrain technology does the Volkswagen Golf 1.5 TSI use?
-Q008: How much power does the Volkswagen Golf R generate?
-Q009: What type of body style is the Volkswagen ID. Buzz Pro?
-Q010: Is the Volkswagen Touareg 3.0 TDI a diesel or gasoline vehicle?
-Q011: What is the starting price for the electric Volkswagen ID.7 Pro?
-Q012: What engine type powers the BMW M3 Competition sedan?
-Q013: How much horsepower does the BMW M2 Coupe deliver?
-Q014: What is the base MSRP of the electric BMW i4 eDrive40?
-Q015: Which BMW model offers a Plug-in Hybrid powertrain in the 3-Series lineup?
-Q016: How much power does the high-performance BMW XM Label Red produce?
-Q017: What body type is the BMW 430i Gran Coupe classified as?
-Q018: What is the price and horsepower of the luxury BMW i7 xDrive60 sedan?
-Q019: What type of powertrain is featured in the Mercedes-Benz C 63 S E-Performance?
-Q020: How much horsepower does the Mercedes-Benz AMG A 45 S 4MATIC+ produce?
-Q021: What is the estimated starting price of the Mercedes-Maybach S 580 4MATIC?
-Q022: What body style is the Mercedes-Benz CLE 300?
-Q023: What is the power output of the Mercedes-Benz G 63 AMG off-road SUV?
-Q024: Which electric SUV model is offered by Mercedes-Benz under $55,000?
-Q025: What type of engine is fitted in the Audi RS 3 Sportback?
-Q026: How much horsepower does the Audi RS 6 Avant Performance produce?
-Q027: What is the base MSRP for the electric Audi e-tron GT quattro?
-Q028: Is the Audi Q5 40 TFSI equipped with a mild hybrid powertrain?
-Q029: What is the maximum output of the electric Audi SQ6 e-tron?
-Q030: What is the base price of the entry-level Porsche 911 Carrera?
-Q031: How much power does the Porsche 911 GT3 RS track coupe output?
-Q032: What powertrain technology is used in the Porsche 911 Carrera GTS?
-Q033: What is the starting MSRP for the electric Porsche Taycan Turbo S?
-Q034: How much horsepower does the Porsche Cayenne E-Hybrid produce?
-Q035: What engine configuration powers the Porsche 718 Cayman GTS 4.0?
-Q036: What type of hybrid system is used in the Renault Clio E-Tech?
-Q037: How much power does the Alpine A110 GT sports coupe deliver?
-Q038: What is the price of the electric Renault 5 E-Tech compact hatchback?
-Q039: What powertrain options exist for the Peugeot 408 Fastback Crossover?
-Q040: How much power does the Peugeot 508 Peugeot Sport Engineered sedan output?
-Q041: Is the Citroën ë-C3 an electric or hybrid vehicle?
-Q042: What is the base MSRP of the luxury DS 9 E-TENSE 360 sedan?
-Q043: How much horsepower does the Alfa Romeo Giulia Quadrifoglio generate?
-Q044: What is the starting price for the Alfa Romeo Tonale Sprint Q4 plug-in hybrid?
-Q045: Is the Fiat 500e Hatchback a fully electric vehicle (BEV)?
-Q046: What powertrain is featured in the Maserati Grecale Folgore?
-Q047: How much power does the Maserati GranTurismo Folgore output?
-Q048: What engine type powers the Ferrari Purosangue luxury SUV?
-Q049: How much horsepower does the Ferrari 296 GTB plug-in hybrid produce?
-Q050: What is the estimated price of the Ferrari SF90 XX Stradale hypercar?
-Q051: What powertrain powers the Lamborghini Revuelto hypercar?
-Q052: How much horsepower does the Lamborghini Urus SE plug-in hybrid produce?
-Q053: What type of powertrain does the Volvo XC60 B5 use?
-Q054: How much horsepower does the Volvo XC90 Recharge T8 plug-in hybrid generate?
-Q055: What is the starting price for the compact Volvo EX30 Single Motor Extended?
-Q056: What is the power output of the dual-motor Polestar 4?
-Q057: How much horsepower does the electric Polestar 3 Long Range SUV produce?
-Q058: What is the power output of the Jaguar F-PACE SVR?
-Q059: What engine powers the Range Rover Sport SV performance SUV?
-Q060: How much does the flagship Range Rover SV cost at base MSRP?
-Q061: What body style is the Land Rover Defender 130 V8?
-Q062: What is the starting price of the electric Mini Cooper SE Hatchback?
-Q063: How much horsepower does the Aston Martin Vantage V8 Coupe output?
-Q064: What engine type powers the flagship Aston Martin Vanquish V12?
-Q065: What powertrain is used in the Bentley Continental GT Speed?
-Q066: How much horsepower does the Lotus Emeya R EV hyper GT produce?
-Q067: What is the base MSRP of the McLaren 750S Coupe supercar?
-Q068: What is the horsepower of the high-performance Toyota GR Yaris 1.6T?
-Q069: What powertrain powers the Toyota Prius Prime PHEV?
-Q070: How much power does the Toyota Crown Platinum Hybrid MAX generate?
-Q071: What is the base price for the Toyota Land Cruiser 250 First Edition?
-Q072: Which Toyota sports coupe features a 3.0-liter turbocharged inline-6 engine?
-Q073: What ultra-luxury SUV model is offered by Toyota at $170,000?
-Q074: How much horsepower does the Lexus IS 500 F Sport Performance sedan deliver?
-Q075: What type of powertrain is in the Lexus NX 450h+ PHEV?
-Q076: What is the base MSRP of the flagship Lexus LX 600 Ultra Luxury SUV?
-Q077: How much power does the Lexus RX 500h F Sport Performance generate?
-Q078: What engine powers the grand tourer Lexus LC 500 Coupe?
-Q079: Is the Lexus RZ 450e a fully electric or plug-in hybrid luxury SUV?
-Q080: How much horsepower does the Honda Civic Type R produce?
-Q081: What powertrain is used in the Honda CR-V e:FCEV SUV?
-Q082: What is the base price of the electric Honda Prologue EV Touring?
-Q083: What engine powers the Mazda3 Hatchback Turbo AWD?
-Q084: How much power does the Mazda CX-60 e-Skyactiv PHEV produce?
-Q085: What unique rotary-assisted powertrain is used in the Mazda MX-30 e-Skyactiv R-EV?
-Q086: What is the horsepower of the Mazda CX-90 3.3 Turbo S Premium?
-Q087: What type of hybrid system is installed in the Nissan Note e-POWER X?
-Q088: How much horsepower does the Nissan Z NISMO performance coupe deliver?
-Q089: What is the base MSRP of the supercar Nissan GT-R NISMO?
-Q090: How much power does the electric Nissan Ariya NISMO SUV generate?
-Q091: What engine configuration powers the Subaru WRX Premium 6MT?
-Q092: What is the base price of the off-road Subaru Crosstrek Wilderness 2.5?
-Q093: What powertrain is used in the Mitsubishi Outlander PHEV SEL Black Edition?
-Q094: What type of vehicle is the Suzuki Jimny 5-Door XL?
-Q095: How much horsepower does the Suzuki Across 2.5 PHEV AWD produce?
-Q096: What engine powers the Infiniti Q50 Red Sport 400 sedan?
-Q097: How much power does the twin-turbo Infiniti QX80 Autograph 4WD output?
-Q098: Which European hatchback under $35,000 offers over 200 horsepower?
-Q099: What are the available fully electric (BEV) SUV options from German manufacturers?
-Q100: Which Japanese SUVs feature plug-in hybrid (PHEV) powertrains?
-Q101: What is the most powerful supercar listed in the Italian cars section?
-Q102: Which car models in the dataset are classified as performance wagons?
-Q103: What are the available 7-seater SUV models from Volvo, Peugeot, and Mazda?
-Q104: Which Japanese vehicles feature manual transmissions or track-oriented trims?
-Q105: What electric vehicle (BEV) models are offered by British manufacturers?
-Q106: Which models in the dataset use diesel or diesel mild-hybrid powertrains?
-Q107: What are the options for compact luxury electric crossovers under $60,000?
-Q108: Which vehicle holds the highest base price among all European models in the dataset?
-Q109: Which vehicle holds the lowest starting base price among all Japanese models?
-Q110: What sports coupes are available in the dataset with naturally aspirated engines?
-Q111: Which models feature twin-turbocharged V8 engines across European luxury brands?
-Q112: What hydrogen fuel cell vehicle is included in the Japanese car dataset?
+--- SECTION 1: DATASET METADATA & SCHEMA OVERVIEW ---
+Q001: What are the primary car datasets included in this Knowledge Base and how do their record counts compare?
+Q002: What field schema and attributes are available in CARS_DATASET.xlsx?
+Q003: What fields are included in the European & Japanese Cars Dataset (eu_and_jp_cars_dataset.txt)?
+Q004: Which currencies are used for vehicle pricing across the two datasets?
+Q005: How is market segmentation classified (Segments A through F) in CARS_DATASET.xlsx?
+Q006: What ADAS (Advanced Driver Assistance Systems) autonomy levels are tracked in the database?
+Q007: What is the scale and criteria used for safety ratings in CARS_DATASET.xlsx?
+Q008: Which geographic regions and countries of origin are represented in the European and Japanese car dataset?
+Q009: What powertrain types are categorized across both datasets (BEV, PHEV, HEV, MHEV, Gasoline, Diesel, FCEV)?
+Q010: What units of measurement are used for battery capacity, driving range, efficiency, acceleration, and towing capacity?
 
+--- SECTION 2: SPECIFIC VEHICLE QUERIES - EUROPEAN & JAPANESE CARS DATASET ---
+Q011: What is the estimated starting base price (USD) and horsepower of the Volkswagen Golf 1.5 TSI?
+Q012: What engine type powers the performance Volkswagen Golf GTI and Golf R models?
+Q013: What body style and powertrain are featured in the electric Volkswagen ID. Buzz Pro?
+Q014: Is the Volkswagen Touareg 3.0 TDI a diesel or gasoline vehicle, and what is its output?
+Q015: What is the base MSRP of the electric Volkswagen ID.7 Pro sedan?
+Q016: What engine configuration powers the BMW M3 Competition sedan and M3 Touring?
+Q017: How much horsepower does the twin-turbo BMW M2 Coupe deliver?
+Q018: What is the base price and power output of the electric BMW i4 eDrive40 fastback?
+Q019: Which BMW model in the 3-Series lineup offers a Plug-in Hybrid powertrain?
+Q020: What is the horsepower rating for the high-performance BMW XM Label Red SUV?
+Q021: What powertrain technology is featured in the Mercedes-Benz C 63 S E-Performance?
+Q022: How much horsepower does the Mercedes-Benz AMG A 45 S 4MATIC+ produce?
+Q023: What is the estimated starting MSRP of the ultra-luxury Mercedes-Maybach S 580 4MATIC?
+Q024: What engine and power output does the Mercedes-Benz G 63 AMG off-road SUV feature?
+Q025: Which electric crossover models are offered by Mercedes-Benz under $55,000 USD?
+Q026: What engine type is fitted in the performance Audi RS 3 Sportback?
+Q027: How much horsepower does the Audi RS 6 Avant Performance wagon produce?
+Q028: What is the base MSRP for the electric Audi e-tron GT quattro luxury sedan?
+Q029: What is the starting base price of the entry-level Porsche 911 Carrera coupe?
+Q030: How much power does the track-focused Porsche 911 GT3 RS output?
+Q031: What powertrain technology is used in the hybrid Porsche 911 Carrera GTS?
+Q032: What is the starting MSRP for the electric Porsche Taycan Turbo S?
+Q033: What type of hybrid powertrain powers the Renault Clio E-Tech hatchback?
+Q034: How much horsepower does the Alpine A110 GT sports coupe generate?
+Q035: What is the base price of the electric Renault 5 E-Tech compact hatchback?
+Q036: What powertrain options are available for the Peugeot 408 Fastback Crossover?
+Q037: How much horsepower does the Peugeot 508 Peugeot Sport Engineered deliver?
+Q038: Is the compact Citroën ë-C3 classified as a fully electric vehicle (BEV)?
+Q039: How much horsepower does the Alfa Romeo Giulia Quadrifoglio sedan produce?
+Q040: What is the starting price for the Alfa Romeo Tonale Sprint Q4 plug-in hybrid?
+Q041: What powertrain powers the Maserati Grecale Folgore and GranTurismo Folgore?
+Q042: What engine configuration powers the Ferrari Purosangue luxury crossover?
+Q043: How much horsepower does the Ferrari 296 GTB plug-in hybrid supercar produce?
+Q044: What powertrain technology is featured in the flagship Lamborghini Revuelto hypercar?
+Q045: How much power does the Lamborghini Urus SE plug-in hybrid SUV produce?
+Q046: What is the power output and starting price of the compact Volvo EX30 Single Motor Extended?
+Q047: How much horsepower does the Volvo XC90 Recharge T8 plug-in hybrid deliver?
+Q048: What engine powers the performance Range Rover Sport SV SUV?
+Q049: What is the base MSRP of the flagship luxury Range Rover SV?
+Q050: What is the starting price of the electric Mini Cooper SE Hatchback?
+Q051: What engine configuration powers the flagship Aston Martin Vanquish V12?
+Q052: How much horsepower does the Lotus Emeya R EV hyper-GT output?
+Q053: What is the base MSRP of the McLaren 750S Coupe supercar?
+Q054: What engine and power output does the Toyota GR Yaris 1.6T hot hatch offer?
+Q055: What powertrain type powers the Toyota Prius Prime PHEV?
+Q056: How much power does the Toyota Crown Platinum Hybrid MAX generate?
+Q057: What ultra-luxury SUV model is offered by Toyota at an estimated $170,000 MSRP?
+Q058: How much horsepower does the Lexus IS 500 F Sport Performance sedan deliver?
+Q059: What powertrain is featured in the luxury Lexus NX 450h+ plug-in hybrid?
+Q060: What is the base MSRP of the flagship Lexus LX 600 Ultra Luxury SUV?
+Q061: How much power does the Honda Civic Type R hatchback produce?
+Q062: What unique powertrain is featured in the Honda CR-V e:FCEV fuel cell crossover?
+Q063: What engine powers the performance Mazda3 Hatchback Turbo AWD?
+Q064: What unique rotary generator hybrid system is used in the Mazda MX-30 e-Skyactiv R-EV?
+Q065: How much horsepower does the Mazda CX-90 3.3 Turbo S Premium output?
+Q066: What is the horsepower rating of the Nissan Z NISMO sports coupe?
+Q067: What is the base MSRP of the supercar Nissan GT-R NISMO?
+Q068: What engine configuration powers the Subaru WRX Premium 6-speed manual?
+Q069: What powertrain is featured in the Mitsubishi Outlander PHEV SEL Black Edition?
+Q070: How much horsepower does the Suzuki Across 2.5 PHEV AWD generate?
+
+--- SECTION 3: EXTENDED METRICS & TECHNICAL ATTRIBUTES (CARS_DATASET.xlsx) ---
+Q071: What range of usable battery capacities (kWh) is present across electric models in CARS_DATASET.xlsx?
+Q072: Which electric vehicle models in the 6,000-record dataset achieve a real-world driving range exceeding 700 km?
+Q073: What is the typical energy efficiency rating (in Wh/km) for compact electric hatchbacks versus large electric SUVs?
+Q074: Which vehicles in CARS_DATASET.xlsx record 0 to 100 km/h acceleration times under 4.0 seconds?
+Q075: What is the maximum top speed recorded among performance sports coupes in CARS_DATASET.xlsx?
+Q076: What is the highest towing capacity (kg) recorded for heavy-duty SUVs and crossovers in the 6,000-record dataset?
+Q077: What is the distribution of vehicle prices in Euros (EUR) across Segments A, B, C, D, E, and F in CARS_DATASET.xlsx?
+Q078: How do fast-charging times (minutes) compare across models with max charging power ratings of 150 kW to 350 kW?
+Q079: What is the maximum horsepower (HP) and peak torque (Nm) achieved by top-tier performance models in CARS_DATASET.xlsx?
+Q080: What are the average annual maintenance costs (EUR/year) for luxury vehicles compared to budget compact models?
+Q081: What seating capacity options (e.g., 2, 4, 5, or 7 seats) are available across different vehicle body types in CARS_DATASET.xlsx?
+Q082: Which estate wagons and large SUVs offer boot capacities exceeding 750 liters?
+Q083: What proportion of models in CARS_DATASET.xlsx feature Level 2 and Level 3 ADAS (Advanced Driver Assistance Systems)?
+Q084: How many models in the 6,000-record dataset have received a maximum 5-Star Euro NCAP safety rating?
+Q085: What are the primary differences in specifications between vehicles categorized for Personal versus Commercial usage?
+Q086: What is the estimated energy cost per 100 km (EUR/100km) for electric vehicles compared to gasoline and diesel models?
+Q087: How are insurance ratings (scale 1 to 10) distributed relative to vehicle power output and MSRP in CARS_DATASET.xlsx?
+Q088: Which manufacturers in CARS_DATASET.xlsx offer plug-in hybrid (PHEV) models combining petrol engine and electric propulsion?
+Q089: What fuel types are present in CARS_DATASET.xlsx (Petrol, Diesel, Electric, Hybrid Petrol+Electric, Diesel+Electric)?
+Q090: Which D-segment and E-segment sedans in CARS_DATASET.xlsx feature adaptive drive systems and ADAS Level 3 autonomy?
+
+--- SECTION 4: COMPARATIVE, ANALYTICAL & CROSS-DATASET SYNTHESIS QUERIES ---
+Q091: How do starting prices compare between European luxury sedans in USD (from eu_and_jp_cars_dataset.txt) and EUR (from CARS_DATASET.xlsx)?
+Q092: Which German manufacturers (BMW, Mercedes-Benz, Audi, Porsche, Volkswagen) offer fully electric (BEV) models across both datasets?
+Q093: Which Japanese automakers (Toyota, Lexus, Honda, Nissan, Mazda, Subaru) feature plug-in hybrid (PHEV) powertrains in both datasets?
+Q094: What are the top performance supercars in both datasets delivering over 600 horsepower?
+Q095: How do power outputs compare between Japanese hot hatches (e.g., Civic Type R, GR Yaris) and European hot hatches (e.g., Golf R, AMG A 45 S)?
+Q096: Which 7-seater SUV models are identified across European and Japanese brands in both dataset files?
+Q097: What performance wagons are available from BMW, Audi, and Mercedes-Benz across both datasets?
+Q098: Which compact electric vehicles offer base prices under $35,000 USD or €35,000 EUR in the datasets?
+Q099: Which vehicle holds the highest base price among all European luxury models in the Knowledge Base?
+Q100: Which entry-level model holds the lowest starting base price among Japanese manufacturers in the dataset?
+Q101: What naturally aspirated sports coupes are listed in the Japanese and European car dataset?
+Q102: Which flagship models feature twin-turbocharged V8 engines across German and Italian luxury brands?
+Q103: What hydrogen fuel cell vehicle (FCEV) models are present in the Japanese vehicle collection?
+Q104: How do towing capacities compare between diesel-powered SUVs and battery electric SUVs in CARS_DATASET.xlsx?
+Q105: What are the highest efficiency electric models (lowest Wh/km consumption) recorded in CARS_DATASET.xlsx?
+Q106: Which luxury sedans offer both Level 3 ADAS autonomy and 5-Star Euro NCAP safety ratings?
+Q107: What is the average maintenance cost difference between battery electric vehicles (BEVs) and internal combustion engine (ICE) cars?
+Q108: Which brands appear in both CARS_DATASET.xlsx and eu_and_jp_cars_dataset.txt?
+Q109: What convertible models are available from British, German, and Italian manufacturers across the datasets?
+Q110: How does acceleration (0-100 km/h) correlate with total horsepower (HP) across sports coupes in CARS_DATASET.xlsx?
+Q111: Which compact crossovers under €40,000 EUR offer all-wheel drive (AWD) capability in CARS_DATASET.xlsx?
+Q112: What midsize luxury sedans provide a real-world driving range greater than 800 km on a single tank or charge?
+Q113: How do insurance ratings differ between high-horsepower sports cars and family MPVs/vans?
+Q114: Which European luxury brands offer ultra-luxury sedans with prices exceeding $150,000 USD or €150,000 EUR?
+Q115: What models feature mild-hybrid (MHEV) gasoline and diesel powertrains in the European automotive dataset?
+Q116: Which Italian supercar brands (Ferrari, Lamborghini, Maserati) feature plug-in hybrid technology in their latest line-ups?
+Q117: What off-road SUV models with high towing capacity and 4WD are included in the Japanese and European datasets?
+Q118: How do boot space capacities (in Liters) compare between compact hatchbacks, fastbacks, estate wagons, and full-size SUVs?
+Q119: What are the primary differences in battery capacity and max charging speed between city EVs and long-distance GT EVs?
+Q120: What general insights can be synthesized regarding vehicle electrification trends across European and Japanese manufacturers in 2025-2026?
+
+--- SECTION 5: AUTOMOTIVE FUNDAMENTALS & BEGINNER GLOSSARY QUERIES ---
+Q121: What is an SUV (Sport Utility Vehicle) and how does it differ from a Crossover (CUV)?
+Q122: What is the main difference between a Sedan, a Hatchback, and an Estate Wagon?
+Q123: What defines a Coupe and how does it differ from a standard Sedan?
+Q124: What is a Hot Hatch and what are some prominent examples in the market?
+Q125: What is an MPV (Multi-Purpose Vehicle) and what passenger capacity does it typically offer?
+Q126: What is a Convertible or Roadster?
+Q127: What is an ICE (Internal Combustion Engine) vehicle and how do Gasoline and Diesel engines compare?
+Q128: What is a Mild Hybrid Electric Vehicle (MHEV) and can it drive purely on electricity?
+Q129: What is a Full Hybrid Electric Vehicle (HEV) and does it require external plug-in charging?
+Q130: What is a Plug-in Hybrid Electric Vehicle (PHEV) and what are its key operational advantages?
+Q131: What is a Battery Electric Vehicle (BEV / Pure EV) and how is it powered?
+Q132: What is a Fuel Cell Electric Vehicle (FCEV) and what fuel does it use?
+Q133: What is the difference between Horsepower (HP) and Torque (Nm)?
+Q134: How is acceleration (0 to 100 km/h) evaluated across performance and standard vehicles?
+Q135: What does usable battery capacity (kWh) mean in electric vehicles?
+Q136: What is Wh/km energy efficiency and how does it affect EV driving range?
+Q137: How does Euro NCAP rate vehicle safety and what does a 5-Star rating signify?
+Q138: What are ADAS autonomy levels (Level 0 through Level 5)?
+Q139: How are vehicle market segments (Segment A through Segment F) classified?
+Q140: What are the main factors contributing to the Total Cost of Ownership for electric vs ICE vehicles?
 ========================================================================================================================================
