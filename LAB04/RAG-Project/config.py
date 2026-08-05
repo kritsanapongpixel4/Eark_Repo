@@ -27,8 +27,7 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 VECTOR_DB_DIR = os.path.join(BASE_DIR, "vector_db")
 
 # Data file of the knowledge base
-SOURCE_FILE = [os.path.join(DATA_DIR, "car_dataset_kb_qa_questions.txt"),
-               os.path.join(DATA_DIR, "car_fundamentals_glossary_kb.txt"),
+SOURCE_FILE = [os.path.join(DATA_DIR, "car_fundamentals_glossary_kb.txt"),
                os.path.join(DATA_DIR, "CARS_DATASET.xlsx"),
                os.path.join(DATA_DIR, "eu_and_jp_cars_dataset.txt")]
 
@@ -45,15 +44,15 @@ CHUNK_STORE_FILE = os.path.join(VECTOR_DB_DIR, "chunk_store.json")
 # settings for chunking and embedding
 #data is already in Q&A format, but if the answer is too long, 
 # it will be split into chunks of this size (number of characters)
-CHUNK_SIZE = 400
-CHUNK_OVERLAP = 50
+CHUNK_SIZE = 600
+CHUNK_OVERLAP = 80
 
 # setting for the embedding model
 #multilingual model for TH language support
 EMBEDDING_MODEL_NAME = "paraphrase-multilingual-MiniLM-L12-v2"
 
 # RAG setting for the retrieval process
-TOP_K = 3
+TOP_K = 1
 
 # create output folders in advance if they don't exist
 for _dir in (OUTPUT_DIR, VECTOR_DB_DIR):
