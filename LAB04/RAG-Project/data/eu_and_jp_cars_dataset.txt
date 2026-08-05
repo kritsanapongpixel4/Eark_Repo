@@ -1,0 +1,445 @@
+========================================================================================================================================
+COMPREHENSIVE CURRENT EUROPEAN & JAPANESE CARS DATASET (2025-2026 EDITION)
+========================================================================================================================================
+This dataset contains a structured list of 200+ current production vehicle models available globally from European and 
+Japanese automotive manufacturers. 
+
+Total Records: 421
+
+Field Schema:
+- ID           : Sequential Entry Identifier
+- Make         : Vehicle Brand / Manufacturer
+- Model        : Vehicle Model Name and Trim/Variant Specification
+- Region       : Geographic Region (Europe / Japan)
+- Country      : Country of Origin / Corporate Headquarters
+- Body_Type    : Vehicle Body Configuration
+- Powertrain   : Engine Tech / Fuel Type (Gasoline, Diesel, Full Hybrid, Plug-in Hybrid, BEV, MHEV)
+- Power_HP     : Maximum Engine/System Output in Horsepower (HP)
+- Base_Price   : Estimated Starting MSRP in USD ($)
+========================================================================================================================================
+
+ID   | Make               | Model                         | Region   | Country        | Body_Type          | Powertrain                  | Power_HP | Base_Price
+----------------------------------------------------------------------------------------------------------------------------------------
+001  | Volkswagen         | Golf 1.5 TSI                  | Europe   | Germany        | Hatchback          | Gasoline / Mild Hybrid      | 150 HP   | $30,500
+002  | Volkswagen         | Golf GTI                      | Europe   | Germany        | Hatchback          | Gasoline Turbo              | 241 HP   | $32,000
+003  | Volkswagen         | Golf R                        | Europe   | Germany        | Hatchback          | Gasoline Turbo AWD          | 315 HP   | $45,500
+004  | Volkswagen         | Polo 1.0 TSI                  | Europe   | Germany        | Hatchback          | Gasoline Turbo              | 95 HP    | $21,500
+005  | Volkswagen         | Tiguan 2.0 TSI                | Europe   | Germany        | SUV                | Gasoline Turbo              | 201 HP   | $38,500
+006  | Volkswagen         | Tiguan 2.0 TDI                | Europe   | Germany        | SUV                | Diesel Turbo                | 193 HP   | $42,000
+007  | Volkswagen         | Touareg 3.0 TDI               | Europe   | Germany        | Luxury SUV         | Diesel Turbo V6             | 286 HP   | $72,000
+008  | Volkswagen         | ID.3 Pro                      | Europe   | Germany        | Hatchback          | Electric (BEV)              | 204 HP   | $38,000
+009  | Volkswagen         | ID.4 Pro                      | Europe   | Germany        | SUV                | Electric (BEV)              | 282 HP   | $45,000
+010  | Volkswagen         | ID.5 GTX                      | Europe   | Germany        | Coupe SUV          | Electric (BEV) AWD          | 335 HP   | $54,000
+011  | Volkswagen         | ID.7 Pro                      | Europe   | Germany        | Sedan              | Electric (BEV)              | 282 HP   | $58,000
+012  | Volkswagen         | ID. Buzz Pro                  | Europe   | Germany        | Van / MPV          | Electric (BEV)              | 282 HP   | $60,000
+013  | Volkswagen         | Arteon Shooting Brake         | Europe   | Germany        | Wagon              | Gasoline Turbo              | 316 HP   | $52,000
+014  | Volkswagen         | T-Roc 1.5 TSI                 | Europe   | Germany        | Compact SUV        | Gasoline Turbo              | 150 HP   | $31,000
+015  | Volkswagen         | Taigo 1.0 TSI                 | Europe   | Germany        | Coupe SUV          | Gasoline Turbo              | 110 HP   | $26,500
+016  | Volkswagen         | Passat Variant 2.0 TDI        | Europe   | Germany        | Wagon              | Diesel Turbo                | 193 HP   | $48,000
+017  | BMW                | 118i Hatchback                | Europe   | Germany        | Hatchback          | Gasoline Turbo              | 136 HP   | $33,000
+018  | BMW                | M135i xDrive                  | Europe   | Germany        | Hot Hatch          | Gasoline Turbo AWD          | 302 HP   | $48,500
+019  | BMW                | 220i Coupe                    | Europe   | Germany        | Coupe              | Gasoline Turbo              | 184 HP   | $38,800
+020  | BMW                | M2 Coupe                      | Europe   | Germany        | Coupe              | Twin-Turbo Inline-6         | 453 HP   | $63,200
+021  | BMW                | 220i Active Tourer            | Europe   | Germany        | MPV                | Mild Hybrid Gasoline        | 170 HP   | $36,000
+022  | BMW                | 330i Sedan                    | Europe   | Germany        | Sedan              | Gasoline Turbo              | 255 HP   | $45,500
+023  | BMW                | 330e Plug-in Hybrid           | Europe   | Germany        | Sedan              | Plug-in Hybrid              | 288 HP   | $48,800
+024  | BMW                | M3 Competition                | Europe   | Germany        | Sedan              | Twin-Turbo Inline-6         | 503 HP   | $76,000
+025  | BMW                | M3 Touring                    | Europe   | Germany        | Performance Wagon  | Twin-Turbo Inline-6 AWD     | 503 HP   | $88,000
+026  | BMW                | 430i Gran Coupe               | Europe   | Germany        | Fastback           | Gasoline Turbo              | 255 HP   | $48,300
+027  | BMW                | M4 Coupe                      | Europe   | Germany        | Coupe              | Twin-Turbo Inline-6         | 473 HP   | $78,100
+028  | BMW                | 530i Sedan                    | Europe   | Germany        | Sedan              | Mild Hybrid Gasoline        | 255 HP   | $57,900
+029  | BMW                | i5 eDrive40                   | Europe   | Germany        | Sedan              | Electric (BEV)              | 335 HP   | $66,800
+030  | BMW                | 740i Sedan                    | Europe   | Germany        | Luxury Sedan       | Mild Hybrid Inline-6        | 375 HP   | $96,700
+031  | BMW                | i7 xDrive60                   | Europe   | Germany        | Luxury Sedan       | Electric (BEV)              | 536 HP   | $105,700
+032  | BMW                | X1 xDrive28i                  | Europe   | Germany        | Compact SUV        | Gasoline Turbo              | 241 HP   | $40,500
+033  | BMW                | iX1 xDrive30                  | Europe   | Germany        | Compact SUV        | Electric (BEV) AWD          | 308 HP   | $51,000
+034  | BMW                | X2 M35i xDrive                | Europe   | Germany        | Coupe SUV          | Gasoline Turbo AWD          | 312 HP   | $51,400
+035  | BMW                | X3 xDrive30i                  | Europe   | Germany        | SUV                | Gasoline Turbo              | 255 HP   | $48,900
+036  | BMW                | X4 xDrive30i                  | Europe   | Germany        | Coupe SUV          | Gasoline Turbo              | 255 HP   | $55,000
+037  | BMW                | X5 xDrive40i                  | Europe   | Germany        | SUV                | Mild Hybrid Inline-6        | 375 HP   | $66,000
+038  | BMW                | X6 xDrive40i                  | Europe   | Germany        | Coupe SUV          | Mild Hybrid Inline-6        | 375 HP   | $74,500
+039  | BMW                | X7 xDrive40i                  | Europe   | Germany        | Luxury SUV         | Mild Hybrid Inline-6        | 375 HP   | $81,900
+040  | BMW                | XM Label Red                  | Europe   | Germany        | Performance SUV    | Plug-in Hybrid Twin-Turbo V8 | 738 HP   | $185,000
+041  | BMW                | i4 eDrive40                   | Europe   | Germany        | Fastback           | Electric (BEV)              | 335 HP   | $57,000
+042  | BMW                | iX xDrive50                   | Europe   | Germany        | Luxury SUV         | Electric (BEV)              | 516 HP   | $87,200
+043  | BMW                | Z4 sDrive30i                  | Europe   | Germany        | Convertible        | Gasoline Turbo              | 255 HP   | $53,600
+044  | Mercedes-Benz      | A 200 Hatchback               | Europe   | Germany        | Hatchback          | Gasoline Turbo              | 163 HP   | $36,000
+045  | Mercedes-Benz      | AMG A 45 S 4MATIC+            | Europe   | Germany        | Hot Hatch          | Gasoline Turbo AWD          | 416 HP   | $68,000
+046  | Mercedes-Benz      | CLA 250 Coupe                 | Europe   | Germany        | Coupe Sedan        | Gasoline Turbo              | 221 HP   | $43,200
+047  | Mercedes-Benz      | C 300 Sedan                   | Europe   | Germany        | Sedan              | Mild Hybrid Gasoline        | 255 HP   | $48,000
+048  | Mercedes-Benz      | C 63 S E-Performance          | Europe   | Germany        | Sedan              | Plug-in Hybrid Turbo-4      | 671 HP   | $85,000
+049  | Mercedes-Benz      | E 350 Sedan                   | Europe   | Germany        | Sedan              | Mild Hybrid Gasoline        | 255 HP   | $62,300
+050  | Mercedes-Benz      | E 450 4MATIC All-Terrain      | Europe   | Germany        | Wagon              | Mild Hybrid Inline-6        | 375 HP   | $74,700
+051  | Mercedes-Benz      | S 500 4MATIC                  | Europe   | Germany        | Luxury Sedan       | Mild Hybrid Inline-6        | 429 HP   | $117,300
+052  | Mercedes-Benz      | Maybach S 580 4MATIC          | Europe   | Germany        | Ultra-Luxury Sedan | Twin-Turbo V8 MHEV          | 496 HP   | $193,400
+053  | Mercedes-Benz      | GLA 250 SUV                   | Europe   | Germany        | Compact SUV        | Gasoline Turbo              | 221 HP   | $41,800
+054  | Mercedes-Benz      | GLB 250 SUV                   | Europe   | Germany        | Compact SUV        | Gasoline Turbo              | 221 HP   | $44,000
+055  | Mercedes-Benz      | GLC 300 4MATIC                | Europe   | Germany        | SUV                | Mild Hybrid Gasoline        | 255 HP   | $49,000
+056  | Mercedes-Benz      | GLC 43 Coupe                  | Europe   | Germany        | Coupe SUV          | Mild Hybrid Turbo-4         | 416 HP   | $68,200
+057  | Mercedes-Benz      | GLE 350 4MATIC                | Europe   | Germany        | SUV                | Mild Hybrid Gasoline        | 255 HP   | $62,600
+058  | Mercedes-Benz      | GLE 53 AMG SUV                | Europe   | Germany        | Performance SUV    | Mild Hybrid Inline-6        | 429 HP   | $86,750
+059  | Mercedes-Benz      | GLS 450 4MATIC                | Europe   | Germany        | Luxury SUV         | Mild Hybrid Inline-6        | 375 HP   | $87,000
+060  | Mercedes-Benz      | G 550 Geländewagen            | Europe   | Germany        | Off-Road SUV       | Mild Hybrid Inline-6        | 443 HP   | $143,000
+061  | Mercedes-Benz      | G 63 AMG                      | Europe   | Germany        | Off-Road SUV       | Twin-Turbo V8               | 577 HP   | $183,000
+062  | Mercedes-Benz      | EQA 250+                      | Europe   | Germany        | Compact SUV        | Electric (BEV)              | 188 HP   | $48,000
+063  | Mercedes-Benz      | EQB 300 4MATIC                | Europe   | Germany        | Compact SUV        | Electric (BEV)              | 225 HP   | $53,050
+064  | Mercedes-Benz      | EQE 350+ Sedan                | Europe   | Germany        | Luxury Sedan       | Electric (BEV)              | 288 HP   | $75,000
+065  | Mercedes-Benz      | EQE 350 SUV                   | Europe   | Germany        | Luxury SUV         | Electric (BEV)              | 288 HP   | $77,900
+066  | Mercedes-Benz      | EQS 450+ Sedan                | Europe   | Germany        | Luxury Sedan       | Electric (BEV)              | 355 HP   | $104,400
+067  | Mercedes-Benz      | CLE 300 Coupe                 | Europe   | Germany        | Coupe              | Mild Hybrid Gasoline        | 255 HP   | $56,500
+068  | Mercedes-Benz      | SL 43 Roadster                | Europe   | Germany        | Convertible        | Gasoline Turbo              | 375 HP   | $109,900
+069  | Mercedes-Benz      | AMG GT 55 Coupe               | Europe   | Germany        | Sports Coupe       | Twin-Turbo V8 AWD           | 469 HP   | $134,900
+070  | Audi               | A1 Sportback 30 TFSI          | Europe   | Germany        | Hatchback          | Gasoline Turbo              | 110 HP   | $25,000
+071  | Audi               | A3 Sedan 40 TFSI              | Europe   | Germany        | Sedan              | Mild Hybrid Gasoline        | 201 HP   | $35,800
+072  | Audi               | S3 Sedan                      | Europe   | Germany        | Sedan              | Gasoline Turbo AWD          | 328 HP   | $47,000
+073  | Audi               | RS 3 Sportback                | Europe   | Germany        | Hatchback          | Turbo Inline-5 AWD          | 401 HP   | $62,300
+074  | Audi               | A4 Sedan 45 TFSI              | Europe   | Germany        | Sedan              | Mild Hybrid Gasoline        | 261 HP   | $42,000
+075  | Audi               | S4 Sedan                      | Europe   | Germany        | Sedan              | Turbo V6 AWD                | 349 HP   | $53,800
+076  | Audi               | RS 4 Avant                    | Europe   | Germany        | Wagon              | Twin-Turbo V6 AWD           | 444 HP   | $82,000
+077  | Audi               | A5 Sportback 45 TFSI          | Europe   | Germany        | Fastback           | Mild Hybrid Gasoline        | 261 HP   | $46,200
+078  | Audi               | RS 5 Coupe                    | Europe   | Germany        | Coupe              | Twin-Turbo V6 AWD           | 444 HP   | $78,600
+079  | Audi               | A6 Sedan 45 TFSI              | Europe   | Germany        | Sedan              | Mild Hybrid Gasoline        | 261 HP   | $58,100
+080  | Audi               | RS 6 Avant Performance        | Europe   | Germany        | Performance Wagon  | Twin-Turbo V8 MHEV          | 621 HP   | $125,900
+081  | Audi               | A7 Sportback 55 TFSI          | Europe   | Germany        | Fastback           | Mild Hybrid V6              | 335 HP   | $72,000
+082  | Audi               | A8 L 55 TFSI                  | Europe   | Germany        | Luxury Sedan       | Mild Hybrid V6              | 335 HP   | $90,000
+083  | Audi               | S8 Sedan                      | Europe   | Germany        | Luxury Sedan       | Twin-Turbo V8 MHEV          | 563 HP   | $123,400
+084  | Audi               | Q2 35 TFSI                    | Europe   | Germany        | Compact SUV        | Gasoline Turbo              | 150 HP   | $32,000
+085  | Audi               | Q3 40 TFSI                    | Europe   | Germany        | Compact SUV        | Gasoline Turbo              | 184 HP   | $37,400
+086  | Audi               | Q5 40 TFSI                    | Europe   | Germany        | SUV                | Mild Hybrid Gasoline        | 201 HP   | $45,000
+087  | Audi               | SQ5                           | Europe   | Germany        | Performance SUV    | Turbo V6                    | 349 HP   | $57,700
+088  | Audi               | Q7 45 TFSI                    | Europe   | Germany        | Luxury SUV         | Gasoline Turbo              | 261 HP   | $59,500
+089  | Audi               | Q8 55 TFSI                    | Europe   | Germany        | Luxury Coupe SUV   | Mild Hybrid V6              | 335 HP   | $73,800
+090  | Audi               | RS Q8                         | Europe   | Germany        | Super SUV          | Twin-Turbo V8 MHEV          | 591 HP   | $125,800
+091  | Audi               | Q4 e-tron 45                  | Europe   | Germany        | Compact SUV        | Electric (BEV)              | 282 HP   | $50,000
+092  | Audi               | Q6 e-tron                     | Europe   | Germany        | SUV                | Electric (BEV)              | 422 HP   | $63,800
+093  | Audi               | SQ6 e-tron                    | Europe   | Germany        | Performance SUV    | Electric (BEV) AWD          | 509 HP   | $72,900
+094  | Audi               | e-tron GT quattro             | Europe   | Germany        | Grand Tourer       | Electric (BEV)              | 522 HP   | $106,500
+095  | Audi               | RS e-tron GT                  | Europe   | Germany        | Grand Tourer       | Electric (BEV)              | 637 HP   | $147,100
+096  | Porsche            | 718 Cayman                    | Europe   | Germany        | Coupe              | Turbo Flat-4                | 300 HP   | $68,300
+097  | Porsche            | 718 Cayman GTS 4.0            | Europe   | Germany        | Coupe              | Naturally Aspirated Flat-6  | 394 HP   | $95,200
+098  | Porsche            | 718 Boxster                   | Europe   | Germany        | Convertible        | Turbo Flat-4                | 300 HP   | $70,400
+099  | Porsche            | 911 Carrera                   | Europe   | Germany        | Coupe              | Twin-Turbo Flat-6           | 388 HP   | $114,400
+100  | Porsche            | 911 Carrera S                 | Europe   | Germany        | Coupe              | Twin-Turbo Flat-6           | 443 HP   | $131,300
+101  | Porsche            | 911 Carrera GTS               | Europe   | Germany        | Coupe              | Hybrid Turbo Flat-6         | 532 HP   | $164,900
+102  | Porsche            | 911 Turbo S                   | Europe   | Germany        | Coupe              | Twin-Turbo Flat-6 AWD       | 640 HP   | $230,400
+103  | Porsche            | 911 GT3                       | Europe   | Germany        | Coupe              | Naturally Aspirated Flat-6  | 502 HP   | $182,900
+104  | Porsche            | 911 GT3 RS                    | Europe   | Germany        | Track Coupe        | Naturally Aspirated Flat-6  | 518 HP   | $241,300
+105  | Porsche            | Taycan Base                   | Europe   | Germany        | Sedan              | Electric (BEV)              | 402 HP   | $99,400
+106  | Porsche            | Taycan 4S                     | Europe   | Germany        | Sedan              | Electric (BEV)              | 536 HP   | $118,500
+107  | Porsche            | Taycan Turbo S                | Europe   | Germany        | Sedan              | Electric (BEV) AWD          | 938 HP   | $209,000
+108  | Porsche            | Panamera 4                    | Europe   | Germany        | Sedan              | Twin-Turbo V6               | 348 HP   | $102,800
+109  | Porsche            | Panamera Turbo E-Hybrid       | Europe   | Germany        | Sedan              | Plug-in Hybrid V8           | 670 HP   | $191,000
+110  | Porsche            | Macan Base                    | Europe   | Germany        | Compact SUV        | Gasoline Turbo              | 261 HP   | $62,900
+111  | Porsche            | Macan GTS                     | Europe   | Germany        | Compact SUV        | Twin-Turbo V6               | 434 HP   | $86,800
+112  | Porsche            | Macan Electric 4              | Europe   | Germany        | Compact SUV        | Electric (BEV)              | 402 HP   | $78,800
+113  | Porsche            | Macan Electric Turbo          | Europe   | Germany        | Compact SUV        | Electric (BEV) AWD          | 630 HP   | $105,300
+114  | Porsche            | Cayenne Base                  | Europe   | Germany        | Luxury SUV         | Turbo V6                    | 348 HP   | $79,200
+115  | Porsche            | Cayenne E-Hybrid              | Europe   | Germany        | Luxury SUV         | Plug-in Hybrid              | 463 HP   | $93,000
+116  | Porsche            | Cayenne Turbo GT              | Europe   | Germany        | Performance SUV    | Twin-Turbo V8               | 650 HP   | $196,300
+117  | Opel               | Corsa 1.2 Turbo               | Europe   | Germany        | Hatchback          | Gasoline Turbo              | 100 HP   | $21,000
+118  | Opel               | Corsa Electric                | Europe   | Germany        | Hatchback          | Electric (BEV)              | 156 HP   | $35,000
+119  | Opel               | Astra 1.2 PureTech            | Europe   | Germany        | Hatchback          | Gasoline Turbo              | 130 HP   | $28,000
+120  | Opel               | Astra Electric                | Europe   | Germany        | Hatchback          | Electric (BEV)              | 156 HP   | $40,000
+121  | Opel               | Mokka Electric                | Europe   | Germany        | Compact SUV        | Electric (BEV)              | 156 HP   | $37,500
+122  | Smart              | #1 Pro+                       | Europe   | Germany        | Compact SUV        | Electric (BEV)              | 272 HP   | $39,000
+123  | Smart              | #3 Brabus                     | Europe   | Germany        | Coupe SUV          | Electric (BEV) AWD          | 428 HP   | $51,000
+124  | Renault            | Clio E-Tech Hybrid            | Europe   | France         | Hatchback          | Full Hybrid                 | 143 HP   | $27,000
+125  | Renault            | Captur E-Tech                 | Europe   | France         | Compact SUV        | Full Hybrid                 | 143 HP   | $29,500
+126  | Renault            | Austral E-Tech                | Europe   | France         | SUV                | Full Hybrid                 | 200 HP   | $36,000
+127  | Renault            | Espace E-Tech                 | Europe   | France         | Large SUV          | Full Hybrid                 | 200 HP   | $42,000
+128  | Renault            | Rafale E-Tech 4WD             | Europe   | France         | Coupe SUV          | Plug-in Hybrid AWD          | 300 HP   | $49,000
+129  | Renault            | Megane E-Tech                 | Europe   | France         | Crossover          | Electric (BEV)              | 220 HP   | $42,000
+130  | Renault            | Scenic E-Tech                 | Europe   | France         | SUV                | Electric (BEV)              | 217 HP   | $44,000
+131  | Renault            | 5 E-Tech                      | Europe   | France         | Compact Hatchback  | Electric (BEV)              | 150 HP   | $28,000
+132  | Renault            | Twingo E-Tech                 | Europe   | France         | City Car           | Electric (BEV)              | 81 HP    | $22,000
+133  | Renault            | Kardian 1.0 Turbo             | Europe   | France         | Compact SUV        | Gasoline Turbo              | 125 HP   | $21,500
+134  | Peugeot            | 208 PureTech 100              | Europe   | France         | Hatchback          | Gasoline / Mild Hybrid      | 100 HP   | $22,000
+135  | Peugeot            | e-208 GT                      | Europe   | France         | Hatchback          | Electric (BEV)              | 156 HP   | $36,000
+136  | Peugeot            | 308 Hatchback GT              | Europe   | France         | Hatchback          | Mild Hybrid Gasoline        | 136 HP   | $31,000
+137  | Peugeot            | 308 SW PHEV 180               | Europe   | France         | Wagon              | Plug-in Hybrid              | 180 HP   | $39,500
+138  | Peugeot            | 408 Plug-in Hybrid            | Europe   | France         | Fastback Crossover | Plug-in Hybrid              | 225 HP   | $43,000
+139  | Peugeot            | 2008 PureTech 130             | Europe   | France         | Compact SUV        | Gasoline Turbo              | 130 HP   | $28,500
+140  | Peugeot            | e-2008 GT                     | Europe   | France         | Compact SUV        | Electric (BEV)              | 156 HP   | $39,000
+141  | Peugeot            | 3008 Mild Hybrid              | Europe   | France         | Fastback SUV       | Mild Hybrid Gasoline        | 136 HP   | $38,000
+142  | Peugeot            | e-3008 GT                     | Europe   | France         | Fastback SUV       | Electric (BEV)              | 210 HP   | $48,000
+143  | Peugeot            | 5008 Hybrid 136               | Europe   | France         | 7-Seater SUV       | Mild Hybrid                 | 136 HP   | $42,000
+144  | Peugeot            | e-5008 GT                     | Europe   | France         | 7-Seater SUV       | Electric (BEV)              | 210 HP   | $52,000
+145  | Peugeot            | 508 Peugeot Sport Engineered  | Europe   | France         | Sedan              | Plug-in Hybrid AWD          | 355 HP   | $68,000
+146  | Citroën            | C3 PureTech                   | Europe   | France         | Hatchback          | Gasoline                    | 100 HP   | $18,500
+147  | Citroën            | ë-C3                          | Europe   | France         | Hatchback          | Electric (BEV)              | 113 HP   | $25,000
+148  | Citroën            | C3 Aircross PureTech          | Europe   | France         | Compact SUV        | Mild Hybrid                 | 136 HP   | $24,000
+149  | Citroën            | C4 PureTech 130               | Europe   | France         | Crossover Hatch    | Gasoline Turbo              | 130 HP   | $27,000
+150  | Citroën            | ë-C4 X                        | Europe   | France         | Fastback Sedan     | Electric (BEV)              | 156 HP   | $38,000
+151  | Citroën            | C5 Aircross Hybrid            | Europe   | France         | SUV                | Plug-in Hybrid              | 225 HP   | $41,000
+152  | Citroën            | C5 X Plug-in Hybrid           | Europe   | France         | Crossover Wagon    | Plug-in Hybrid              | 225 HP   | $45,000
+153  | DS Automobiles     | DS 3 E-TENSE                  | Europe   | France         | Compact SUV        | Electric (BEV)              | 156 HP   | $42,000
+154  | DS Automobiles     | DS 4 E-TENSE 225              | Europe   | France         | Hatchback          | Plug-in Hybrid              | 225 HP   | $44,000
+155  | DS Automobiles     | DS 7 E-TENSE 4x4              | Europe   | France         | Luxury SUV         | Plug-in Hybrid              | 300 HP   | $56,000
+156  | DS Automobiles     | DS 9 E-TENSE 360              | Europe   | France         | Luxury Sedan       | Plug-in Hybrid AWD          | 360 HP   | $69,000
+157  | Alpine             | A110 Pure                     | Europe   | France         | Sports Coupe       | Gasoline Turbo              | 252 HP   | $64,000
+158  | Alpine             | A110 GT                       | Europe   | France         | Sports Coupe       | Gasoline Turbo              | 300 HP   | $72,000
+159  | Alpine             | A110 S                        | Europe   | France         | Sports Coupe       | Gasoline Turbo              | 300 HP   | $76,000
+160  | Alpine             | A290 GT                       | Europe   | France         | Electric Hot Hatch | Electric (BEV)              | 220 HP   | $42,000
+161  | Alfa Romeo         | Giulia Sprint                 | Europe   | Italy          | Sedan              | Gasoline Turbo              | 280 HP   | $44,500
+162  | Alfa Romeo         | Giulia Veloce Q4              | Europe   | Italy          | Sedan              | Gasoline Turbo AWD          | 280 HP   | $51,000
+163  | Alfa Romeo         | Giulia Quadrifoglio           | Europe   | Italy          | Performance Sedan  | Twin-Turbo V6               | 505 HP   | $81,000
+164  | Alfa Romeo         | Stelvio Ti                    | Europe   | Italy          | SUV                | Gasoline Turbo AWD          | 280 HP   | $47,500
+165  | Alfa Romeo         | Stelvio Quadrifoglio          | Europe   | Italy          | Performance SUV    | Twin-Turbo V6               | 505 HP   | $87,500
+166  | Alfa Romeo         | Tonale Sprint Q4              | Europe   | Italy          | Compact SUV        | Plug-in Hybrid AWD          | 285 HP   | $43,800
+167  | Alfa Romeo         | Junior Elettrica              | Europe   | Italy          | Compact SUV        | Electric (BEV)              | 156 HP   | $38,000
+168  | Alfa Romeo         | Junior Veloce                 | Europe   | Italy          | Compact SUV        | Electric (BEV)              | 280 HP   | $48,000
+169  | Fiat               | 500 Mild Hybrid               | Europe   | Italy          | City Car           | Mild Hybrid                 | 70 HP    | $18,000
+170  | Fiat               | 500e Hatchback                | Europe   | Italy          | City Car           | Electric (BEV)              | 117 HP   | $32,500
+171  | Fiat               | 600 Hybrid                    | Europe   | Italy          | Compact Crossover  | Mild Hybrid                 | 100 HP   | $26,000
+172  | Fiat               | 600e Crossover                | Europe   | Italy          | Compact Crossover  | Electric (BEV)              | 154 HP   | $38,000
+173  | Fiat               | Panda Hybrid                  | Europe   | Italy          | City Car           | Mild Hybrid                 | 70 HP    | $16,500
+174  | Fiat               | Grande Panda EV               | Europe   | Italy          | Compact SUV        | Electric (BEV)              | 113 HP   | $27,000
+175  | Abarth             | 500e Turismo                  | Europe   | Italy          | Hot Hatch          | Electric (BEV)              | 155 HP   | $41,000
+176  | Abarth             | 600e Pack Scorpionissima      | Europe   | Italy          | Crossover Hot Hatch | Electric (BEV)              | 240 HP   | $48,000
+177  | Maserati           | Grecale GT                    | Europe   | Italy          | Luxury SUV         | Mild Hybrid Turbo           | 296 HP   | $68,500
+178  | Maserati           | Grecale Trofeo                | Europe   | Italy          | Performance SUV    | Twin-Turbo V6               | 523 HP   | $108,000
+179  | Maserati           | Grecale Folgore               | Europe   | Italy          | Luxury SUV         | Electric (BEV)              | 550 HP   | $109,000
+180  | Maserati           | Ghibli Modena Q4              | Europe   | Italy          | Luxury Sedan       | Twin-Turbo V6               | 424 HP   | $86,000
+181  | Maserati           | GranTurismo Modena            | Europe   | Italy          | Grand Tourer Coupe | Twin-Turbo V6               | 483 HP   | $158,000
+182  | Maserati           | GranTurismo Folgore           | Europe   | Italy          | Grand Tourer Coupe | Electric (BEV)              | 751 HP   | $192,000
+183  | Maserati           | MC20 Coupe                    | Europe   | Italy          | Supercar           | Twin-Turbo V6               | 621 HP   | $242,000
+184  | Ferrari            | Roma Coupe                    | Europe   | Italy          | Grand Tourer       | Twin-Turbo V8               | 612 HP   | $243,000
+185  | Ferrari            | Roma Spider                   | Europe   | Italy          | Convertible        | Twin-Turbo V8               | 612 HP   | $275,000
+186  | Ferrari            | 296 GTB                       | Europe   | Italy          | Supercar           | Plug-in Hybrid Twin-Turbo V6 | 819 HP   | $338,000
+187  | Ferrari            | 296 GTS                       | Europe   | Italy          | Spider Supercar    | Plug-in Hybrid Twin-Turbo V6 | 819 HP   | $371,000
+188  | Ferrari            | SF90 XX Stradale              | Europe   | Italy          | Hypercar           | Plug-in Hybrid Twin-Turbo V8 | 1016 HP  | $890,000
+189  | Ferrari            | Purosangue                    | Europe   | Italy          | Luxury SUV         | Naturally Aspirated V12     | 715 HP   | $400,000
+190  | Ferrari            | 12Cilindri                    | Europe   | Italy          | Grand Tourer       | Naturally Aspirated V12     | 819 HP   | $423,000
+191  | Lamborghini        | Huracán Sterrato              | Europe   | Italy          | Supercar Crossover | Naturally Aspirated V10     | 602 HP   | $278,000
+192  | Lamborghini        | Temerario                     | Europe   | Italy          | Supercar           | Plug-in Hybrid Twin-Turbo V8 | 907 HP   | $350,000
+193  | Lamborghini        | Revuelto                      | Europe   | Italy          | Hypercar           | Plug-in Hybrid V12          | 1001 HP  | $604,000
+194  | Lamborghini        | Urus S                        | Europe   | Italy          | Super SUV          | Twin-Turbo V8               | 657 HP   | $237,000
+195  | Lamborghini        | Urus SE                       | Europe   | Italy          | Super SUV          | Plug-in Hybrid Twin-Turbo V8 | 789 HP   | $245,000
+196  | Volvo              | S60 B5 AWD                    | Europe   | Sweden         | Sedan              | Mild Hybrid Gasoline        | 247 HP   | $43,000
+197  | Volvo              | S90 B5                        | Europe   | Sweden         | Luxury Sedan       | Mild Hybrid Gasoline        | 295 HP   | $58,300
+198  | Volvo              | V60 Cross Country B5          | Europe   | Sweden         | Crossover Wagon    | Mild Hybrid Gasoline        | 247 HP   | $50,300
+199  | Volvo              | V90 Cross Country B6          | Europe   | Sweden         | Luxury Wagon       | Mild Hybrid Gasoline        | 295 HP   | $59,800
+200  | Volvo              | XC40 B4                       | Europe   | Sweden         | Compact SUV        | Mild Hybrid Gasoline        | 197 HP   | $40,500
+201  | Volvo              | EX40 Single Motor             | Europe   | Sweden         | Compact SUV        | Electric (BEV)              | 248 HP   | $53,700
+202  | Volvo              | EC40 Twin Motor               | Europe   | Sweden         | Coupe SUV          | Electric (BEV) AWD          | 402 HP   | $60,500
+203  | Volvo              | XC60 B5                       | Europe   | Sweden         | SUV                | Mild Hybrid Gasoline        | 247 HP   | $47,500
+204  | Volvo              | XC60 Recharge T8              | Europe   | Sweden         | SUV                | Plug-in Hybrid AWD          | 455 HP   | $58,000
+205  | Volvo              | XC90 B6 AWD                   | Europe   | Sweden         | 7-Seater Luxury SUV | Mild Hybrid Gasoline        | 295 HP   | $57,000
+206  | Volvo              | XC90 Recharge T8              | Europe   | Sweden         | 7-Seater Luxury SUV | Plug-in Hybrid AWD          | 455 HP   | $72,900
+207  | Volvo              | EX30 Single Motor Extended    | Europe   | Sweden         | Compact SUV        | Electric (BEV)              | 268 HP   | $35,000
+208  | Volvo              | EX30 Twin Motor Performance   | Europe   | Sweden         | Compact SUV        | Electric (BEV) AWD          | 422 HP   | $44,900
+209  | Volvo              | EX90 Twin Motor               | Europe   | Sweden         | 7-Seater SUV       | Electric (BEV)              | 402 HP   | $76,700
+210  | Polestar           | Polestar 2 Standard Range     | Europe   | Sweden         | Fastback           | Electric (BEV)              | 272 HP   | $45,900
+211  | Polestar           | Polestar 2 Long Range Dual    | Europe   | Sweden         | Fastback           | Electric (BEV) AWD          | 421 HP   | $55,300
+212  | Polestar           | Polestar 3 Long Range         | Europe   | Sweden         | Luxury SUV         | Electric (BEV)              | 489 HP   | $73,400
+213  | Polestar           | Polestar 4 Long Range         | Europe   | Sweden         | Coupe SUV          | Electric (BEV)              | 272 HP   | $56,300
+214  | Polestar           | Polestar 4 Dual Motor         | Europe   | Sweden         | Coupe SUV          | Electric (BEV) AWD          | 544 HP   | $62,900
+215  | Jaguar             | XF P250                       | Europe   | United Kingdom | Sedan              | Gasoline Turbo              | 246 HP   | $49,800
+216  | Jaguar             | F-PACE P250                   | Europe   | United Kingdom | SUV                | Gasoline Turbo              | 246 HP   | $57,000
+217  | Jaguar             | F-PACE SVR                    | Europe   | United Kingdom | Performance SUV    | Supercharged V8             | 575 HP   | $91,900
+218  | Jaguar             | I-PACE EV400                  | Europe   | United Kingdom | SUV                | Electric (BEV)              | 394 HP   | $72,000
+219  | Land Rover         | Range Rover Evoque P250       | Europe   | United Kingdom | Compact SUV        | Gasoline Turbo              | 246 HP   | $49,900
+220  | Land Rover         | Range Rover Velar P250        | Europe   | United Kingdom | SUV                | Gasoline Turbo              | 247 HP   | $61,500
+221  | Land Rover         | Range Rover Sport P360        | Europe   | United Kingdom | Luxury SUV         | Mild Hybrid Inline-6        | 355 HP   | $83,600
+222  | Land Rover         | Range Rover Sport SV          | Europe   | United Kingdom | Performance SUV    | Twin-Turbo V8 MHEV          | 626 HP   | $180,300
+223  | Land Rover         | Range Rover P400 SE           | Europe   | United Kingdom | Flagship Luxury SUV | Mild Hybrid Inline-6        | 395 HP   | $107,400
+224  | Land Rover         | Range Rover SV                | Europe   | United Kingdom | Ultra-Luxury SUV   | Twin-Turbo V8               | 606 HP   | $209,000
+225  | Land Rover         | Defender 90 P300              | Europe   | United Kingdom | Off-Road SUV       | Gasoline Turbo              | 296 HP   | $56,400
+226  | Land Rover         | Defender 110 P400             | Europe   | United Kingdom | Off-Road SUV       | Mild Hybrid Inline-6        | 395 HP   | $67,900
+227  | Land Rover         | Defender 130 V8               | Europe   | United Kingdom | Off-Road 8-Seater  | Supercharged V8             | 493 HP   | $116,600
+228  | Land Rover         | Discovery P300                | Europe   | United Kingdom | Family SUV         | Gasoline Turbo              | 296 HP   | $59,900
+229  | Land Rover         | Discovery Sport P250          | Europe   | United Kingdom | Compact SUV        | Gasoline Turbo              | 246 HP   | $48,900
+230  | Mini               | Cooper C Hatchback            | Europe   | United Kingdom | Hatchback          | Gasoline Turbo              | 156 HP   | $28,900
+231  | Mini               | Cooper S Hatchback            | Europe   | United Kingdom | Hatchback          | Gasoline Turbo              | 201 HP   | $32,200
+232  | Mini               | Cooper SE Electric            | Europe   | United Kingdom | Hatchback          | Electric (BEV)              | 218 HP   | $35,000
+233  | Mini               | Aceman SE Electric            | Europe   | United Kingdom | Compact Crossover  | Electric (BEV)              | 218 HP   | $38,000
+234  | Mini               | Countryman S ALL4             | Europe   | United Kingdom | SUV                | Gasoline Turbo AWD          | 241 HP   | $38,900
+235  | Mini               | Countryman JCW ALL4           | Europe   | United Kingdom | Performance SUV    | Gasoline Turbo AWD          | 312 HP   | $46,900
+236  | Aston Martin       | Vantage V8 Coupe              | Europe   | United Kingdom | Sports Coupe       | Twin-Turbo V8               | 656 HP   | $191,000
+237  | Aston Martin       | DB12 Coupe                    | Europe   | United Kingdom | Grand Tourer       | Twin-Turbo V8               | 671 HP   | $245,000
+238  | Aston Martin       | DB12 Volante                  | Europe   | United Kingdom | Convertible GT     | Twin-Turbo V8               | 671 HP   | $265,000
+239  | Aston Martin       | Vanquish V12                  | Europe   | United Kingdom | Flagship Coupe     | Twin-Turbo V12              | 824 HP   | $420,000
+240  | Aston Martin       | DBX707                        | Europe   | United Kingdom | Super SUV          | Twin-Turbo V8               | 707 HP   | $242,000
+241  | Bentley            | Continental GT Speed          | Europe   | United Kingdom | Luxury GT Coupe    | Twin-Turbo V8 Hybrid        | 771 HP   | $286,000
+242  | Bentley            | Continental GTC Speed         | Europe   | United Kingdom | Luxury GT Convertible | Twin-Turbo V8 Hybrid        | 771 HP   | $314,000
+243  | Bentley            | Flying Spur Hybrid            | Europe   | United Kingdom | Ultra-Luxury Sedan | Plug-in Hybrid V6           | 536 HP   | $218,000
+244  | Bentley            | Bentayga V8                   | Europe   | United Kingdom | Ultra-Luxury SUV   | Twin-Turbo V8               | 542 HP   | $200,000
+245  | Bentley            | Bentayga EWB Azure            | Europe   | United Kingdom | Extended Luxury SUV | Twin-Turbo V8               | 542 HP   | $233,700
+246  | Lotus              | Emira V6 First Edition        | Europe   | United Kingdom | Sports Coupe       | Supercharged V6             | 400 HP   | $99,900
+247  | Lotus              | Eletre S EV                   | Europe   | United Kingdom | Hyper SUV          | Electric (BEV) AWD          | 603 HP   | $107,000
+248  | Lotus              | Emeya R EV                    | Europe   | United Kingdom | Hyper GT Sedan     | Electric (BEV) AWD          | 905 HP   | $135,000
+249  | McLaren            | Artura Coupe                  | Europe   | United Kingdom | Supercar           | Plug-in Hybrid Twin-Turbo V6 | 690 HP   | $238,000
+250  | McLaren            | Artura Spider                 | Europe   | United Kingdom | Convertible Supercar | Plug-in Hybrid Twin-Turbo V6 | 690 HP   | $273,800
+251  | McLaren            | 750S Coupe                    | Europe   | United Kingdom | Supercar           | Twin-Turbo V8               | 740 HP   | $329,500
+252  | McLaren            | GTS Coupe                     | Europe   | United Kingdom | Grand Tourer       | Twin-Turbo V8               | 626 HP   | $212,500
+253  | Toyota             | Yaris 1.5 Hybrid              | Japan    | Japan          | Hatchback          | Full Hybrid                 | 116 HP   | $22,000
+254  | Toyota             | GR Yaris 1.6T                 | Japan    | Japan          | Hot Hatch          | Gasoline Turbo AWD          | 276 HP   | $44,000
+255  | Toyota             | Yaris Cross Hybrid            | Japan    | Japan          | Compact SUV        | Full Hybrid                 | 116 HP   | $26,500
+256  | Toyota             | Corolla Sedan 1.8 Hybrid      | Japan    | Japan          | Sedan              | Full Hybrid                 | 138 HP   | $24,500
+257  | Toyota             | Corolla Hatchback FX          | Japan    | Japan          | Hatchback          | Gasoline                    | 169 HP   | $26,500
+258  | Toyota             | Corolla Cross Hybrid          | Japan    | Japan          | Compact SUV        | Full Hybrid AWD             | 196 HP   | $28,200
+259  | Toyota             | GR Corolla 1.6T               | Japan    | Japan          | Hot Hatch          | Gasoline Turbo AWD          | 300 HP   | $36,500
+260  | Toyota             | Prius 2.0 Hybrid              | Japan    | Japan          | Fastback           | Full Hybrid                 | 196 HP   | $27,950
+261  | Toyota             | Prius Prime PHEV              | Japan    | Japan          | Fastback           | Plug-in Hybrid              | 220 HP   | $32,975
+262  | Toyota             | Camry 2.5 Hybrid LE           | Japan    | Japan          | Sedan              | Full Hybrid                 | 225 HP   | $28,400
+263  | Toyota             | Camry 2.5 Hybrid XSE AWD      | Japan    | Japan          | Sedan              | Full Hybrid AWD             | 232 HP   | $34,600
+264  | Toyota             | Crown Crossover Limited       | Japan    | Japan          | Crossover Sedan    | Full Hybrid AWD             | 236 HP   | $45,950
+265  | Toyota             | Crown Platinum Hybrid MAX     | Japan    | Japan          | Crossover Sedan    | Turbo Hybrid AWD            | 340 HP   | $53,070
+266  | Toyota             | Crown Signia Hybrid           | Japan    | Japan          | Crossover Wagon    | Full Hybrid AWD             | 240 HP   | $43,590
+267  | Toyota             | RAV4 LE Hybrid                | Japan    | Japan          | SUV                | Full Hybrid AWD             | 219 HP   | $32,000
+268  | Toyota             | RAV4 Woodland Edition         | Japan    | Japan          | Off-Road SUV       | Full Hybrid AWD             | 219 HP   | $34,945
+269  | Toyota             | RAV4 Prime PHEV               | Japan    | Japan          | SUV                | Plug-in Hybrid AWD          | 302 HP   | $43,690
+270  | Toyota             | Venza / Harrier Hybrid        | Japan    | Japan          | Luxury Crossover   | Full Hybrid AWD             | 219 HP   | $35,000
+271  | Toyota             | Highlander Hybrid             | Japan    | Japan          | 3-Row SUV          | Full Hybrid                 | 243 HP   | $40,970
+272  | Toyota             | Grand Highlander Hybrid MAX   | Japan    | Japan          | 3-Row SUV          | Turbo Hybrid AWD            | 362 HP   | $43,300
+273  | Toyota             | 4Runner i-FORCE MAX           | Japan    | Japan          | Off-Road SUV       | Turbo Hybrid                | 326 HP   | $45,000
+274  | Toyota             | Land Cruiser 250 First Edition | Japan    | Japan          | Off-Road SUV       | Turbo Hybrid AWD            | 326 HP   | $61,950
+275  | Toyota             | Land Cruiser 300 V6 Twin-Turbo | Japan    | Japan          | Flagship SUV       | Twin-Turbo V6               | 409 HP   | $85,000
+276  | Toyota             | Sequoia Capstone Hybrid       | Japan    | Japan          | Full-Size SUV      | Turbo Hybrid V6             | 437 HP   | $80,865
+277  | Toyota             | Tacoma Trailhunter            | Japan    | Japan          | Pickup Truck       | Turbo Hybrid 4WD            | 326 HP   | $62,900
+278  | Toyota             | Tundra TRD Pro                | Japan    | Japan          | Full-Size Pickup   | Turbo Hybrid V6             | 437 HP   | $72,130
+279  | Toyota             | bZ4X XLE Electric             | Japan    | Japan          | SUV                | Electric (BEV)              | 201 HP   | $43,070
+280  | Toyota             | GR86 Coupe 2.4                | Japan    | Japan          | Sports Coupe       | Gasoline Boxer              | 228 HP   | $29,300
+281  | Toyota             | GR Supra 2.0                  | Japan    | Japan          | Sports Coupe       | Gasoline Turbo              | 255 HP   | $46,440
+282  | Toyota             | GR Supra 3.0 Premium          | Japan    | Japan          | Sports Coupe       | Gasoline Turbo Inline-6     | 382 HP   | $58,550
+283  | Toyota             | Alphard 2.5 Hybrid            | Japan    | Japan          | Luxury MPV         | Full Hybrid                 | 247 HP   | $68,000
+284  | Toyota             | Vellfire 2.4 Turbo            | Japan    | Japan          | Luxury MPV         | Gasoline Turbo              | 275 HP   | $72,000
+285  | Toyota             | Century SUV Hybrid            | Japan    | Japan          | Ultra-Luxury SUV   | Plug-in Hybrid V6           | 406 HP   | $170,000
+286  | Honda              | Fit / Jazz e:HEV              | Japan    | Japan          | Hatchback          | Full Hybrid                 | 121 HP   | $20,500
+287  | Honda              | Civic Sedan LX                | Japan    | Japan          | Sedan              | Gasoline                    | 158 HP   | $24,250
+288  | Honda              | Civic Sport Hybrid            | Japan    | Japan          | Sedan              | Full Hybrid                 | 200 HP   | $28,750
+289  | Honda              | Civic Hatchback Sport Touring | Japan    | Japan          | Hatchback          | Gasoline Turbo              | 180 HP   | $31,450
+290  | Honda              | Civic Type R                  | Japan    | Japan          | Performance Hatchback | Gasoline Turbo              | 315 HP   | $44,795
+291  | Honda              | Accord EX                     | Japan    | Japan          | Sedan              | Gasoline Turbo              | 192 HP   | $27,895
+292  | Honda              | Accord Hybrid Touring         | Japan    | Japan          | Sedan              | Full Hybrid                 | 204 HP   | $38,890
+293  | Honda              | HR-V / ZR-V e:HEV             | Japan    | Japan          | Compact SUV        | Full Hybrid                 | 181 HP   | $29,000
+294  | Honda              | CR-V EX-L                     | Japan    | Japan          | SUV                | Gasoline Turbo              | 190 HP   | $34,860
+295  | Honda              | CR-V Sport Touring Hybrid     | Japan    | Japan          | SUV                | Full Hybrid AWD             | 204 HP   | $40,800
+296  | Honda              | CR-V e:FCEV                   | Japan    | Japan          | SUV                | Hydrogen Fuel Cell PHEV     | 174 HP   | $50,000
+297  | Honda              | Pilot TrailSport              | Japan    | Japan          | 3-Row SUV          | Gasoline V6                 | 285 HP   | $48,900
+298  | Honda              | Pilot Black Edition           | Japan    | Japan          | 3-Row Luxury SUV   | Gasoline V6 AWD             | 285 HP   | $54,280
+299  | Honda              | Passport TrailSport           | Japan    | Japan          | SUV                | Gasoline V6 AWD             | 285 HP   | $44,500
+300  | Honda              | Prologue EV Touring           | Japan    | Japan          | SUV                | Electric (BEV)              | 288 HP   | $51,700
+301  | Honda              | Odyssey Elite MPV             | Japan    | Japan          | Minivan            | Gasoline V6                 | 280 HP   | $49,970
+302  | Honda              | WR-V 1.5                      | Japan    | Japan          | Compact SUV        | Gasoline                    | 118 HP   | $21,000
+303  | Honda              | Ridgeline Black Edition       | Japan    | Japan          | Pickup Truck       | Gasoline V6 AWD             | 280 HP   | $46,350
+304  | Lexus              | LBX Hybrid                    | Japan    | Japan          | Compact SUV        | Full Hybrid                 | 134 HP   | $38,000
+305  | Lexus              | LBX Morizo RR                 | Japan    | Japan          | Performance Compact SUV | Gasoline Turbo AWD          | 300 HP   | $46,000
+306  | Lexus              | IS 300 Sedan                  | Japan    | Japan          | Sedan              | Gasoline Turbo              | 241 HP   | $41,235
+307  | Lexus              | IS 350 F Sport                | Japan    | Japan          | Sedan              | Gasoline V6                 | 311 HP   | $44,660
+308  | Lexus              | IS 500 F Sport Performance    | Japan    | Japan          | Performance Sedan  | Naturally Aspirated V8      | 472 HP   | $60,520
+309  | Lexus              | ES 250 AWD                    | Japan    | Japan          | Luxury Sedan       | Gasoline AWD                | 203 HP   | $43,190
+310  | Lexus              | ES 300h Ultra Luxury          | Japan    | Japan          | Luxury Sedan       | Full Hybrid                 | 215 HP   | $50,880
+311  | Lexus              | ES 350 F Sport Handling       | Japan    | Japan          | Luxury Sedan       | Gasoline V6                 | 302 HP   | $49,650
+312  | Lexus              | LS 500 AWD                    | Japan    | Japan          | Flagship Sedan     | Twin-Turbo V6 AWD           | 416 HP   | $83,935
+313  | Lexus              | LS 500h Hybrid                | Japan    | Japan          | Flagship Sedan     | Multi-Stage Hybrid V6       | 354 HP   | $115,560
+314  | Lexus              | UX 300h Hybrid                | Japan    | Japan          | Compact Luxury SUV | Full Hybrid                 | 196 HP   | $37,490
+315  | Lexus              | NX 250                        | Japan    | Japan          | Luxury SUV         | Gasoline                    | 203 HP   | $40,605
+316  | Lexus              | NX 350 Turbo F Sport          | Japan    | Japan          | Luxury SUV         | Gasoline Turbo AWD          | 275 HP   | $49,000
+317  | Lexus              | NX 350h Hybrid                | Japan    | Japan          | Luxury SUV         | Full Hybrid AWD             | 240 HP   | $44,615
+318  | Lexus              | NX 450h+ PHEV                 | Japan    | Japan          | Luxury SUV         | Plug-in Hybrid AWD          | 304 HP   | $60,005
+319  | Lexus              | RX 350 AWD                    | Japan    | Japan          | Luxury SUV         | Gasoline Turbo AWD          | 275 HP   | $51,300
+320  | Lexus              | RX 350h Hybrid                | Japan    | Japan          | Luxury SUV         | Full Hybrid AWD             | 246 HP   | $52,100
+321  | Lexus              | RX 450h+ PHEV                 | Japan    | Japan          | Luxury SUV         | Plug-in Hybrid AWD          | 304 HP   | $70,580
+322  | Lexus              | RX 500h F Sport Performance   | Japan    | Japan          | Performance SUV    | Turbo Hybrid AWD            | 366 HP   | $63,800
+323  | Lexus              | TX 350 Premium                | Japan    | Japan          | 3-Row Luxury SUV   | Gasoline Turbo              | 275 HP   | $55,050
+324  | Lexus              | TX 500h F Sport Performance   | Japan    | Japan          | 3-Row Luxury SUV   | Turbo Hybrid AWD            | 366 HP   | $69,350
+325  | Lexus              | TX 550h+ PHEV Luxury          | Japan    | Japan          | 3-Row Luxury SUV   | Plug-in Hybrid V6           | 404 HP   | $78,050
+326  | Lexus              | GX 550 Premium                | Japan    | Japan          | Off-Road Luxury SUV | Twin-Turbo V6               | 349 HP   | $64,250
+327  | Lexus              | GX 550 Overtrail+             | Japan    | Japan          | Off-Road Luxury SUV | Twin-Turbo V6               | 349 HP   | $77,250
+328  | Lexus              | LX 600 Ultra Luxury           | Japan    | Japan          | Flagship Luxury SUV | Twin-Turbo V6               | 409 HP   | $130,000
+329  | Lexus              | RZ 300e Premium EV            | Japan    | Japan          | Luxury SUV         | Electric (BEV)              | 201 HP   | $55,150
+330  | Lexus              | RZ 450e Luxury EV             | Japan    | Japan          | Luxury SUV         | Electric (BEV) AWD          | 308 HP   | $65,580
+331  | Lexus              | LC 500 Coupe                  | Japan    | Japan          | Grand Tourer Coupe | Naturally Aspirated V8      | 471 HP   | $99,800
+332  | Lexus              | LC 500 Convertible            | Japan    | Japan          | Grand Tourer Convertible | Naturally Aspirated V8      | 471 HP   | $107,300
+333  | Lexus              | LC 500h Hybrid                | Japan    | Japan          | Grand Tourer Coupe | Multi-Stage Hybrid V6       | 354 HP   | $103,100
+334  | Lexus              | LM 350h Executive             | Japan    | Japan          | Ultra-Luxury MPV   | Full Hybrid                 | 250 HP   | $120,000
+335  | Mazda              | Mazda2 1.5 Hybrid             | Japan    | Japan          | Hatchback          | Full Hybrid                 | 116 HP   | $22,500
+336  | Mazda              | Mazda3 Sedan 2.5 S            | Japan    | Japan          | Sedan              | Gasoline                    | 191 HP   | $24,170
+337  | Mazda              | Mazda3 Hatchback Turbo        | Japan    | Japan          | Hatchback          | Gasoline Turbo AWD          | 250 HP   | $33,250
+338  | Mazda              | Mazda6 2.5 Turbo              | Japan    | Japan          | Sedan              | Gasoline Turbo              | 250 HP   | $35,000
+339  | Mazda              | EZ-6 EV                       | Japan    | Japan          | Sedan              | Electric (BEV)              | 258 HP   | $32,000
+340  | Mazda              | CX-30 2.5 S                   | Japan    | Japan          | Compact SUV        | Gasoline AWD                | 191 HP   | $24,995
+341  | Mazda              | CX-30 2.5 Turbo               | Japan    | Japan          | Compact SUV        | Gasoline Turbo AWD          | 250 HP   | $33,790
+342  | Mazda              | CX-5 2.5 S Select             | Japan    | Japan          | SUV                | Gasoline AWD                | 187 HP   | $29,300
+343  | Mazda              | CX-5 2.5 Turbo Signature      | Japan    | Japan          | SUV                | Gasoline Turbo AWD          | 256 HP   | $40,600
+344  | Mazda              | CX-50 2.5 Preferred           | Japan    | Japan          | Crossover SUV      | Gasoline AWD                | 187 HP   | $31,650
+345  | Mazda              | CX-50 Hybrid Premium          | Japan    | Japan          | Crossover SUV      | Full Hybrid AWD             | 219 HP   | $33,970
+346  | Mazda              | CX-50 2.5 Meridian Edition    | Japan    | Japan          | Crossover SUV      | Gasoline Turbo AWD          | 256 HP   | $40,800
+347  | Mazda              | CX-60 e-Skyactiv PHEV         | Japan    | Japan          | SUV                | Plug-in Hybrid AWD          | 323 HP   | $48,000
+348  | Mazda              | CX-60 3.3 e-Skyactiv D        | Japan    | Japan          | SUV                | Diesel Turbo MHEV           | 254 HP   | $46,500
+349  | Mazda              | CX-70 3.3 Turbo Preferred     | Japan    | Japan          | SUV                | Mild Hybrid Inline-6        | 280 HP   | $40,445
+350  | Mazda              | CX-70 PHEV Premium            | Japan    | Japan          | SUV                | Plug-in Hybrid AWD          | 323 HP   | $54,400
+351  | Mazda              | CX-80 e-Skyactiv PHEV         | Japan    | Japan          | 3-Row SUV          | Plug-in Hybrid AWD          | 323 HP   | $52,000
+352  | Mazda              | CX-90 3.3 Turbo Select        | Japan    | Japan          | 3-Row SUV          | Mild Hybrid Inline-6        | 280 HP   | $37,845
+353  | Mazda              | CX-90 3.3 Turbo S Premium     | Japan    | Japan          | 3-Row SUV          | Mild Hybrid Inline-6        | 340 HP   | $52,450
+354  | Mazda              | CX-90 PHEV Premium Plus       | Japan    | Japan          | 3-Row SUV          | Plug-in Hybrid AWD          | 323 HP   | $57,450
+355  | Mazda              | MX-30 e-Skyactiv R-EV         | Japan    | Japan          | Compact SUV        | Rotary Plug-in Hybrid       | 170 HP   | $38,000
+356  | Mazda              | MX-5 Miata Sport              | Japan    | Japan          | Roadster           | Gasoline                    | 181 HP   | $28,985
+357  | Mazda              | MX-5 Miata RF Club            | Japan    | Japan          | Hardtop Roadster   | Gasoline                    | 181 HP   | $37,010
+358  | Nissan             | Note e-POWER X                | Japan    | Japan          | Hatchback          | Series Hybrid               | 116 HP   | $21,000
+359  | Nissan             | Note Aura NISMO               | Japan    | Japan          | Hot Hatch          | Series Hybrid               | 136 HP   | $26,000
+360  | Nissan             | Sentra SR                     | Japan    | Japan          | Sedan              | Gasoline                    | 149 HP   | $23,700
+361  | Nissan             | Altima SR VC-Turbo            | Japan    | Japan          | Sedan              | Variable Compression Turbo  | 248 HP   | $35,430
+362  | Nissan             | Maxima / Skyline 3.0t         | Japan    | Japan          | Sports Sedan       | Twin-Turbo V6               | 300 HP   | $44,000
+363  | Nissan             | Skyline Nismo                 | Japan    | Japan          | Performance Sedan  | Twin-Turbo V6               | 414 HP   | $58,000
+364  | Nissan             | Kicks SR                      | Japan    | Japan          | Compact SUV        | Gasoline AWD                | 141 HP   | $25,210
+365  | Nissan             | Qashqai e-POWER               | Japan    | Japan          | Compact SUV        | Series Hybrid               | 188 HP   | $35,000
+366  | Nissan             | Rogue / X-Trail e-POWER AWD   | Japan    | Japan          | SUV                | Series Hybrid AWD           | 211 HP   | $38,000
+367  | Nissan             | Rogue Rock Creek Edition      | Japan    | Japan          | Off-Road SUV       | Variable Compression Turbo  | 201 HP   | $35,420
+368  | Nissan             | Murano Platinum               | Japan    | Japan          | SUV                | Gasoline V6                 | 260 HP   | $45,910
+369  | Nissan             | Pathfinder Rock Creek         | Japan    | Japan          | 3-Row SUV          | Gasoline V6 4WD             | 295 HP   | $43,620
+370  | Nissan             | Armada PRO-4X                 | Japan    | Japan          | Full-Size SUV      | Twin-Turbo V6               | 425 HP   | $64,000
+371  | Nissan             | Patrol Nismo 5.6 V8           | Japan    | Japan          | Full-Size SUV      | Gasoline V8                 | 428 HP   | $105,000
+372  | Nissan             | Ariya Engage+ e-4ORCE         | Japan    | Japan          | SUV                | Electric (BEV) AWD          | 389 HP   | $51,190
+373  | Nissan             | Ariya NISMO                   | Japan    | Japan          | Performance SUV    | Electric (BEV) AWD          | 429 HP   | $60,000
+374  | Nissan             | Leaf SV PLUS                  | Japan    | Japan          | Hatchback          | Electric (BEV)              | 214 HP   | $36,190
+375  | Nissan             | Z Sport 6MT                   | Japan    | Japan          | Sports Coupe       | Twin-Turbo V6               | 400 HP   | $42,970
+376  | Nissan             | Z NISMO                       | Japan    | Japan          | Performance Coupe  | Twin-Turbo V6               | 420 HP   | $65,750
+377  | Nissan             | GT-R Premium                  | Japan    | Japan          | Supercar           | Twin-Turbo V6 AWD           | 565 HP   | $121,000
+378  | Nissan             | GT-R T-spec                   | Japan    | Japan          | Supercar           | Twin-Turbo V6 AWD           | 565 HP   | $141,000
+379  | Nissan             | GT-R NISMO                    | Japan    | Japan          | Track Supercar     | Twin-Turbo V6 AWD           | 600 HP   | $221,000
+380  | Subaru             | Impreza RS 2.5                | Japan    | Japan          | Hatchback          | Gasoline Boxer AWD          | 182 HP   | $27,885
+381  | Subaru             | WRX Premium 6MT               | Japan    | Japan          | Sports Sedan       | Gasoline Turbo Boxer AWD    | 271 HP   | $34,635
+382  | Subaru             | WRX TR / tS                   | Japan    | Japan          | Performance Sedan  | Gasoline Turbo Boxer AWD    | 271 HP   | $41,655
+383  | Subaru             | BRZ Premium                   | Japan    | Japan          | Sports Coupe       | Gasoline Boxer RWD          | 228 HP   | $31,095
+384  | Subaru             | BRZ tS                        | Japan    | Japan          | Sports Coupe       | Gasoline Boxer RWD          | 228 HP   | $35,345
+385  | Subaru             | Crosstrek Premium 2.0         | Japan    | Japan          | Compact SUV        | Gasoline Boxer AWD          | 152 HP   | $26,145
+386  | Subaru             | Crosstrek Wilderness 2.5      | Japan    | Japan          | Off-Road Compact SUV | Gasoline Boxer AWD          | 182 HP   | $32,105
+387  | Subaru             | Forester Premium              | Japan    | Japan          | SUV                | Gasoline Boxer AWD          | 180 HP   | $31,995
+388  | Subaru             | Forester Sport                | Japan    | Japan          | SUV                | Gasoline Boxer AWD          | 180 HP   | $34,495
+389  | Subaru             | Forester Touring              | Japan    | Japan          | SUV                | Gasoline Boxer AWD          | 180 HP   | $39,995
+390  | Subaru             | Outback Premium 2.5           | Japan    | Japan          | Crossover Wagon    | Gasoline Boxer AWD          | 182 HP   | $31,195
+391  | Subaru             | Outback Wilderness 2.4T       | Japan    | Japan          | Off-Road Wagon     | Gasoline Turbo Boxer AWD    | 260 HP   | $39,960
+392  | Subaru             | Outback Touring XT 2.4T       | Japan    | Japan          | Crossover Wagon    | Gasoline Turbo Boxer AWD    | 260 HP   | $42,795
+393  | Subaru             | Ascent Onyx Edition 2.4T      | Japan    | Japan          | 3-Row SUV          | Gasoline Turbo Boxer AWD    | 260 HP   | $41,495
+394  | Subaru             | Solterra Touring EV           | Japan    | Japan          | SUV                | Electric (BEV) AWD          | 215 HP   | $51,995
+395  | Mitsubishi         | Mirage G4 Sedan               | Japan    | Japan          | Sedan              | Gasoline                    | 78 HP    | $17,795
+396  | Mitsubishi         | Outlander Sport SE            | Japan    | Japan          | Compact SUV        | Gasoline AWD                | 148 HP   | $26,695
+397  | Mitsubishi         | Eclipse Cross SEL Touring     | Japan    | Japan          | Compact SUV        | Gasoline Turbo AWD          | 152 HP   | $31,445
+398  | Mitsubishi         | Outlander SE                  | Japan    | Japan          | 3-Row SUV          | Gasoline AWD                | 181 HP   | $31,145
+399  | Mitsubishi         | Outlander Ralliart            | Japan    | Japan          | 3-Row SUV          | Gasoline AWD                | 181 HP   | $34,145
+400  | Mitsubishi         | Outlander PHEV SEL Black Edition | Japan    | Japan          | 3-Row SUV          | Plug-in Hybrid AWD          | 248 HP   | $44,845
+401  | Mitsubishi         | Triton / L200 GSR 4WD         | Japan    | Japan          | Pickup Truck       | Bi-Turbo Diesel 4WD         | 201 HP   | $38,000
+402  | Mitsubishi         | Delica D:5 2.2D AWD           | Japan    | Japan          | Minivan / Off-Road Van | Turbo Diesel AWD            | 145 HP   | $33,000
+403  | Mitsubishi         | Delica Mini 4WD               | Japan    | Japan          | Kei SUV            | Mild Hybrid Turbo 4WD       | 64 HP    | $16,500
+404  | Suzuki             | Swift 1.2 Mild Hybrid         | Japan    | Japan          | Hatchback          | Mild Hybrid                 | 82 HP    | $18,500
+405  | Suzuki             | Swift Sport 1.4 Boosterjet    | Japan    | Japan          | Hot Hatch          | Mild Hybrid Turbo           | 129 HP   | $24,000
+406  | Suzuki             | Jimny 3-Door Sierra           | Japan    | Japan          | Mini Off-Roader    | Gasoline 4WD                | 102 HP   | $22,000
+407  | Suzuki             | Jimny 5-Door XL               | Japan    | Japan          | Off-Roader         | Gasoline 4WD                | 102 HP   | $24,500
+408  | Suzuki             | Vitara 1.5 Full Hybrid        | Japan    | Japan          | Compact SUV        | Full Hybrid AWD             | 115 HP   | $28,000
+409  | Suzuki             | S-Cross 1.4 Boosterjet AllGrip | Japan    | Japan          | Compact SUV        | Mild Hybrid Turbo AWD       | 129 HP   | $27,000
+410  | Suzuki             | Ignis 1.2 AllGrip             | Japan    | Japan          | Micro SUV          | Mild Hybrid AWD             | 83 HP    | $19,000
+411  | Suzuki             | Swace 1.8 Full Hybrid         | Japan    | Japan          | Wagon              | Full Hybrid                 | 140 HP   | $31,000
+412  | Suzuki             | Across 2.5 PHEV AWD           | Japan    | Japan          | SUV                | Plug-in Hybrid AWD          | 306 HP   | $52,000
+413  | Suzuki             | e-Vitara EV                   | Japan    | Japan          | Compact SUV        | Electric (BEV) AWD          | 184 HP   | $33,000
+414  | Infiniti           | Q50 Luxe 3.0t                 | Japan    | Japan          | Luxury Sedan       | Twin-Turbo V6               | 300 HP   | $43,050
+415  | Infiniti           | Q50 Red Sport 400             | Japan    | Japan          | Performance Sedan  | Twin-Turbo V6               | 400 HP   | $56,500
+416  | Infiniti           | QX50 Luxe AWD                 | Japan    | Japan          | Compact Luxury SUV | Variable Compression Turbo  | 268 HP   | $43,000
+417  | Infiniti           | QX55 Sensory AWD              | Japan    | Japan          | Coupe SUV          | Variable Compression Turbo  | 268 HP   | $58,500
+418  | Infiniti           | QX60 Luxe AWD                 | Japan    | Japan          | 3-Row Luxury SUV   | Gasoline V6 AWD             | 295 HP   | $51,650
+419  | Infiniti           | QX60 Autograph AWD            | Japan    | Japan          | 3-Row Luxury SUV   | Gasoline V6 AWD             | 295 HP   | $63,200
+420  | Infiniti           | QX80 Pure                     | Japan    | Japan          | Flagship Luxury SUV | Twin-Turbo V6               | 450 HP   | $82,450
+421  | Infiniti           | QX80 Autograph 4WD            | Japan    | Japan          | Flagship Luxury SUV | Twin-Turbo V6 4WD           | 450 HP   | $110,500
+========================================================================================================================================
+Note: Prices are estimated base starting MSRPs in USD across global markets. Final pricing depends on options, country tax, and freight.
