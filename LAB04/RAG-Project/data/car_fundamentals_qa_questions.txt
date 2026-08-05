@@ -1,0 +1,175 @@
+========================================================================================================================================
+AUTOMOTIVE FUNDAMENTALS & GLOSSARY Q&A DATASET (QUESTIONS ONLY)
+========================================================================================================================================
+This document contains 150 structured English inquiry questions designed for embedding into Knowledge Bases, Vector Databases,
+or RAG (Retrieval-Augmented Generation) systems. These questions specifically target fundamental automotive domain concepts,
+vehicle body configurations, powertrain technologies, performance specs, safety systems, drivetrains, transmissions, EV charging,
+and total cost of ownership from car_fundamentals_glossary_kb.txt.
+
+Total Questions: 150
+========================================================================================================================================
+
+--- SECTION 1: VEHICLE BODY TYPES & CONFIGURATIONS (Q001 - Q025) ---
+Q001: What is a Sedan (Saloon) and what are its main structural characteristics?
+Q002: How does an SUV (Sport Utility Vehicle) differ from a traditional sedan?
+Q003: What is a Crossover Utility Vehicle (CUV) and what platform is it built upon?
+Q004: What is a Hatchback and how does its rear cargo access work?
+Q005: What defines a Hot Hatch and what performance upgrades does it include?
+Q006: What is a Coupe and what are its primary design features?
+Q007: What is an Estate Wagon (Station Wagon / Avant / Touring) and what advantages does it offer over an SUV?
+Q008: What is an MPV (Multi-Purpose Vehicle / Minivan) and what seating capacity does it typically accommodate?
+Q009: What is a Convertible (Cabriolet / Roadster) vehicle?
+Q010: What are the primary differences between a body-on-frame SUV and a unibody crossover?
+Q011: Which body style is ideal for urban driving and tight parking spaces?
+Q012: Which vehicle body configuration provides the highest seating position and ground clearance for off-roading?
+Q013: What is the main structural difference between a 2-door Coupe and a 4-door Sedan?
+Q014: Why do estate wagons offer comparable boot space to SUVs while maintaining lower fuel consumption?
+Q015: What features make MPVs suitable for family transport and commercial shuttles?
+Q016: What is a 3-box design in automotive terminology?
+Q017: What are some real-world examples of executive sedans mentioned in the glossary?
+Q018: What are some prominent examples of performance hot hatches?
+Q019: What makes a Roadster different from a standard 4-seat convertible?
+Q020: Which body style offers maximum cargo volume flexibility through folding rear seats in a compact footprint?
+Q021: How does ground clearance impact vehicle stability and off-road capability?
+Q022: What body type is recommended for heavy towing and rugged terrain?
+Q023: What design elements distinguish a Shooting Brake from a conventional station wagon?
+Q024: What are the main trade-offs between choosing an SUV versus an Estate Wagon?
+Q025: How does aerodynamic drag differ between low-slung coupes and boxy SUVs?
+
+--- SECTION 2: POWERTRAIN & FUEL TECHNOLOGIES (Q026 - Q055) ---
+Q026: What is an Internal Combustion Engine (ICE) vehicle?
+Q027: What are the main operational differences between Gasoline and Diesel engines?
+Q028: What is a Mild Hybrid Electric Vehicle (MHEV) and how does its 48V electrical system assist driving?
+Q029: Can a Mild Hybrid Electric Vehicle (MHEV) drive on 100% electric power alone?
+Q030: What is a Full Hybrid Electric Vehicle (HEV) and how does its self-charging system work?
+Q031: Does a Full Hybrid Electric Vehicle (HEV) require external plug-in charging?
+Q032: What is a Plug-in Hybrid Electric Vehicle (PHEV) and how does it differ from a standard HEV?
+Q033: What is the typical all-electric driving range of a modern PHEV on a single charge?
+Q034: What happens when a PHEV drains its battery completely during a long trip?
+Q035: What is a Battery Electric Vehicle (BEV / Pure EV)?
+Q036: What are the primary advantages of driving a fully electric vehicle (BEV)?
+Q037: What is a Fuel Cell Electric Vehicle (FCEV) and what fuel does it run on?
+Q038: What byproduct is emitted from the exhaust tailpipe of a Fuel Cell Electric Vehicle?
+Q039: How does refueling time compare between a gasoline ICE, an FCEV, and a DC fast-charging BEV?
+Q040: What is regenerative braking and how does it recover energy in hybrid and electric vehicles?
+Q041: What are the differences between AC Home Charging and DC Fast Charging for EVs?
+Q042: Why do electric vehicles deliver instantaneous torque compared to internal combustion engines?
+Q043: What is a high-voltage traction battery pack in a BEV?
+Q044: How does maintenance cost compare between internal combustion engine cars and pure electric vehicles?
+Q045: What are the advantages of low center of gravity in battery electric vehicles?
+Q046: Which powertrain type is best suited for daily short city commutes using pure electricity without range anxiety?
+Q047: How does a self-charging hybrid recover kinetic energy during deceleration?
+Q048: What is an electrochemical fuel cell stack in a hydrogen vehicle?
+Q049: What are some examples of popular BEV models listed in the domain knowledge base?
+Q050: What are some examples of PHEV vehicles in the market?
+Q051: What are some examples of FCEV production vehicles?
+Q052: Why are diesel engines commonly used in long-distance heavy towing vehicles?
+Q053: What is the role of an electric starter-generator in a mild hybrid system?
+Q054: What environmental benefits do BEVs offer regarding tailpipe emissions?
+Q055: How do extreme hot or cold ambient temperatures affect EV battery range and performance?
+
+--- SECTION 3: KEY PERFORMANCE & TECHNICAL METRICS (Q056 - Q075) ---
+Q056: What is Horsepower (HP) and what vehicle characteristic does it determine?
+Q057: What is Torque (Nm) and how does it affect initial acceleration and towing?
+Q058: What is the mathematical conversion factor between Kilowatts (kW) and Horsepower (HP)?
+Q059: How is vehicle acceleration evaluated from 0 to 100 km/h?
+Q060: What zero-to-100 km/h acceleration benchmark is expected for high-performance sports cars?
+Q061: What does usable battery capacity (kWh) represent in electric vehicles?
+Q062: What is the typical battery capacity range (kWh) for PHEVs versus long-range BEVs?
+Q063: What does real-world driving range (km) mean for electric vehicles?
+Q064: What is energy efficiency measured in Wh/km or kWh/100km?
+Q065: What energy efficiency rating (Wh/km) is considered highly efficient for compact electric hatchbacks?
+Q066: What is Max Charging Power (kW) and how does it impact DC fast-charging times?
+Q067: What is Towing Capacity (kg) and why is it important for utility vehicles?
+Q068: What is the difference between peak engine power and continuous electric motor power?
+Q069: How does vehicle weight influence energy consumption in Wh/km?
+Q070: What is boot capacity measured in Liters (L) and how is it measured?
+Q071: Why is torque at low RPM crucial for heavy-duty off-road SUVs?
+Q072: How does top speed (km/h) relate to total horsepower and aerodynamic drag?
+Q073: What charging architecture (e.g., 400V vs 800V) enables ultra-fast EV charging above 250 kW?
+Q074: How does payload capacity differ from towing capacity in light commercial vehicles?
+Q075: What factors affect real-world EV efficiency compared to official laboratory WLTP ratings?
+
+--- SECTION 4: SAFETY RATINGS, ADAS & MARKET SEGMENTS (Q076 - Q100) ---
+Q076: What is Euro NCAP and what does a 5-Star safety rating signify?
+Q077: What four main areas are evaluated in Euro NCAP safety assessments?
+Q078: What does ADAS stand for in modern vehicle technology?
+Q079: What is Level 0 ADAS autonomy?
+Q080: What is Level 1 ADAS autonomy and what is a common example?
+Q081: What is Level 2 ADAS autonomy and how does it assist the driver?
+Q082: What is Level 3 ADAS autonomy and when can the system take full driving control?
+Q083: What is Level 4 ADAS autonomy?
+Q084: What is Level 5 ADAS autonomy and how does it eliminate human driver input?
+Q085: How is Segment A classified in European vehicle market segmentation?
+Q086: What types of cars belong to Segment B (Subcompact / Small Cars)?
+Q087: What vehicle types are included in Segment C (Compact / Family Cars)?
+Q088: What characterizes Segment D (Midsize / Executive Cars)?
+Q089: What vehicle types make up Segment E (Full-size Luxury / Executive Cars)?
+Q090: What characterizes Segment F (Ultra-Luxury / Flagship / Supercars)?
+Q091: What driver assistance technologies are included under Level 2 ADAS?
+Q092: Why must a human driver remain attentive during Level 2 ADAS operation?
+Q093: What is the difference between active safety systems and passive crash safety?
+Q094: Which market segment contains ultra-compact city cars like the Fiat 500 and Hyundai i10?
+Q095: Which market segment includes flagship luxury cars like the Mercedes-Maybach and BMW 7 Series?
+Q096: What safety features protect vulnerable road users such as pedestrians and cyclists?
+Q097: What is Adaptive Cruise Control (ACC) and lane-keeping assistance?
+Q098: What is the Total Cost of Ownership (TCO) for a motor vehicle?
+Q099: What factors are included in annual vehicle maintenance and energy costs?
+Q100: How do insurance ratings scale from 1 to 10 based on vehicle performance, repair cost, and safety?
+
+--- SECTION 5: DRIVETRAIN, TRANSMISSIONS & TRACTION CONFIGURATIONS (Q101 - Q115) ---
+Q101: What is Front-Wheel Drive (FWD) and what are its main advantages for city cars?
+Q102: What is Rear-Wheel Drive (RWD) and why is it preferred in sports cars and performance sedans?
+Q103: What is All-Wheel Drive (AWD) and how does it enhance driver safety in wet or slippery conditions?
+Q104: What is Four-Wheel Drive (4WD / 4x4) and how does 4-Low gear setting assist off-roading?
+Q105: What is torque steer and which drivetrain configuration is susceptible to it?
+Q106: What is understeer versus oversteer during vehicle cornering?
+Q107: What is a Manual Transmission (MT) and how does the driver operate it?
+Q108: What is a Torque Converter Automatic Transmission (AT) and how does it shift gears?
+Q109: What is a Continuously Variable Transmission (CVT) and why is it popular in fuel-efficient compact cars?
+Q110: What is a Dual-Clutch Transmission (DCT / DSG / PDK) and how fast are its gear shifts?
+Q111: Why do most Battery Electric Vehicles (BEVs) use a Single-Speed Direct Drive transmission instead of multi-gear gearboxes?
+Q112: Which drivetrain configuration provides 50:50 front-to-rear weight balance for handling dynamics?
+Q113: What are the main trade-offs in fuel economy when choosing AWD over FWD?
+Q114: Why shouldn't heavy 4WD low-range lock be engaged on dry paved highways?
+Q115: What causes engine "drone" behavior in CVT transmissions under heavy acceleration?
+
+--- SECTION 6: EV CHARGING STANDARDS, PLUGS & BATTERY HEALTH (Q116 - Q130) ---
+Q116: What is Level 1 AC Trickle Charging and how long does an overnight charge take?
+Q117: What is Level 2 AC Fast Charging and what equipment is required at home?
+Q118: What is Level 3 DC Fast Charging (Supercharging) and what is its typical charging time from 10% to 80%?
+Q119: What is the Type 2 (Mennekes) charging plug standard?
+Q120: What is the CCS2 (Combined Charging System 2) plug and why is it the global DC fast-charging standard?
+Q121: What is the NACS (North American Charging Standard) plug standard?
+Q122: What is State of Health (SoH) in EV battery diagnostics?
+Q123: Why is liquid thermal management important for preventing EV battery degradation?
+Q124: What standard warranty coverage do manufacturers provide for EV traction batteries?
+Q125: What is the difference between WLTP and EPA estimated driving range figures?
+Q126: What is thermal runaway in battery safety terminology?
+Q127: How does charging an EV battery past 80% impact fast-charging speeds?
+Q128: What is the difference between AC (Alternating Current) and DC (Direct Current) charging?
+Q129: What is a Home Wallbox charger and what power output does it typically supply (7kW to 22kW)?
+Q130: Why does cold winter weather reduce EV battery range and slow down fast charging?
+
+--- SECTION 7: SAFETY TERMINOLOGY, BUYING & OWNERSHIP ECONOMICS (Q131 - Q150) ---
+Q131: What is ABS (Anti-lock Braking System) and how does it assist driver steering under hard braking?
+Q132: What is Electronic Stability Control (ESP / ESC) and how does it prevent skidding?
+Q133: What is Autonomous Emergency Braking (AEB) and how does it prevent forward collisions?
+Q134: What is Blind Spot Monitoring (BSM / BLIS)?
+Q135: What are vehicle crumple zones and how do they absorb impact energy during a crash?
+Q136: What are Isofix child seat anchors and how do they secure child seats to the chassis?
+Q137: What is Base MSRP (Manufacturer's Suggested Retail Price)?
+Q138: What is On-The-Road (OTR) price and what extra fees are included?
+Q139: What is vehicle depreciation and how much value do new cars typically lose in their first year?
+Q140: What is vehicle resale value after 3 to 5 years of ownership?
+Q141: What is the Total Cost of Ownership (TCO) equation for buying a vehicle?
+Q142: Why do electric vehicles (BEVs) generally have lower routine maintenance costs than ICE cars?
+Q143: What is the difference between a manufacturer bumper-to-bumper warranty and a maintenance service pack?
+Q144: How do vehicle insurance groups affect annual ownership expenses?
+Q145: What active safety features help prevent accidents with pedestrians and cyclists?
+Q146: What is the role of side curtain and knee airbags during a collision?
+Q147: How does rapid depreciation impact the resale value of luxury vehicles compared to budget cars?
+Q148: What key factors should a beginner evaluate when choosing between buying a BEV, PHEV, or HEV?
+Q149: How do fuel/energy cost savings offset the higher initial purchase price of an EV over 5 years?
+Q150: What general advice should a beginner follow when selecting their first car body type and drivetrain?
+========================================================================================================================================
