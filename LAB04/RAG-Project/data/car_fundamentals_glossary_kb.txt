@@ -1,9 +1,11 @@
 ========================================================================================================================================
-AUTOMOTIVE FUNDAMENTALS, BODY TYPES & POWERTRAIN GLOSSARY - KNOWLEDGE BASE DOCUMENT
+AUTOMOTIVE FUNDAMENTALS, CAR ANATOMY, POWERTRAIN & BEGINNER DOMAIN GLOSSARY - COMPREHENSIVE KNOWLEDGE BASE DOCUMENT
 ========================================================================================================================================
-This document serves as a comprehensive reference guide for general automotive concepts, vehicle body configurations,
-powertrain technologies, performance metrics, safety systems, and market segments. It is designed for embedding into 
-Vector Databases and Retrieval-Augmented Generation (RAG) systems to answer fundamental domain-specific inquiries.
+This document serves as an exhaustive, all-inclusive domain reference guide for automotive concepts, car anatomy,
+body configurations, powertrain technologies, performance specs, drivetrain systems, transmissions, EV charging standards,
+engine mechanics, maintenance, dashboard warnings, fuel types, safety systems, driving modes, and total ownership economics.
+It is specifically designed for embedding into Vector Databases and Retrieval-Augmented Generation (RAG) systems to answer 
+any fundamental inquiry from non-expert / beginner users who know nothing about cars.
 
 ========================================================================================================================================
 SECTION 1: VEHICLE BODY TYPES & CONFIGURATIONS
@@ -11,12 +13,12 @@ SECTION 1: VEHICLE BODY TYPES & CONFIGURATIONS
 
 1.1 Sedan (Saloon)
 - Definition: A traditional 3-box passenger car with separate compartments for the engine, passengers, and cargo/trunk.
-- Characteristics: 4 doors, fixed roof, lower ground clearance, emphasis on smooth handling and highway comfort.
+- Characteristics: 4 doors, fixed roof, lower ground clearance, emphasis on smooth handling, aerodynamics, and highway comfort.
 - Ideal For: Daily commuting, long-distance highway travel, business executives.
 - Examples: BMW 3 Series, Mercedes-Benz C-Class, Audi A4, Toyota Camry.
 
 1.2 SUV (Sport Utility Vehicle)
-- Definition: A rugged, high-riding vehicle built on a truck or reinforced chassis, often equipped with All-Wheel Drive (AWD) or 4WD.
+- Definition: A rugged, high-riding vehicle built on a truck chassis or reinforced frame, often equipped with All-Wheel Drive (AWD) or 4WD.
 - Characteristics: Elevated seating position, high ground clearance, spacious cabin, excellent off-road and all-weather capability.
 - Ideal For: Families, outdoor activities, off-road driving, heavy towing.
 - Examples: Volkswagen Touareg, Mercedes-Benz G-Class, BMW X5, Land Rover Defender.
@@ -95,46 +97,201 @@ SECTION 2: POWERTRAIN & FUEL TECHNOLOGIES
 - Examples: Toyota Mirai, Honda CR-V e:FCEV, Hyundai NEXO.
 
 ========================================================================================================================================
-SECTION 3: KEY PERFORMANCE & TECHNICAL METRICS
+SECTION 3: DRIVETRAIN & TRACTION CONFIGURATIONS (FWD, RWD, AWD, 4WD)
 ========================================================================================================================================
 
-3.1 Horsepower (HP / PS / kW)
+3.1 Front-Wheel Drive (FWD)
+- Definition: Engine power is delivered exclusively to the two front wheels.
+- Pros: Lower manufacturing cost, lighter weight, superior fuel economy, better traction on slippery roads due to engine weight over front wheels.
+- Cons: Torque steer under heavy acceleration, understeer in sharp cornering.
+- Best For: Budget compact cars, city hatchbacks, family sedans.
+
+3.2 Rear-Wheel Drive (RWD)
+- Definition: Engine power is delivered exclusively to the two rear wheels.
+- Pros: Balanced 50:50 weight distribution, superior handling dynamics, steering wheel is free from drive torque interference.
+- Cons: Lower traction on snow/ice without snow tires, oversteer during high-speed cornering.
+- Best For: Sports cars, luxury sedans, performance coupes (e.g., BMW 3 Series, Mustang, Porsche 911).
+
+3.3 All-Wheel Drive (AWD)
+- Definition: Power is automatically sent to all four wheels continuously or on-demand based on electronic sensors.
+- Pros: Maximum traction in rain, snow, and light off-road conditions; enhanced cornering stability.
+- Cons: Additional weight, higher fuel consumption, increased mechanical complexity.
+- Best For: Crossovers, performance luxury sedans, family SUVs (e.g., Audi Quattro, Subaru AWD, BMW xDrive).
+
+3.4 Four-Wheel Drive (4WD / 4x4)
+- Definition: Heavy-duty mechanical system where the driver can manually engage 4WD, often with low-range transfer gears (4-Low).
+- Pros: Extreme off-road climbing ability, rock crawling, mud and sand navigation.
+- Cons: Cannot be used on dry paved roads in 4-Low without damaging drivetrain components.
+- Best For: Dedicated off-road vehicles and heavy pickups (e.g., Jeep Wrangler, Toyota Land Cruiser, Mercedes G-Class).
+
+========================================================================================================================================
+SECTION 4: TRANSMISSION TYPES & GEARBOXES
+========================================================================================================================================
+
+4.1 Manual Transmission (MT / Stick Shift)
+- Definition: Driver operates a manual clutch pedal and gear selector to change ratios manually (5-speed or 6-speed).
+- Characteristics: High driver engagement, simple mechanical repair, lower initial vehicle cost.
+
+4.2 Torque Converter Automatic Transmission (AT)
+- Definition: Traditional automatic gearbox using a hydraulic torque converter to shift gears smoothly without driver input (6-speed to 10-speed).
+- Characteristics: Smooth gear shifts, high durability, excellent towing capability.
+
+4.3 Continuously Variable Transmission (CVT)
+- Definition: Automatic gearbox using a belt and pulley system instead of fixed gears, providing infinite gear ratios.
+- Characteristics: Highly fuel-efficient, seamless acceleration without shift points; can exhibit engine "drone" under hard acceleration. Common in Japanese urban cars (e.g., Toyota, Honda, Nissan).
+
+4.4 Dual-Clutch Transmission (DCT / DSG / PDK)
+- Definition: Automated gearbox featuring two separate clutches—one for odd gears and one for even gears—enabling lightning-fast gear changes.
+- Characteristics: Rapid gear shifts (milliseconds), high performance, aggressive driving feel (e.g., VW DSG, Porsche PDK).
+
+4.5 EV Single-Speed Direct Drive
+- Definition: Electric vehicles typically use a single fixed reduction gear because electric motors deliver high RPM ranges (up to 20,000 RPM) and instant torque from 0 RPM without needing multiple gears.
+
+========================================================================================================================================
+SECTION 5: ENGINE ARCHITECTURE & INDUCTION SYSTEMS
+========================================================================================================================================
+
+5.1 Engine Displacement (Liters / cc)
+- Definition: The total swept volume of all cylinders in an engine, measured in Liters (e.g., 1.5L, 2.0L, 3.0L) or Cubic Centimeters (e.g., 1498 cc, 1998 cc).
+- Meaning: Larger displacement generally yields more natural power but higher fuel consumption.
+
+5.2 Engine Cylinder Layouts
+- Inline / Straight (I3, I4, I6): Cylinders arranged in a single straight line. Inline-4 (I4) is the most common car engine. Inline-6 (I6) is famous for silky smooth operation (e.g., BMW).
+- V-Engine (V6, V8, V10, V12): Cylinders arranged in two angled banks forming a "V" shape, saving engine bay length (e.g., Mercedes V8, Ferrari V12).
+- Flat / Boxer (F4, F6): Cylinders arranged horizontally opposing each other, lowering the car's center of gravity (e.g., Porsche 911 Flat-6, Subaru Boxer).
+
+5.3 Forced Induction: Turbocharger vs Supercharger vs Naturally Aspirated (NA)
+- Naturally Aspirated (NA): Engine draws ambient air without assistance. Linear throttle response, high reliability, but lower power output per liter.
+- Turbocharger: Turbine driven by exhaust gases forces compressed air into the engine, significantly boosting horsepower and torque from smaller engines (Downsizing). Can exhibit slight "turbo lag" before spooling.
+- Supercharger: Mechanically driven air pump connected directly to the engine crankshaft. Instant boost without lag, but consumes some engine power to operate.
+
+========================================================================================================================================
+SECTION 6: KEY PERFORMANCE & TECHNICAL METRICS
+========================================================================================================================================
+
+6.1 Horsepower (HP / PS / kW)
 - Definition: Measurement of engine power output, determining maximum vehicle speed and top-end acceleration.
 - Unit Conversion: 1 kW = 1.341 HP; 1 HP = 1.014 PS.
 
-3.2 Torque (Nm / lb-ft)
-- Definition: The rotational force generated by the engine/motor. High torque provides quick initial acceleration and towing capability.
+6.2 Torque (Nm / lb-ft)
+- Definition: The rotational force generated by the engine/motor. High torque provides quick initial acceleration, uphill pulling power, and towing capability.
 
-3.3 Acceleration (0 to 100 km/h in seconds)
+6.3 Acceleration (0 to 100 km/h in seconds)
 - Definition: Time taken for a vehicle to accelerate from a complete standstill to 100 km/h (62 mph).
 - Benchmark: Sports cars < 4.0 seconds; Standard cars 7.0–10.0 seconds; Budget cars > 11.0 seconds.
 
-3.4 Usable Battery Capacity (kWh)
-- Definition: The net amount of electrical energy stored in a BEV/PHEV battery that is accessible for driving.
-- Typical Range: PHEVs 10–25 kWh; Compact EVs 40–60 kWh; Long-range EVs 75–120 kWh.
+6.4 Revolutions Per Minute (RPM) & Redline
+- Definition: Speed at which the engine crankshaft rotates. "Redline" indicates the maximum safe RPM limit before engine damage occurs.
 
-3.5 Real-World Driving Range (km)
-- Definition: Estimated distance an electric vehicle can travel on a full single charge under real driving conditions.
+6.5 Turning Radius / Turning Circle
+- Definition: The smallest diameter circle required for a vehicle to complete a 180-degree U-turn. Smaller turning radius equals easier parking and maneuvering in tight streets.
 
-3.6 Energy Efficiency (Wh/km & kWh/100km)
-- Definition: Energy consumed per distance traveled. Lower values indicate higher energy efficiency.
-- Typical EV Rating: Efficient EVs consume 130–160 Wh/km; Large performance electric SUVs consume 220–300 Wh/km.
-
-3.7 Max Charging Power (kW) & Fast Charging Time (min)
-- Definition: Maximum DC fast-charging rate supported by the vehicle battery architecture (e.g., 150 kW, 250 kW, 350 kW 800V architecture). Determines 10% to 80% charging duration.
-
-3.8 Towing Capacity (kg)
-- Definition: Maximum trailer or load weight a vehicle is rated to safely pull.
+6.6 Wheelbase & Track Width
+- Definition: Wheelbase is the distance between the front and rear axle centers. A longer wheelbase provides smoother high-speed stability and more rear legroom, while a shorter wheelbase improves agility.
 
 ========================================================================================================================================
-SECTION 4: SAFETY RATINGS & DRIVER ASSISTANCE (ADAS)
+SECTION 7: EV BATTERY TECH, CHARGING STANDARDS & RANGE TESTING
 ========================================================================================================================================
 
-4.1 Euro NCAP Safety Rating (1 to 5 Stars)
-- Definition: European New Car Assessment Programme rating assessing adult protection, child occupant protection, vulnerable road user protection, and safety assist technologies.
+7.1 Charging Levels (Level 1, Level 2, Level 3)
+- Level 1 Charging (AC Trickle): Plugged into a standard 120V household outlet. Charges 3–8 km of range per hour (overnight charging takes 24+ hours).
+- Level 2 Charging (AC Fast): Home wallbox or public AC charger (208V–240V, 7kW–22kW). Charges 25–60 km of range per hour (full charge in 4–8 hours).
+- Level 3 Charging (DC Fast Charging / Supercharging): Commercial high-power DC chargers (50kW to 350kW). Charges battery from 10% to 80% in 15–30 minutes.
+
+7.2 EV Plug Connectors & Standards
+- Type 2 (Mennekes): Standard AC plug connector in Europe and Thailand.
+- CCS2 (Combined Charging System 2): Global standard DC fast-charging plug combining Type 2 AC pins with 2 high-power DC pins.
+- CHAdeMO: Legacy Japanese DC fast-charging standard.
+- NACS (North American Charging Standard / Tesla Connector): Standard EV plug across North America.
+
+7.3 Battery Health, Thermal Management & Heat Pump
+- State of Health (SoH): Percentage measure of battery energy capacity remaining relative to brand new condition (e.g., 92% SoH).
+- Liquid Thermal Management: Active liquid cooling/heating system keeping EV battery cells at optimal operating temperature (20°C–35°C), preventing battery degradation and thermal runaway.
+- Heat Pump: Highly efficient heating system that extracts ambient heat to warm the EV cabin in winter without draining traction battery range.
+- One-Pedal Driving & B-Mode: Driving mode where lifting off the accelerator pedal automatically engages strong regenerative braking, slowing the car to a complete stop without touching the brake pedal.
+
+7.4 Range Testing Standards: WLTP vs EPA vs NEDC
+- WLTP (Worldwide Harmonized Light Vehicles Test Procedure): Current European global testing standard; balanced and realistic.
+- EPA (US Environmental Protection Agency): American standard; strict and conservative (most realistic real-world range).
+- NEDC (New European Driving Cycle): Outdated lab testing standard; overly optimistic (often 25% higher than real-world range).
+
+========================================================================================================================================
+SECTION 8: MAJOR MECHANICAL SYSTEMS & CAR ANATOMY
+========================================================================================================================================
+
+8.1 Suspension Systems
+- MacPherson Strut: Simple, compact front suspension used in most passenger cars; cost-effective and space-saving.
+- Double Wishbone: High-performance suspension with top and bottom A-arms; provides superior tire contact, precise cornering, and stability (sports cars, luxury SUVs).
+- Multi-Link: Independent rear suspension using multiple control arms; balances luxury ride comfort with responsive handling.
+- Air Suspension: Electronically controlled rubber air springs that automatically adjust vehicle ride height and dampening softness.
+
+8.2 Braking System: Disc Brakes vs Drum Brakes
+- Disc Brakes (Rotors & Callipers): Brake pads squeeze against a metal disc. Superior heat dissipation, wet performance, and stopping power. Used on all modern front wheels and performance cars.
+- Drum Brakes: Brake shoes press outward inside a metal drum. Cheaper and sealed from dirt, commonly used on rear wheels of budget compact cars.
+
+8.3 Steering System & Auxiliary Battery
+- Electric Power Steering (EPS): Electric motor assists steering, reducing fuel consumption and enabling automated lane-keeping systems.
+- 12V Auxiliary Battery: All vehicles (including 100% electric EVs) use a standard 12V lead-acid or lithium auxiliary battery to power headlights, door locks, infotainment screens, and safety computers even when the main engine/EV battery is off.
+
+========================================================================================================================================
+SECTION 9: ROUTINE CAR MAINTENANCE & VITAL FLUIDS
+========================================================================================================================================
+
+9.1 Engine Oil & Viscosity Grades
+- Function: Lubricates moving engine parts, reduces friction, cools internal components, and cleans engine sludge.
+- Viscosity Ratings (e.g., 0W-20, 5W-30): "W" stands for Winter. Lower numbers before "W" mean easier cold starts; numbers after "W" represent oil thickness at operating temperature (100°C).
+- Synthetic Oil: Fully man-made lubricant offering superior protection and longer change intervals (10,000–15,000 km) compared to mineral oil.
+
+9.2 Essential Car Fluids
+- Coolant / Antifreeze: Fluid circulating through the engine and radiator to prevent overheating and freezing.
+- Brake Fluid: Hydraulic fluid transferring foot pedal pressure to brake callipers. Hygroscopic (absorbs water), requires changing every 2 years.
+- Transmission Fluid: Lubricates and cools automatic/manual gearboxes.
+- Windshield Washer Fluid: Cleaning fluid for front and rear windscreen wipers.
+
+9.3 Tires, Alignment & Air Pressure
+- Tire Pressure (PSI / Bar): Correct inflation pressure printed on the driver's door jamb. Under-inflation increases fuel consumption and tire blowout risk; over-inflation reduces grip and causes harsh ride.
+- Tread Depth: Rubber grooves on tires that disperse water. Legal minimum tread depth is usually 1.6 mm; tires should be replaced when tread wears down to 3.0 mm.
+- Wheel Alignment & Balancing: Adjustment of tire angles to ensure the car travels straight without pulling to one side or causing uneven tire wear.
+
+========================================================================================================================================
+SECTION 10: DASHBOARD WARNING INDICATORS & SYMBOLS
+========================================================================================================================================
+
+10.1 Warning Indicator Colors
+- RED Warning Lights: Critical safety risk or mechanical failure. Pull over safely and turn off engine immediately (e.g., Oil Pressure, Brake System, Engine Overheat).
+- AMBER / YELLOW Lights: Warning or system fault requiring inspection soon (e.g., Check Engine, TPMS, ABS, Low Fuel).
+- GREEN / BLUE Lights: System active status notification (e.g., Headlights, High Beam, Cruise Control).
+
+10.2 Common Warning Symbols Explained
+- Check Engine Light (CEL): Engine control module detected an emission, sensor, or combustion fault.
+- Oil Pressure Warning (Oil Can Symbol): Engine oil pressure dropped dangerously low. Stop driving immediately to avoid catastrophic engine seizure.
+- Battery Charging Warning: Alternator or 12V charging system failure.
+- Engine Overheat Symbol (Thermometer in Water): Engine coolant temperature exceeds safe limit. Stop car immediately to prevent warped engine heads.
+- TPMS Warning (Exclamation Mark in Horseshoe): One or more tires have low air pressure.
+- ABS Warning Light: Anti-lock braking system deactivated; standard brakes still function, but wheel lockup protection is disabled.
+
+========================================================================================================================================
+SECTION 11: FUEL TYPES, OCTANE RATINGS & EXHAUST ADDITIVES
+========================================================================================================================================
+
+11.1 Gasoline Octane Ratings (RON 91, RON 95, RON 98)
+- Definition: Research Octane Number (RON) measures gasoline's resistance to premature detonation ("engine knocking").
+- Usage: Standard cars run on RON 91/95. High-performance turbocharged or high-compression engines require RON 98 to prevent engine knock.
+- Gasohol Blends (E10, E20, E85): Gasoline blended with ethanol alcohol. E10 contains 10% ethanol; E85 contains 85% ethanol (requires Flex-Fuel engine compatibility).
+
+11.2 Diesel Fuel & AdBlue (DEF - Diesel Exhaust Fluid)
+- Diesel Fuel (Euro 5 / Euro 6): Low-sulfur diesel fuel designed for modern high-pressure common rail diesel engines.
+- AdBlue / DEF: Non-toxic urea solution injected into diesel exhaust systems (SCR - Selective Catalytic Reduction) to convert harmful Nitrogen Oxide (NOx) pollutants into harmless nitrogen and water vapor.
+
+========================================================================================================================================
+SECTION 12: SAFETY RATINGS & DRIVER ASSISTANCE (ADAS)
+========================================================================================================================================
+
+12.1 Euro NCAP Safety Rating (1 to 5 Stars)
+- Definition: European New Car Assessment Programme rating assessing adult occupant protection, child occupant protection, vulnerable road user protection, and safety assist technologies.
 - 5 Stars: Overall excellent performance in crash protection and collision avoidance technology.
 
-4.2 ADAS Autonomy Levels (Level 0 to Level 5)
+12.2 ADAS Autonomy Levels (Level 0 to Level 5)
 - Level 0: No automation; human driver controls all functions (warnings only).
 - Level 1: Driver Assistance; single system assists with steering OR acceleration/braking (e.g., standard Cruise Control).
 - Level 2: Partial Automation; system controls steering AND acceleration simultaneously under driver supervision (e.g., Adaptive Cruise Control with Lane Centering).
@@ -142,8 +299,28 @@ SECTION 4: SAFETY RATINGS & DRIVER ASSISTANCE (ADAS)
 - Level 4: High Automation; vehicle drives autonomously in designated areas without driver intervention.
 - Level 5: Full Automation; complete driverless vehicle in all conditions.
 
+12.3 Active vs Passive Safety Systems
+- Active Systems: ABS, ESP/ESC, AEB (Autonomous Emergency Braking), BSM (Blind Spot Monitoring), Lane Keep Assist (LKA).
+- Passive Systems: Crumple Zones, Airbags (Front, Side, Curtain, Knee), Isofix Child Seat Anchors, Seatbelt Pre-tensioners.
+
 ========================================================================================================================================
-SECTION 5: MARKET SEGMENTS (A-SEGMENT TO F-SEGMENT)
+SECTION 13: DRIVING MODES & CONVENIENCE TECHNOLOGIES
+========================================================================================================================================
+
+13.1 Driving Modes (Eco, Comfort, Sport, Snow/Off-Road)
+- Eco Mode: Softens throttle sensitivity, shifts gear early, and optimizes climate control to maximize fuel economy.
+- Comfort / Normal Mode: Balanced suspension softness, steering weight, and smooth throttle response for daily driving.
+- Sport / Sport+ Mode: Sharpens throttle response, holds engine gears at higher RPM, stiffens adaptive suspension, and increases steering weight for aggressive driving.
+- Snow / Mud / Sand Mode: Adjusts traction control and wheel torque slip to maintain grip on loose surfaces.
+
+13.2 Driver Convenience Features
+- Electronic Parking Brake (EPB): Replaces manual handbrake lever with a push-button electronic switch.
+- Auto Hold Function: Holds brake hydraulic pressure automatically when the vehicle comes to a complete stop at traffic lights, allowing the driver to remove their foot from the brake pedal until pressing the accelerator.
+- Hill Start Assist (HSA): Automatically holds brake pressure for 2–3 seconds when starting on a steep uphill slope, preventing the car from rolling backward.
+- Paddle Shifters: Steering-wheel-mounted levers (+/-) allowing manual gear override on automatic or dual-clutch transmissions.
+
+========================================================================================================================================
+SECTION 14: MARKET SEGMENTS (A-SEGMENT TO F-SEGMENT)
 ========================================================================================================================================
 
 - Segment A (City Cars / Microcars): Ultra-compact urban cars (e.g., Fiat 500, Hyundai i10, Toyota Aygo).
@@ -152,4 +329,19 @@ SECTION 5: MARKET SEGMENTS (A-SEGMENT TO F-SEGMENT)
 - Segment D (Midsize / Executive Cars): Midsize sedans and crossovers (e.g., BMW 3 Series, Audi A4, VW Passat).
 - Segment E (Full-size Executive / Luxury Cars): Large luxury sedans (e.g., BMW 5 Series, Mercedes-Benz E-Class, Audi A6).
 - Segment F (Ultra-Luxury / Flagship / Supercars): Flagship luxury sedans, supercars, hypercars (e.g., Mercedes-Maybach, BMW 7 Series, Porsche 911, Ferrari, Lamborghini).
+
+========================================================================================================================================
+SECTION 15: CAR BUYING, DEPRECIATION & TOTAL COST OF OWNERSHIP (TCO)
+========================================================================================================================================
+
+15.1 Financial & Pricing Terms
+- Base MSRP (Manufacturer's Suggested Retail Price): The recommended starting base price before optional equipment, taxes, and dealer fees.
+- OTR Price (On-The-Road Price): Total final price including taxes, registration fees, insurance, and delivery charges.
+- Depreciation: The loss in market value of a vehicle over time. Cars typically lose 15%–25% of value in their first year.
+- Resale Value: Remaining market value of a used vehicle when sold after several years of ownership.
+
+15.2 Ownership Economics & Total Cost of Ownership (TCO)
+- Total Cost of Ownership (TCO): The overall expense of owning a vehicle over 3–5 years, calculating:
+  TCO = Purchase Price + Depreciation + Fuel/Energy Cost + Maintenance/Repairs + Insurance + Taxes - Resale Value
+- EV vs ICE Ownership Economics: Pure electric vehicles (BEVs) generally have higher upfront purchase prices (MSRP), but deliver significantly lower fuel/energy costs and up to 40% lower routine maintenance costs (no engine oil changes, spark plugs, timing belts, or exhaust system repairs).
 ========================================================================================================================================

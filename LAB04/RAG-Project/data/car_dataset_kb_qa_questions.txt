@@ -1,13 +1,12 @@
 ========================================================================================================================================
-KNOWLEDGE BASE EXTRACTABLE Q&A DATASET (QUESTIONS ONLY) - COMBINED CAR DATASETS & AUTOMOTIVE FUNDAMENTALS (2025-2026)
+KNOWLEDGE BASE EXTRACTABLE Q&A DATASET (QUESTIONS ONLY) - COMBINED CAR DATASETS (2025-2026)
 ========================================================================================================================================
-This document contains 140 structured English inquiry questions designed for embedding into Knowledge Bases, Vector Databases,
-or RAG (Retrieval-Augmented Generation) systems. The questions cover both vehicle records and automotive domain fundamentals:
+This document contains 120 structured English inquiry questions designed for embedding into Knowledge Bases, Vector Databases,
+or RAG (Retrieval-Augmented Generation) systems. The questions cover both datasets:
 1. CARS_DATASET.xlsx (6,000 extended vehicle records with comprehensive metrics)
 2. eu_and_jp_cars_dataset.txt (421 European & Japanese vehicle records with country, region, and MSRP specs)
-3. car_fundamentals_glossary_kb.txt (Automotive concepts, body types, powertrain technologies, safety & technical terms)
 
-Total Questions: 140
+Total Questions: 120
 ========================================================================================================================================
 
 --- SECTION 1: DATASET METADATA & SCHEMA OVERVIEW ---
@@ -137,26 +136,4 @@ Q117: What off-road SUV models with high towing capacity and 4WD are included in
 Q118: How do boot space capacities (in Liters) compare between compact hatchbacks, fastbacks, estate wagons, and full-size SUVs?
 Q119: What are the primary differences in battery capacity and max charging speed between city EVs and long-distance GT EVs?
 Q120: What general insights can be synthesized regarding vehicle electrification trends across European and Japanese manufacturers in 2025-2026?
-
---- SECTION 5: AUTOMOTIVE FUNDAMENTALS & BEGINNER GLOSSARY QUERIES ---
-Q121: What is an SUV (Sport Utility Vehicle) and how does it differ from a Crossover (CUV)?
-Q122: What is the main difference between a Sedan, a Hatchback, and an Estate Wagon?
-Q123: What defines a Coupe and how does it differ from a standard Sedan?
-Q124: What is a Hot Hatch and what are some prominent examples in the market?
-Q125: What is an MPV (Multi-Purpose Vehicle) and what passenger capacity does it typically offer?
-Q126: What is a Convertible or Roadster?
-Q127: What is an ICE (Internal Combustion Engine) vehicle and how do Gasoline and Diesel engines compare?
-Q128: What is a Mild Hybrid Electric Vehicle (MHEV) and can it drive purely on electricity?
-Q129: What is a Full Hybrid Electric Vehicle (HEV) and does it require external plug-in charging?
-Q130: What is a Plug-in Hybrid Electric Vehicle (PHEV) and what are its key operational advantages?
-Q131: What is a Battery Electric Vehicle (BEV / Pure EV) and how is it powered?
-Q132: What is a Fuel Cell Electric Vehicle (FCEV) and what fuel does it use?
-Q133: What is the difference between Horsepower (HP) and Torque (Nm)?
-Q134: How is acceleration (0 to 100 km/h) evaluated across performance and standard vehicles?
-Q135: What does usable battery capacity (kWh) mean in electric vehicles?
-Q136: What is Wh/km energy efficiency and how does it affect EV driving range?
-Q137: How does Euro NCAP rate vehicle safety and what does a 5-Star rating signify?
-Q138: What are ADAS autonomy levels (Level 0 through Level 5)?
-Q139: How are vehicle market segments (Segment A through Segment F) classified?
-Q140: What are the main factors contributing to the Total Cost of Ownership for electric vs ICE vehicles?
 ========================================================================================================================================
