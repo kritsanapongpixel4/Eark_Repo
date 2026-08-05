@@ -48,8 +48,7 @@ CHUNK_SIZE = 600
 CHUNK_OVERLAP = 80
 
 # setting for the embedding model
-#multilingual model for TH language support
-EMBEDDING_MODEL_NAME = "paraphrase-multilingual-MiniLM-L12-v2"
+EMBEDDING_MODEL_NAME = "intfloat/e5-base-v2"
 
 # RAG setting for the retrieval process
 TOP_K = 1
