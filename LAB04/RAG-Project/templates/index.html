@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pad Krapao RAG Chatbot - ผัดกะเพราเลิฟเวอร์ 🌿🍳🌶️</title>
+    <title>Automotive RAG Chatbot - คลังความรู้เรื่องรถยนต์อัจฉริยะ 🚗⚡🏎️</title>
     <!-- Google Fonts: Kanit and Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +18,10 @@
         <!-- Sidebar Navigation / Information Panel -->
         <aside class="sidebar">
             <div class="brand">
-                <div class="brand-icon">🌿🍳</div>
+                <div class="brand-icon">🚗⚡</div>
                 <div class="brand-text">
-                    <h1>กะเพรา RAG Bot</h1>
-                    <span class="badge-tag">Pad Krapao AI</span>
+                    <h1>Car Knowledge RAG</h1>
+                    <span class="badge-tag">Automotive AI</span>
                 </div>
             </div>
 
@@ -55,19 +55,19 @@
             </div>
 
             <div class="quick-prompts-section">
-                <h3><i class="fa-solid fa-lightbulb"></i> คำถามยอดฮิต 🌶️</h3>
+                <h3><i class="fa-solid fa-lightbulb"></i> คำถามยอดฮิตเรื่องรถ 🚗</h3>
                 <div class="quick-prompt-buttons">
-                    <button class="prompt-btn" data-query="กำเนิดผัดกะเพรามีประวัติความเป็นมาอย่างไร?">
-                        <i class="fa-solid fa-book-open"></i> ประวัติผัดกะเพรา
+                    <button class="prompt-btn" data-query="What is an SUV and how does it differ from a sedan?">
+                        <i class="fa-solid fa-car-side"></i> SUV คืออะไร ต่างจาก Sedan อย่างไร?
                     </button>
-                    <button class="prompt-btn" data-query="สูตรการทำผัดกะเพราโบราณให้อร่อยต้องทำอย่างไร?">
-                        <i class="fa-solid fa-fire-burner"></i> สูตรเด็ดกะเพราโบราณ
+                    <button class="prompt-btn" data-query="What are the specifications of Volkswagen Golf GTI?">
+                        <i class="fa-solid fa-gauge-high"></i> สเปก Volkswagen Golf GTI
                     </button>
-                    <button class="prompt-btn" data-query="ทำไมผัดกะเพราแท้ถึงไม่ควรใส่หอมใหญ่และถั่วฝักยาว?">
-                        <i class="fa-solid fa-pepper-hot"></i> ผัดกะเพราแท้ใส่อะไรบ้าง?
+                    <button class="prompt-btn" data-query="What is the difference between BEV, PHEV, and HEV?">
+                        <i class="fa-solid fa-bolt"></i> ความต่าง BEV, PHEV, HEV
                     </button>
-                    <button class="prompt-btn" data-query="ทำไมต้องใส่ใบกะเพราเป็นขั้นตอนสุดท้ายของการผัด?">
-                        <i class="fa-solid fa-leaf"></i> เคล็ดลับใบกะเพรา
+                    <button class="prompt-btn" data-query="Which cars have a 5-Star Euro NCAP safety rating?">
+                        <i class="fa-solid fa-shield-halved"></i> รถรุ่นไหนได้ความปลอดภัย 5 ดาว?
                     </button>
                 </div>
             </div>
@@ -84,8 +84,8 @@
             <!-- Top Navbar -->
             <header class="chat-header">
                 <div class="header-title">
-                    <h2><i class="fa-solid fa-utensils"></i> ถามตอบเรื่องผัดกะเพรา 🌿🍳</h2>
-                    <p>ระบบค้นหาคำตอบอัจฉริยะ (RAG System for Pad Krapao Lovers)</p>
+                    <h2><i class="fa-solid fa-car"></i> คลังความรู้และสเปกรถยนต์ 🚗⚡</h2>
+                    <p>ระบบค้นหาข้อมูลเรื่องรถอัจฉริยะ (Automotive RAG System)</p>
                 </div>
                 <div class="header-actions">
                     <span class="info-pill"><i class="fa-solid fa-shield-halved"></i> Retrieval-Based QA</span>
@@ -96,15 +96,15 @@
             <div class="chat-messages" id="chat-messages">
                 <!-- Welcome Bot Message -->
                 <div class="message bot-message">
-                    <div class="avatar">🌿</div>
+                    <div class="avatar">🚗</div>
                     <div class="message-content">
                         <div class="message-header">
-                            <span class="author">กะเพรา RAG Bot</span>
+                            <span class="author">Car Knowledge Bot</span>
                             <span class="time">เมื่อสักครู่</span>
                         </div>
                         <div class="message-body">
-                            <p>สวัสดีครับ! วันนี้อยากกินกะเพราอีกแล้วใช่มั้ย 🌿🍳🌶️🍚</p>
-                            <p>สงสัยเรื่องประวัติ สูตร เคล็ดลับ หรือวัตถุดิบผัดกะเพรา ถามมาได้เลยครับ!</p>
+                            <p>สวัสดีครับ! ยินดีต้อนรับสู่ระบบค้นหาข้อมูลเรื่องรถยนต์อัจฉริยะ 🚗⚡🏎️</p>
+                            <p>สามารถสอบถามสเปกรถรายรุ่น, ประเภทตัวถัง (SUV, Sedan, Hatchback), ระบบขับเคลื่อน (EV, Hybrid, PHEV), หรือศัพท์เทคนิคเรื่องรถได้เลยครับ!</p>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
 
             <!-- Typing Indicator (Hidden by default) -->
             <div class="typing-indicator" id="typing-indicator" style="display: none;">
-                <div class="avatar">🌿</div>
+                <div class="avatar">🚗</div>
                 <div class="typing-bubble">
                     <span class="dot"></span>
                     <span class="dot"></span>
@@ -125,14 +125,14 @@
             <div class="chat-input-area">
                 <form id="chat-form" class="chat-input-form">
                     <div class="input-wrapper">
-                        <input type="text" id="user-input" placeholder="ถามเกี่ยวกับผัดกะเพราที่นี่... (เช่น สูตรกะเพราหมูสับ, ประวัติกะเพรา)" autocomplete="off" required>
+                        <input type="text" id="user-input" placeholder="ถามเกี่ยวกับรถยนต์ที่นี่... (เช่น SUV คืออะไร, สเปก Golf GTI, รถ EV วิ่งได้เกิน 700 km)" autocomplete="off" required>
                         <button type="submit" id="send-btn" title="ส่งคำถาม">
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </div>
                 </form>
                 <div class="input-footer">
-                    <span><i class="fa-solid fa-circle-info"></i> ข้อมูลดึงมาจากคลังความรู้ `sex_q_a.txt` และ FAISS Database</span>
+                    <span><i class="fa-solid fa-circle-info"></i> ข้อมูลดึงมาจากคลังความรู้รถยนต์ 2025-2026 และ FAISS Vector Database</span>
                 </div>
             </div>
         </main>

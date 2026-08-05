@@ -55,14 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
     clearChatBtn.addEventListener('click', () => {
         chatMessages.innerHTML = `
             <div class="message bot-message">
-                <div class="avatar">🌿</div>
+                <div class="avatar">🚗</div>
                 <div class="message-content">
                     <div class="message-header">
-                        <span class="author">กะเพรา RAG Bot</span>
+                        <span class="author">Car Knowledge Bot</span>
                         <span class="time">${getCurrentTime()}</span>
                     </div>
                     <div class="message-body">
-                        <p>ล้างประวัติการสนทนาเรียบร้อยครับ อยากถามเกี่ยวกับผัดกะเพราเมนูไหนอีกสั่งมาได้เลย! 🌿🍳🌶️</p>
+                        <p>ล้างประวัติการสนทนาเรียบร้อยครับ สามารถสอบถามข้อมูลเรื่องรถยนต์เพิ่มเติมได้เลยครับ! 🚗⚡🏎️</p>
                     </div>
                 </div>
             </div>
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let resultsHtml = '';
         if (!results || results.length === 0) {
-            resultsHtml = '<p>ขออภัยครับ ไม่พบคำตอบที่เกี่ยวข้องในคลังความรู้ผัดกะเพรา 🌿</p>';
+            resultsHtml = '<p>ขออภัยครับ ไม่พบคำตอบที่เกี่ยวข้องในคลังความรู้เรื่องรถยนต์ 🚗</p>';
         } else {
             results.forEach((item) => {
                 const scoreClass = getScoreBadgeClass(item.score);
@@ -166,10 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         msgDiv.innerHTML = `
-            <div class="avatar">🌿</div>
+            <div class="avatar">🚗</div>
             <div class="message-content">
                 <div class="message-header">
-                    <span class="author">กะเพรา RAG Bot</span>
+                    <span class="author">Car Knowledge Bot</span>
                     <span class="time">${getCurrentTime()}</span>
                 </div>
                 <div class="message-body">
