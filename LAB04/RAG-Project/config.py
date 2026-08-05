@@ -27,9 +27,10 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 VECTOR_DB_DIR = os.path.join(BASE_DIR, "vector_db")
 
 # Data file of the knowledge base
-SOURCE_FILE = [os.path.join(DATA_DIR, "rag_pad_krapao.txt"),
-               os.path.join(DATA_DIR, "pad_krapao_50_questions.txt"),
-               os.path.join(DATA_DIR, "history_of_pad_krapao.txt")]
+SOURCE_FILE = [os.path.join(DATA_DIR, "car_dataset_kb_qa_questions.txt"),
+               os.path.join(DATA_DIR, "car_fundamentals_glossary_kb.txt"),
+               os.path.join(DATA_DIR, "CARS_DATASET.xlsx"),
+               os.path.join(DATA_DIR, "eu_and_jp_cars_dataset.txt")]
 
 # results intermediate files (outputs/)
 EXTRACTED_TEXT_FILE = os.path.join(OUTPUT_DIR, "extracted_text.json")
