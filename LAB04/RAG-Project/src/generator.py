@@ -5,8 +5,11 @@
 # Generate answers with an LLM from retrieved documents.
 # Disable USE_LLM to return retrieved text only.
 
+import json
 import os
 import re
+import urllib.request
+import urllib.error
 
 from openai import OpenAI
 
@@ -15,7 +18,7 @@ from src.prompt_templates import build_messages
 
 
 class LLM:
-    """เรียก Cloud LLM ผ่าน OpenAI-compatible API (Google Gemini / OpenAI / Groq / OpenRouter)"""
+    """เรียก Cloud LLM (รองรับทั้ง Google Gemini API ตรง และ OpenAI / Groq / OpenRouter)"""
 
     def __init__(self, provider=None):
         self.provider = provider or config.LLM_PROVIDER
@@ -28,23 +31,92 @@ class LLM:
         if not api_key and key_name and hasattr(config, key_name):
             api_key = getattr(config, key_name, "")
 
-        self.client = OpenAI(base_url=base_url, api_key=api_key or "no-key")
+        self.api_key = api_key.strip()
+        self.base_url = base_url
+
+        if self.provider != "gemini":
+            self.client = OpenAI(base_url=base_url, api_key=self.api_key or "no-key")
+        else:
+            self.client = None
+
+    def _call_gemini(self, prompt, timeout=15.0):
+        """เรียก Gemini REST API โดยตรง รวดเร็วและแม่นยำ ไม่ต้องพึ่งพา Proxy"""
+        models_to_try = [self.model, "gemini-3.6-flash", "gemini-2.5-flash", "gemini-flash-latest", "gemini-1.5-flash"]
+        # ลบโมเดลซ้ำ
+        models_to_try = list(dict.fromkeys(models_to_try))
+
+        last_error = None
+        for m in models_to_try:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={self.api_key}"
+            payload = json.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {
+                    "temperature": config.LLM_TEMPERATURE,
+                    "maxOutputTokens": config.LLM_MAX_TOKENS,
+                }
+            }).encode("utf-8")
+
+            req = urllib.request.Request(
+                url,
+                data=payload,
+                headers={"Content-Type": "application/json"}
+            )
+
+            try:
+                with urllib.request.urlopen(req, timeout=timeout) as response:
+                    data = json.loads(response.read().decode("utf-8"))
+                    candidates = data.get("candidates", [])
+                    if candidates:
+                        parts = candidates[0].get("content", {}).get("parts", [])
+                        if parts:
+                            self.model = m
+                            return parts[0].get("text", "").strip()
+            except urllib.error.HTTPError as e:
+                err_body = e.read().decode("utf-8")
+                last_error = f"HTTP {e.code}: {err_body}"
+            except Exception as e:
+                last_error = str(e)
+
+        raise RuntimeError(last_error or "Failed to call Gemini API")
 
     def check_connection(self):
-        """ตรวจสอบว่าสามารถเชื่อมต่อและใช้งาน LM API ได้จริงหรือไม่ ( timeout 3s )"""
+        """ตรวจสอบว่าสามารถเชื่อมต่อและใช้งาน LM API ได้จริงหรือไม่"""
+        if not self.api_key:
+            return False, "ยังไม่ได้ใส่ API Key ใน config.py"
+
         try:
-            # ทดสอบส่ง ping message สั้น ๆ พร้อม timeout 3.0s
-            self.client.chat.completions.create(
-                model=self.model,
-                messages=[{"role": "user", "content": "ping"}],
-                max_tokens=5,
-                timeout=3.0,
-            )
-            return True, f"เชื่อมต่อสำเร็จ ({self.provider} API - {self.model})"
+            if self.provider == "gemini":
+                ans = self._call_gemini("Ping! ตอบสั้นๆว่า OK", timeout=10.0)
+                if ans:
+                    return True, f"เชื่อมต่อสำเร็จ (Google Gemini - {self.model})"
+            else:
+                self.client.chat.completions.create(
+                    model=self.model,
+                    messages=[{"role": "user", "content": "ping"}],
+                    max_tokens=5,
+                    timeout=10.0,
+                )
+                return True, f"เชื่อมต่อสำเร็จ ({self.provider} API - {self.model})"
         except Exception as e:
             return False, f"ไม่สามารถเชื่อมต่อ {self.provider} API ({self.model}): {str(e)}"
 
+        return False, f"ไม่สามารถเชื่อมต่อ {self.provider} API"
+
     def chat(self, messages):
+        if self.provider == "gemini":
+            # รวม System และ User messages เป็น Prompt สำหรับ Gemini
+            full_prompt = ""
+            for msg in messages:
+                role = msg.get("role", "")
+                content = msg.get("content", "")
+                if role == "system":
+                    full_prompt += f"[คำสั่งระบบ]: {content}\n\n"
+                elif role == "user":
+                    full_prompt += f"{content}\n"
+                elif role == "assistant":
+                    full_prompt += f"[คำตอบเดิม]: {content}\n"
+            return self._call_gemini(full_prompt.strip())
+
         response = self.client.chat.completions.create(
             model=self.model,
             messages=messages,

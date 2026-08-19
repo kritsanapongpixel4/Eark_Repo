@@ -57,6 +57,10 @@ TOP_K = 3
 CANDIDATE_K = 20
 RRF_K = 60
 
+# Relevance threshold — ถ้า chunk ที่ดีที่สุดมี RRF score ต่ำกว่านี้
+# จะถือว่าไม่มีข้อมูลที่เกี่ยวข้อง และตอบว่าไม่พบข้อมูล
+RELEVANCE_SCORE_THRESHOLD = 0.005
+
 # Hybrid Retrieval Settings (BM25 + Dense RRF)
 USE_HYBRID = True
 USE_RERANK = False
@@ -82,7 +86,7 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")          # ใส่ Groq API Key �
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 
 LLM_PROVIDERS = {
-    "gemini": ("https://generativelanguage.googleapis.com/v1beta/openai/", "gemini-1.5-flash", "GEMINI_API_KEY"),
+    "gemini": ("https://generativelanguage.googleapis.com/v1beta/models/", "gemini-3.6-flash", "GEMINI_API_KEY"),
     "openai": ("https://api.openai.com/v1", "gpt-4o-mini", "OPENAI_API_KEY"),
     "groq": ("https://api.groq.com/openai/v1", "llama-3.3-70b-versatile", "GROQ_API_KEY"),
     "openrouter": ("https://openrouter.ai/api/v1", "meta-llama/llama-3.3-70b-instruct", "OPENROUTER_API_KEY"),

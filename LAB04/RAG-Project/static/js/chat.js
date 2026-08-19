@@ -12,35 +12,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalChunksEl = document.getElementById('total-chunks');
     const promptButtons = document.querySelectorAll('.prompt-btn');
 
-    // Fetch initial status from server
+    // ─── Status Check ─────────────────────────────
     async function checkServerStatus() {
         try {
             const res = await fetch('/api/status');
             const data = await res.json();
             if (data.status === 'ok' && data.ready) {
                 systemStatusDot.classList.add('active');
-                systemStatusText.innerText = 'ระบบ RAG พร้อมใช้งาน';
-                modelNameEl.innerText = data.model || 'MiniLM-L12-v2';
-                totalChunksEl.innerText = `${data.total_chunks} Chunks`;
+                systemStatusText.innerText = 'system ready';
+                if (modelNameEl) modelNameEl.innerText = (data.model || 'e5-base-v2').replace('intfloat/', '');
+                if (totalChunksEl) totalChunksEl.innerText = `${data.total_chunks.toLocaleString()} chunks`;
+
+                const retrievalEl = document.getElementById('retrieval-mode');
+                if (retrievalEl) retrievalEl.innerText = data.bm25_enabled ? 'Hybrid BM25+Dense' : 'Dense only';
+
+                const llmEl = document.getElementById('llm-model-name');
+                if (llmEl) {
+                    if (data.llm_connected) {
+                        llmEl.innerText = `${data.llm_provider} // ${(data.llm_model || '').split('/').pop()}`;
+                        llmEl.style.color = '#4ade80';
+                    } else {
+                        llmEl.innerText = 'fallback (no key)';
+                        llmEl.style.color = '#facc15';
+                    }
+                }
             } else {
                 systemStatusDot.classList.remove('active');
-                systemStatusText.innerText = 'ระบบเวกเตอร์ฐานข้อมูลไม่พร้อม';
+                systemStatusText.innerText = 'index not found';
             }
         } catch (err) {
-            console.error('Status check error:', err);
+            console.error('Status error:', err);
             systemStatusDot.classList.remove('active');
-            systemStatusText.innerText = 'ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์';
+            systemStatusText.innerText = 'server unreachable';
         }
     }
 
     checkServerStatus();
 
-    // Top-K Slider listener
+    // ─── Slider ───────────────────────────────────
     topKSlider.addEventListener('input', (e) => {
         topKVal.innerText = e.target.value;
     });
 
-    // Quick Prompt Buttons listener
+    // ─── Quick Prompts ────────────────────────────
     promptButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const query = btn.getAttribute('data-query');
@@ -51,187 +65,189 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Clear Chat history
+    // ─── Clear Chat ───────────────────────────────
     clearChatBtn.addEventListener('click', () => {
         chatMessages.innerHTML = `
             <div class="message bot-message">
-                <div class="avatar">🚗</div>
+                <div class="avatar"></div>
                 <div class="message-content">
                     <div class="message-header">
-                        <span class="author">Car Knowledge Bot</span>
-                        <span class="time">${getCurrentTime()}</span>
+                        <span class="author">AutoRAG</span>
+                        <span class="time">${getTime()}</span>
                     </div>
                     <div class="message-body">
-                        <p>ล้างประวัติการสนทนาเรียบร้อยครับ สามารถสอบถามข้อมูลเรื่องรถยนต์เพิ่มเติมได้เลยครับ! 🚗⚡🏎️</p>
+                        <p>Session cleared. Ready for new queries.</p>
                     </div>
                 </div>
             </div>
         `;
     });
 
-    // Form Submit Event
+    // ─── Form Submit ──────────────────────────────
     chatForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const query = userInput.value.trim();
-        if (query) {
-            sendMessage(query);
-        }
+        const q = userInput.value.trim();
+        if (q) sendMessage(q);
     });
 
-    // Core function to send chat query
+    // ─── Core Send ────────────────────────────────
     async function sendMessage(queryText) {
-        // Append user message bubble
-        appendUserMessage(queryText);
+        appendUser(queryText);
         userInput.value = '';
-
-        // Show typing indicator
         showTyping(true);
-        scrollToBottom();
+        scrollDown();
 
         const topK = parseInt(topKSlider.value, 10) || 1;
 
         try {
             const response = await fetch('/api/chat', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    query: queryText,
-                    top_k: topK
-                })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: queryText, top_k: topK })
             });
 
             const data = await response.json();
             showTyping(false);
 
             if (data.status === 'success') {
-                appendBotResults(data.results);
+                appendBotResponse(data);
             } else {
-                appendErrorMessage(data.message || 'เกิดข้อผิดพลาดในการดึงข้อมูล');
+                appendError(data.message || 'Retrieval failed');
             }
         } catch (error) {
             console.error('Chat error:', error);
             showTyping(false);
-            appendErrorMessage('ไม่สามารถติดต่อเซิร์ฟเวอร์ RAG ได้ กรุณาตรวจสอบว่าเซิร์ฟเวอร์ทำงานอยู่');
+            appendError('Connection to RAG server lost');
         }
 
-        scrollToBottom();
+        scrollDown();
     }
 
-    function appendUserMessage(text) {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = 'message user-message';
-        msgDiv.innerHTML = `
-            <div class="avatar">👤</div>
+    // ─── Render: User Message ─────────────────────
+    function appendUser(text) {
+        const div = document.createElement('div');
+        div.className = 'message user-message';
+        div.innerHTML = `
+            <div class="avatar"></div>
             <div class="message-content">
                 <div class="message-header">
-                    <span class="author">คุณ</span>
-                    <span class="time">${getCurrentTime()}</span>
+                    <span class="author">you</span>
+                    <span class="time">${getTime()}</span>
                 </div>
                 <div class="message-body">
-                    <p>${escapeHtml(text)}</p>
+                    <p>${esc(text)}</p>
                 </div>
             </div>
         `;
-        chatMessages.appendChild(msgDiv);
+        chatMessages.appendChild(div);
     }
 
-    function appendBotResults(results) {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = 'message bot-message';
+    // ─── Render: Bot Response (LM answer + sources) ──
+    function appendBotResponse(data) {
+        const div = document.createElement('div');
+        div.className = 'message bot-message';
 
-        let resultsHtml = '';
-        if (!results || results.length === 0) {
-            resultsHtml = '<p>ขออภัยครับ ไม่พบคำตอบที่เกี่ยวข้องในคลังความรู้เรื่องรถยนต์ 🚗</p>';
-        } else {
-            results.forEach((item) => {
-                const scoreClass = getScoreBadgeClass(item.score);
-                const scorePercent = (item.score * 100).toFixed(1);
-                
-                resultsHtml += `
+        const mainAnswer = data.answer || (data.results && data.results[0] ? data.results[0].answer : 'No relevant data found in knowledge base.');
+        const results = data.results || [];
+
+        let sourcesBlock = '';
+        if (results.length > 0) {
+            let sourceItems = '';
+            results.forEach((item, idx) => {
+                const rrf = item.score ? item.score.toFixed(4) : '--';
+                const bm25 = item.bm25_score != null ? item.bm25_score.toFixed(2) : '--';
+                const dense = item.dense_score != null ? item.dense_score.toFixed(4) : '--';
+
+                sourceItems += `
                     <div class="result-card">
-                        <div class="result-card-header">
-                            <span class="score-badge ${scoreClass}">
-                                <i class="fa-solid fa-chart-line"></i> ความคล้ายคลึง: ${item.score} (${scorePercent}%)
-                            </span>
-                            <button class="copy-btn" onclick="copyText(this)" title="คัดลอกคำตอบ">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                            <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--accent); font-weight:600;">#${item.rank || idx + 1} rrf:${rrf}</span>
+                            <span style="font-family:var(--font-mono); font-size:0.62rem; color:var(--text-dim);">bm25:${bm25} dense:${dense}</span>
                         </div>
-                        <div class="result-answer">${escapeHtml(item.answer)}</div>
+                        <div class="result-answer">${esc(item.answer)}</div>
                     </div>
                 `;
             });
+
+            sourcesBlock = `
+                <div style="margin-top:12px; border-top:1px solid var(--border-dim); padding-top:8px;">
+                    <details>
+                        <summary style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-dim); font-weight:500; cursor:pointer;">
+                            retrieved sources (${results.length})
+                        </summary>
+                        <div style="margin-top:8px; display:flex; flex-direction:column; gap:6px;">
+                            ${sourceItems}
+                        </div>
+                    </details>
+                </div>
+            `;
         }
 
-        msgDiv.innerHTML = `
-            <div class="avatar">🚗</div>
+        const formatted = esc(mainAnswer).replace(/\n/g, '<br>');
+
+        div.innerHTML = `
+            <div class="avatar"></div>
             <div class="message-content">
                 <div class="message-header">
-                    <span class="author">Car Knowledge Bot</span>
-                    <span class="time">${getCurrentTime()}</span>
+                    <span class="author">AutoRAG</span>
+                    <span class="time">${getTime()}</span>
                 </div>
                 <div class="message-body">
-                    ${resultsHtml}
+                    <div class="result-answer" style="line-height:1.65;">${formatted}</div>
+                    ${sourcesBlock}
                 </div>
             </div>
         `;
-        chatMessages.appendChild(msgDiv);
+        chatMessages.appendChild(div);
     }
 
-    function appendErrorMessage(errorText) {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = 'message bot-message';
-        msgDiv.innerHTML = `
-            <div class="avatar">⚠️</div>
+    // ─── Render: Error ────────────────────────────
+    function appendError(text) {
+        const div = document.createElement('div');
+        div.className = 'message bot-message';
+        div.innerHTML = `
+            <div class="avatar"></div>
             <div class="message-content">
                 <div class="message-header">
-                    <span class="author">ระบบแจ้งเตือน</span>
-                    <span class="time">${getCurrentTime()}</span>
+                    <span class="author" style="color:var(--red);">error</span>
+                    <span class="time">${getTime()}</span>
                 </div>
-                <div class="message-body" style="border-color: rgba(239, 68, 68, 0.4);">
-                    <p style="color: #ef4444;"><i class="fa-solid fa-circle-exclamation"></i> ${escapeHtml(errorText)}</p>
+                <div class="message-body" style="border-color:rgba(248,113,113,0.3);">
+                    <p style="color:var(--red); font-family:var(--font-mono); font-size:0.82rem;">${esc(text)}</p>
                 </div>
             </div>
         `;
-        chatMessages.appendChild(msgDiv);
+        chatMessages.appendChild(div);
     }
 
+    // ─── Utilities ────────────────────────────────
     function showTyping(show) {
         typingIndicator.style.display = show ? 'flex' : 'none';
     }
 
-    function scrollToBottom() {
+    function scrollDown() {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    function getCurrentTime() {
-        const now = new Date();
-        return now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' });
+    function getTime() {
+        return new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' });
     }
 
-    function getScoreBadgeClass(score) {
-        if (score >= 0.7) return 'score-high';
-        if (score >= 0.4) return 'score-medium';
-        return 'score-low';
+    function esc(text) {
+        const d = document.createElement('div');
+        d.innerText = text;
+        return d.innerHTML;
     }
 
-    function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.innerText = text;
-        return div.innerHTML;
-    }
-
-    // Global copy handler
+    // ─── Copy handler ─────────────────────────────
     window.copyText = function(btn) {
         const card = btn.closest('.result-card');
         const answer = card.querySelector('.result-answer').innerText;
         navigator.clipboard.writeText(answer).then(() => {
-            btn.innerHTML = '<i class="fa-solid fa-check" style="color: #10b981;"></i>';
+            btn.innerHTML = '<i class="fa-solid fa-check" style="color:var(--green);"></i>';
             setTimeout(() => {
                 btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
-            }, 2000);
+            }, 1500);
         });
     };
 });

@@ -3,142 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automotive RAG Chatbot - คลังความรู้เรื่องรถยนต์อัจฉริยะ 🚗⚡🏎️</title>
-    <!-- Google Fonts: Kanit and Outfit -->
+    <title>AutoRAG — Automotive Knowledge Engine</title>
+    <meta name="description" content="Hybrid RAG retrieval system for automotive knowledge base. BM25 + Dense Vector + LM synthesis.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="app-container">
-        <!-- Sidebar Navigation / Information Panel -->
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="brand">
-                <div class="brand-icon">🚗⚡</div>
+                <div class="brand-icon"></div>
                 <div class="brand-text">
-                    <h1>Car Knowledge RAG</h1>
-                    <span class="badge-tag">Automotive AI</span>
+                    <h1>AutoRAG</h1>
+                    <span class="badge-tag">hybrid retrieval engine</span>
                 </div>
             </div>
 
             <div class="status-card">
                 <div class="status-header">
                     <span class="pulse-dot active" id="system-status-dot"></span>
-                    <span id="system-status-text">กำลังเชื่อมต่อระบบ...</span>
+                    <span id="system-status-text">initializing...</span>
                 </div>
                 <div class="status-details">
                     <div class="stat-item">
-                        <span class="stat-label"><i class="fa-solid fa-cube"></i> Embedding Model</span>
-                        <span class="stat-value" id="model-name">MiniLM-L12-v2</span>
+                        <span class="stat-label"><i class="fa-solid fa-layer-group"></i> Retrieval</span>
+                        <span class="stat-value" id="retrieval-mode">Hybrid BM25+Dense</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-label"><i class="fa-solid fa-database"></i> FAISS Chunks</span>
-                        <span class="stat-value" id="total-chunks">-- Chunks</span>
+                        <span class="stat-label"><i class="fa-solid fa-cube"></i> Embeddings</span>
+                        <span class="stat-value" id="model-name">e5-base-v2</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label"><i class="fa-solid fa-database"></i> Index</span>
+                        <span class="stat-value" id="total-chunks">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label"><i class="fa-solid fa-bolt"></i> Generator</span>
+                        <span class="stat-value" id="llm-model-name">pending</span>
                     </div>
                 </div>
             </div>
 
             <div class="controls-card">
-                <h3><i class="fa-solid fa-sliders"></i> ตั้งค่าการค้นหา</h3>
+                <h3><i class="fa-solid fa-sliders"></i> Parameters</h3>
                 <div class="setting-group">
                     <div class="setting-label">
-                        <span>จำนวนผลลัพธ์ (Top-K)</span>
+                        <span>Top-K Results</span>
                         <span id="top-k-val" class="setting-badge">1</span>
                     </div>
                     <input type="range" id="top-k-slider" min="1" max="5" value="1" step="1">
-                    <p class="setting-hint">แสดงผลคำตอบที่ตรงที่สุด k อันดับแรก</p>
+                    <p class="setting-hint">Number of retrieved chunks to return</p>
                 </div>
             </div>
 
             <div class="quick-prompts-section">
-                <h3><i class="fa-solid fa-lightbulb"></i> คำถามยอดฮิตเรื่องรถ 🚗</h3>
+                <h3><i class="fa-solid fa-terminal"></i> Quick queries</h3>
                 <div class="quick-prompt-buttons">
                     <button class="prompt-btn" data-query="What is an SUV and how does it differ from a sedan?">
-                        <i class="fa-solid fa-car-side"></i> SUV คืออะไร ต่างจาก Sedan อย่างไร?
+                        <i class="fa-solid fa-angle-right"></i> SUV vs Sedan differences
                     </button>
                     <button class="prompt-btn" data-query="What are the specifications of Volkswagen Golf GTI?">
-                        <i class="fa-solid fa-gauge-high"></i> สเปก Volkswagen Golf GTI
+                        <i class="fa-solid fa-angle-right"></i> VW Golf GTI full specs
                     </button>
                     <button class="prompt-btn" data-query="What is the difference between BEV, PHEV, and HEV?">
-                        <i class="fa-solid fa-bolt"></i> ความต่าง BEV, PHEV, HEV
+                        <i class="fa-solid fa-angle-right"></i> BEV / PHEV / HEV breakdown
                     </button>
                     <button class="prompt-btn" data-query="Which cars have a 5-Star Euro NCAP safety rating?">
-                        <i class="fa-solid fa-shield-halved"></i> รถรุ่นไหนได้ความปลอดภัย 5 ดาว?
+                        <i class="fa-solid fa-angle-right"></i> 5-star NCAP rated vehicles
                     </button>
                 </div>
             </div>
 
             <div class="sidebar-footer">
                 <button id="clear-chat-btn" class="btn-secondary">
-                    <i class="fa-solid fa-trash-can"></i> ล้างประวัติการคุย
+                    <i class="fa-solid fa-rotate-left"></i> Reset session
                 </button>
             </div>
         </aside>
 
-        <!-- Main Chat Area -->
+        <!-- Main Chat -->
         <main class="chat-main">
-            <!-- Top Navbar -->
             <header class="chat-header">
                 <div class="header-title">
-                    <h2><i class="fa-solid fa-car"></i> คลังความรู้และสเปกรถยนต์ 🚗⚡</h2>
-                    <p>ระบบค้นหาข้อมูลเรื่องรถอัจฉริยะ (Automotive RAG System)</p>
+                    <h2><i class="fa-solid fa-magnifying-glass-chart"></i> Automotive Knowledge Base</h2>
+                    <p>hybrid search // bm25 + faiss dense + rrf reranking</p>
                 </div>
                 <div class="header-actions">
-                    <span class="info-pill"><i class="fa-solid fa-shield-halved"></i> Retrieval-Based QA</span>
+                    <span class="info-pill"><i class="fa-solid fa-shield-halved"></i> RAG Pipeline</span>
                 </div>
             </header>
 
-            <!-- Messages Transcript Container -->
             <div class="chat-messages" id="chat-messages">
-                <!-- Welcome Bot Message -->
                 <div class="message bot-message">
-                    <div class="avatar">🚗</div>
+                    <div class="avatar"></div>
                     <div class="message-content">
                         <div class="message-header">
-                            <span class="author">Car Knowledge Bot</span>
-                            <span class="time">เมื่อสักครู่</span>
+                            <span class="author">AutoRAG</span>
+                            <span class="time">system</span>
                         </div>
                         <div class="message-body">
-                            <p>สวัสดีครับ! ยินดีต้อนรับสู่ระบบค้นหาข้อมูลเรื่องรถยนต์อัจฉริยะ 🚗⚡🏎️</p>
-                            <p>สามารถสอบถามสเปกรถรายรุ่น, ประเภทตัวถัง (SUV, Sedan, Hatchback), ระบบขับเคลื่อน (EV, Hybrid, PHEV), หรือศัพท์เทคนิคเรื่องรถได้เลยครับ!</p>
+                            <p>Automotive knowledge retrieval system online. Query vehicle specs, powertrain types, body classifications, EV technologies, or safety ratings.</p>
+                            <p style="color: var(--text-dim); font-size: 0.82rem; margin-top: 4px;">Hybrid BM25 + Dense Vector search with Reciprocal Rank Fusion.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Typing Indicator (Hidden by default) -->
             <div class="typing-indicator" id="typing-indicator" style="display: none;">
-                <div class="avatar">🚗</div>
+                <div class="avatar"></div>
                 <div class="typing-bubble">
                     <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
-                    <span class="typing-text">กำลังค้นหาข้อมูลใน Vector DB...</span>
+                    <span class="typing-text">retrieving from vector index...</span>
                 </div>
             </div>
 
-            <!-- Input Bar -->
             <div class="chat-input-area">
                 <form id="chat-form" class="chat-input-form">
                     <div class="input-wrapper">
-                        <input type="text" id="user-input" placeholder="ถามเกี่ยวกับรถยนต์ที่นี่... (เช่น SUV คืออะไร, สเปก Golf GTI, รถ EV วิ่งได้เกิน 700 km)" autocomplete="off" required>
-                        <button type="submit" id="send-btn" title="ส่งคำถาม">
-                            <i class="fa-solid fa-paper-plane"></i>
+                        <input type="text" id="user-input" placeholder="Query automotive knowledge base..." autocomplete="off" required>
+                        <button type="submit" id="send-btn" title="Execute query">
+                            <i class="fa-solid fa-arrow-up"></i>
                         </button>
                     </div>
                 </form>
                 <div class="input-footer">
-                    <span><i class="fa-solid fa-circle-info"></i> ข้อมูลดึงมาจากคลังความรู้รถยนต์ 2025-2026 และ FAISS Vector Database</span>
+                    <span>retrieval source: automotive knowledge base 2025-2026 // faiss + bm25 hybrid index</span>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- Script JavaScript -->
     <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
 </body>
 </html>
