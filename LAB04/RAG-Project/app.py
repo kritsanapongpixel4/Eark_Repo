@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(BASE_DIR)
 
 import config
-from src.retriever import Retriever
+from src.rag_pipeline import RAGPipeline
 
 # Configure Unicode support for console
 if hasattr(sys.stdout, "reconfigure"):
@@ -18,19 +18,15 @@ if hasattr(sys.stdout, "reconfigure"):
 app = Flask(__name__, template_folder=os.path.join(BASE_DIR, "templates"), static_folder=os.path.join(BASE_DIR, "static"))
 CORS(app)
 
-# Global retriever instance
-retriever = None
+# Global RAG Pipeline instance
+rag_pipeline = None
 
 def init_retriever():
-    global retriever
+    global rag_pipeline
     if os.path.exists(config.FAISS_INDEX_FILE) and os.path.exists(config.CHUNK_STORE_FILE):
-        print("[RAG-Web] Loading FAISS index and Chunk store...")
-        retriever = Retriever(
-            model_name=config.EMBEDDING_MODEL_NAME,
-            index_path=config.FAISS_INDEX_FILE,
-            chunk_store_path=config.CHUNK_STORE_FILE,
-        )
-        print(f"[RAG-Web] System ready! Total Chunks: {len(retriever.chunks)}")
+        print("[RAG-Web] Initializing RAG Pipeline (BM25 + FAISS + LM Generator)...")
+        rag_pipeline = RAGPipeline()
+        print(f"[RAG-Web] System ready! BM25 Hybrid: {config.USE_HYBRID} | Total Chunks: {len(rag_pipeline.retriever.chunks)}")
     else:
         print("[RAG-Web] Warning: Vector DB files not found. Please build vector DB first.")
 
@@ -40,22 +36,31 @@ def index():
 
 @app.route("/api/status", methods=["GET"])
 def get_status():
-    if retriever is None:
+    if rag_pipeline is None:
         return jsonify({
             "status": "error",
             "ready": False,
-            "message": "Vector database not initialized"
+            "message": "RAG pipeline not initialized"
         }), 500
+
+    is_llm_ok, llm_msg = rag_pipeline.generator.llm.check_connection()
+
     return jsonify({
         "status": "ok",
         "ready": True,
         "model": config.EMBEDDING_MODEL_NAME,
-        "total_chunks": len(retriever.chunks)
+        "total_chunks": len(rag_pipeline.retriever.chunks),
+        "bm25_enabled": config.USE_HYBRID,
+        "bm25_index_exists": os.path.exists(config.BM25_INDEX_FILE),
+        "llm_connected": is_llm_ok,
+        "llm_status": llm_msg,
+        "llm_provider": getattr(rag_pipeline.generator.llm, "provider", "none"),
+        "llm_model": getattr(rag_pipeline.generator.llm, "model", "none"),
     })
 
 @app.route("/api/chat", methods=["POST"])
 def chat():
-    if retriever is None:
+    if rag_pipeline is None:
         return jsonify({
             "status": "error",
             "message": "Retrieval system is not initialized. Please ensure vector DB exists."
@@ -72,23 +77,30 @@ def chat():
         }), 400
 
     try:
-        results = retriever.retrieve(query, top_k=top_k)
+        rag_result = rag_pipeline.ask(query, top_k=top_k)
+        retrieved_chunks = rag_result.get("retrieved", [])
         
-        # Clean and format response objects
+        # Clean and format response objects for UI
         formatted_results = []
-        for rank, item in enumerate(results, start=1):
+        for rank, item in enumerate(retrieved_chunks, start=1):
             formatted_results.append({
                 "rank": rank,
-                "score": round(item.get("score", 0.0), 4),
+                "score": round(float(item.get("score", 0.0)), 4),
+                "bm25_score": round(float(item.get("bm25_score", 0.0)), 4) if item.get("bm25_score") is not None else None,
+                "dense_score": round(float(item.get("dense_score", 0.0)), 4) if item.get("dense_score") is not None else None,
                 "answer": item.get("answer", item.get("text", "")),
                 "question": item.get("question", ""),
-                "category": item.get("category", "ทั่วไป")
+                "category": item.get("category", "Automotive Knowledge")
             })
 
         return jsonify({
             "status": "success",
             "query": query,
             "top_k": top_k,
+            "answer": rag_result.get("answer", ""),
+            "llm_connected": rag_result.get("llm_connected", False),
+            "llm_status": rag_result.get("llm_status", ""),
+            "timings": rag_result.get("timings", {}),
             "results": formatted_results
         })
     except Exception as e:
