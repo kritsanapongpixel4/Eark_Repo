@@ -1,37 +1,53 @@
-📌 สรุปข้อกำหนดการส่งงานรายวิชา (GitHub Repository)
-1. การจัดโครงสร้าง Repository และโฟลเดอร์
-Repository: นักศึกษาทุกคนต้องมี Repository ส่วนตัวคนละ 1 แห่งสำหรับใช้ตลอดทั้งรายวิชา
-
-Directory Structure: สามารถสร้างโฟลเดอร์ LAB01 ถึง LAB10 และ Final-Project ไว้ล่วงหน้าได้เลย
-
-องค์ประกอบภายในโฟลเดอร์แต่ละ LAB:
-
-Source Code: ไฟล์โค้ดนามสกุล .ipynb หรือ .py
-
-Dataset: ไฟล์ข้อมูลที่ใช้ในการทดลอง (ถ้ามี)
-
-Report: รายงานผลการทดลองนามสกุล .pdf (ถ้ามี)
-
-README.md: ไฟล์อธิบายรายละเอียดและข้อมูลของ LAB นั้นๆ
-
-2. การอ้างอิงแหล่งที่มาและจริยธรรมทางวิชาการ (Academic Integrity)
-การใช้งานข้อมูลภายนอก: สามารถเลือกใช้ Dataset, Source Code, หรือ Model จาก Open Dataset, งานวิจัย หรือแหล่งข้อมูลสาธารณะทั่วโลกได้อย่างอิสระ
-
-เงื่อนไขการอ้างอิง (Citation): หากมีการนำผลงานหรือข้อมูลของผู้อื่นมาใช้ ต้องใส่อ้างอิงหรือแนบ URL ต้นฉบับไว้ในไฟล์ README.md หรือรายงานทุกครั้ง
-
-ข้อห้ามสำคัญ:
-
-ห้ามใช้ข้อมูลที่ผิดกฎหมาย ละเมิดลิขสิทธิ์ หรือข้อมูลส่วนบุคคล (Personal Data) ที่ไม่ได้รับอนุญาต
-
-การนำผลงานผู้อื่นมาใช้โดยไม่อ้างอิง ถือเป็นการผิดจริยธรรมทางวิชาการและส่งผลต่อการประเมินเกรด
-
-3. เกณฑ์การส่งงานและการประเมินผล
-ขั้นตอนการส่งงาน:
-
-Commit และ Push งานขึ้น GitHub ให้เรียบร้อยก่อนวัน-เวลาที่กำหนดส่ง
-
-คัดลอก ลิงก์ Repository หรือ ลิงก์โฟลเดอร์ LAB ส่งผ่านระบบที่อาจารย์แจ้ง
-
-หลักเกณฑ์การตรวจงาน: อาจารย์จะประเมินผลโดยพิจารณาจาก Commit History (ประวัติการบันทึกงาน) และ เวลาที่ Push ขึ้น GitHub ประกอบด้วย
-
-ข้อแนะนำ: ควร Commit งานอย่างสม่ำเสมอระหว่างการพัฒนา เพื่อแสดงลำดับขั้นตอนการทำงานอย่างเป็นระบบ และป้องกันข้อมูลสูญหาย (ไม่ควรรอ Commit เพียงครั้งเดียวก่อนส่ง)
+RAG-Project/
+│
+├── data/
+│   ├── data.txt
+│   └── data.json                     # Evaluation set
+│
+├── outputs/
+│   ├── extracted_text.json                 # Parsed Q&A pairs with line numbers
+│   ├── chunks.json                         # 541 text chunks with metadata
+│   ├── embeddings.npy                      # Embedding vectors
+│   ├── retrieval_results.json              # Top-k retrieval results
+│   ├── eval_retrieval.json                 ⭐ Retrieval scores per configuration
+│   └── eval_generation.json                ⭐ Answer quality scores
+│
+├── vector_db/
+│   ├── document.index                      # FAISS index — dense semantic search
+│   ├── bm25_index.pkl                      ⭐ BM25 index — exact-token search
+│   ├── chunk_store.json                    # Chunks + metadata, aligned with FAISS order
+│   └── index_meta.json                     ⭐ Fingerprint of the dataset this index was built from
+│
+├── labs/
+│   ├── lab01_extract_text.py               # Extract text from the source file
+│   ├── lab02_chunking.py                   # Split text into chunks
+│   ├── lab03_create_embeddings.py          # Generate embeddings
+│   ├── lab04_create_vector_db.py           # Build the FAISS vector database
+│   ├── lab05_query_embedding.py            # Create query embeddings
+│   ├── lab06_similarity_search.py          # Retrieve top-k relevant chunks
+│   └── lab07_complete_retrieval.py         # Complete retrieval pipeline
+│
+├── src/
+│   ├── document_loader.py                  # File loading and text extraction
+│   ├── text_splitter.py                    # Text chunking
+│   ├── embedding_model.py                  # Embedding model
+│   ├── vector_store.py                     # FAISS vector database
+│   ├── index_meta.py                       ⭐ Detect when the index is stale vs the dataset
+│   ├── retriever.py                        # Dense-only retrieval
+│   ├── hybrid_retriever.py                 ⭐ BM25 + Dense + RRF Fusion
+│   ├── rerankers.py                        ⭐ Cross-Encoder Reranking
+│   ├── query_transform.py                  ⭐ Query Rewrite, Multi-Query, HyDE
+│   ├── prompt_templates.py                 ⭐ Prompt Templates
+│   ├── generator.py                        ⭐ LLM Answer Generation
+│   ├── memory.py                           ⭐ Conversation History
+│   └── rag_pipeline.py                     ⭐ End-to-End RAG Pipeline
+│
+├── evaluation/
+│   ├── metrics.py                          ⭐ Hit@k, Recall@k, Precision@k, MRR, nDCG
+│   ├── build_golden_set.py                 ⭐ Generate the evaluation set
+│   ├── eval_retrieval.py                   ⭐ Compare retrieval configurations
+│   └── eval_generation.py                  ⭐ Evaluate answer quality
+│
+├── config.py                               # Project configuration
+├── build_index.py                          # Build all indexes
+└── main.py                                 # Run the RAG system

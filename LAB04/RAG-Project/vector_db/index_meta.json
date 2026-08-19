@@ -1,13 +1,27 @@
 {
-  "file": {
-    "size": 434781,
-    "mtime": 1784623080
+  "files": {
+    "car_fundamentals_glossary_kb.txt": {
+      "size": 30495,
+      "mtime": 1785915589
+    },
+    "CARS_DATASET_RAG.txt": {
+      "size": 4038672,
+      "mtime": 1787049878
+    },
+    "eu_and_jp_cars_dataset.txt": {
+      "size": 68433,
+      "mtime": 1785903785
+    }
   },
   "settings": {
-    "CHUNK_SIZE": 400,
-    "CHUNK_OVERLAP": 50,
-    "EMBEDDING_MODEL_NAME": "paraphrase-multilingual-MiniLM-L12-v2"
+    "CHUNK_SIZE": 600,
+    "CHUNK_OVERLAP": 80,
+    "EMBEDDING_MODEL_NAME": "intfloat/e5-base-v2"
   },
-  "n_chunks": 541,
-  "source_file": "sex_q_a.txt"
+  "n_chunks": 60499,
+  "source_files": [
+    "car_fundamentals_glossary_kb.txt",
+    "CARS_DATASET_RAG.txt",
+    "eu_and_jp_cars_dataset.txt"
+  ]
 }
