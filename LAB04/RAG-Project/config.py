@@ -76,7 +76,7 @@ LLM_PROVIDER = os.getenv("LLM_PROVIDER", "gemini")  # ตัวเลือก: 
 LLM_MODEL = os.getenv("LLM_MODEL", None)
 
 # API Keys (ใส่ Key ตรงนี้ได้เลย หรือจะใส่ผ่าน Environment Variable ก็ได้)
-GEMINI_API_KEY = os.getenv("AQ.Ab8RN6Iuhg_Nd7Dp8iPFKrZjKtc7L1BsLaizrsNV3XLen6Qm3w", "")      # ใส่ Google Gemini API Key ที่นี่
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AQ.Ab8RN6Iuhg_Nd7Dp8iPFKrZjKtc7L1BsLaizrsNV3XLen6Qm3w")      # Google Gemini API Key
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")      # ใส่ OpenAI API Key ที่นี่
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")          # ใส่ Groq API Key ที่นี่
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
