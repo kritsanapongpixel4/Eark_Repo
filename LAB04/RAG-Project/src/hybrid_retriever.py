@@ -120,10 +120,14 @@ class HybridRetriever:
         # โหลด BM25 เฉพาะเมื่อเปิดใช้
         self.bm25 = load_bm25(self.chunks) if config.USE_HYBRID else None
 
-    def dense_search(self, query, top_k):  # ค้นด้วยความหมาย — คืน
-        
+    def dense_search(self, query, top_k):  # ค้นด้วยความหมาย — คืน [(ตำแหน่ง, คะแนน)]
         query_vector = self.model.encode_query(query)
-        return self.store.search(query_vector, top_k)
+        scores, indices = self.store.search(query_vector, top_k)
+        hits = []
+        for score, idx in zip(scores, indices):
+            if idx != -1:
+                hits.append((int(idx), float(score)))
+        return hits
 
     def bm25_search(self, query, top_k):  # ค้นด้วยคำตรงตัว — คืน [(ตำแหน่ง, คะแนน),
         if self.bm25 is None:

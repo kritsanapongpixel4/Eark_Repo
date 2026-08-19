@@ -8,12 +8,21 @@ model that converts text into embeddings, where semantically similar texts will 
 
 """
 
+import config
 from sentence_transformers import SentenceTransformer
 
 class EmbeddingModel:
-    def __init__(self, model_name):
+    def __init__(self, model_name=None):
+        model_name = model_name or config.EMBEDDING_MODEL_NAME
         print(f"[embedding_model] Loading model: {model_name} ...")
-        self.model = SentenceTransformer(model_name)
+        try:
+            # โหลดจาก Local Cache ในเครื่องโดยตรงก่อน ป้องกันปัญหาเน็ตหลุด/บล็อก
+            self.model = SentenceTransformer(model_name, local_files_only=True)
+        except Exception:
+            try:
+                self.model = SentenceTransformer(model_name)
+            except Exception:
+                self.model = SentenceTransformer(model_name, local_files_only=True)
         print("[embedding_model] Model loaded successfully.")
 
     def encode(self, texts):

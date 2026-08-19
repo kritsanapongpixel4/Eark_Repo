@@ -15,21 +15,36 @@ from src.prompt_templates import build_messages
 
 
 class LLM:
-    """เรียก LLM ผ่านไลบรารี openai (ใช้ได้ทั้ง ollama / openai / gemini)"""
+    """เรียก Cloud LLM ผ่าน OpenAI-compatible API (Google Gemini / OpenAI / Groq / OpenRouter)"""
 
-    def __init__(self):
-        base_url, default_model, key_name = config.LLM_PROVIDERS[config.LLM_PROVIDER]
+    def __init__(self, provider=None):
+        self.provider = provider or config.LLM_PROVIDER
+        base_url, default_model, key_name = config.LLM_PROVIDERS.get(
+            self.provider, config.LLM_PROVIDERS["gemini"]
+        )
 
         self.model = config.LLM_MODEL or default_model
+        api_key = os.getenv(key_name) if key_name else ""
+        if not api_key and key_name and hasattr(config, key_name):
+            api_key = getattr(config, key_name, "")
 
-        # Ollama ไม่ต้องใช้ key 
-        api_key = os.getenv(key_name) if key_name else "ollama-ไม่ใช้-key"
+        self.client = OpenAI(base_url=base_url, api_key=api_key or "no-key")
 
-        self.client = OpenAI(base_url=base_url, api_key=api_key)
-        #print(f"[llm] use {config.LLM_PROVIDER} · model {self.model}")
+    def check_connection(self):
+        """ตรวจสอบว่าสามารถเชื่อมต่อและใช้งาน LM API ได้จริงหรือไม่ ( timeout 3s )"""
+        try:
+            # ทดสอบส่ง ping message สั้น ๆ พร้อม timeout 3.0s
+            self.client.chat.completions.create(
+                model=self.model,
+                messages=[{"role": "user", "content": "ping"}],
+                max_tokens=5,
+                timeout=3.0,
+            )
+            return True, f"เชื่อมต่อสำเร็จ ({self.provider} API - {self.model})"
+        except Exception as e:
+            return False, f"ไม่สามารถเชื่อมต่อ {self.provider} API ({self.model}): {str(e)}"
 
     def chat(self, messages):
-        #แล้วคืนคำตอบเป็น string
         response = self.client.chat.completions.create(
             model=self.model,
             messages=messages,
@@ -40,56 +55,85 @@ class LLM:
 
 
 class NoLLM:
+    model = "No-LLM Fallback (Extracted Context)"
 
-    model = "don't use LLM"
+    def check_connection(self):
+        return False, "ยังไม่ได้ใส่ API Key (กรุณาใส่ GEMINI_API_KEY หรือ OPENAI_API_KEY ใน config.py)"
 
     def chat(self, messages):
         user_message = messages[-1]["content"]
 
-        # ดึงเนื้อหาบล็อก [1] ออกมาจาก prompt
-        parts = user_message.split("reference data :")
-        if len(parts) < 2:
-            return config.NO_CONTEXT_MESSAGE
+        # สกัดเนื้อหาอ้างอิงออกมาตอบเป็นคำตอบมาตรฐาน
+        if "ข้อมูลอ้างอิง:" in user_message:
+            parts = user_message.split("ข้อมูลอ้างอิง:")
+            context_part = parts[1].split("คำถามของผู้ใช้:")[0].strip()
+            if context_part:
+                lines = [line.strip() for line in context_part.split("\n\n") if line.strip()]
+                if lines:
+                    formatted_ans = "จากการสืบค้นฐานข้อมูลยานยนต์ ได้ข้อมูลดังนี้:\n\n"
+                    for idx, line in enumerate(lines[:3], start=1):
+                        formatted_ans += f"{line}\n"
+                    return formatted_ans.strip()
 
-        context = parts[1].split("Q of user")[0].strip()
-        first_block = context.split("\n\n")[0].replace("[1]", "").strip()
-
-        return f"{first_block} [1]" if first_block else config.NO_CONTEXT_MESSAGE
+        return config.NO_CONTEXT_MESSAGE
 
 
 def get_llm():
     if not config.USE_LLM:
         return NoLLM()
 
-    try:
-        return LLM()
-    except Exception as error:
-        print(f"[llm] Failed to use {config.LLM_PROVIDER}: {error}")
-        print("[llm] Falling back to retrieved text only.")
-        return NoLLM()
+    # ลองตามลำดับ: 1. provider ใน config 2. Gemini/OpenAI/Groq ถ้าระบุไว้ 3. Fallback
+    providers_to_try = [config.LLM_PROVIDER]
+    if (os.getenv("GEMINI_API_KEY") or getattr(config, "GEMINI_API_KEY", "")) and "gemini" not in providers_to_try:
+        providers_to_try.insert(0, "gemini")
+    if (os.getenv("OPENAI_API_KEY") or getattr(config, "OPENAI_API_KEY", "")) and "openai" not in providers_to_try:
+        providers_to_try.insert(0, "openai")
+    if (os.getenv("GROQ_API_KEY") or getattr(config, "GROQ_API_KEY", "")) and "groq" not in providers_to_try:
+        providers_to_try.insert(0, "groq")
+
+    for provider in providers_to_try:
+        try:
+            llm_inst = LLM(provider=provider)
+            is_ok, msg = llm_inst.check_connection()
+            if is_ok:
+                print(f"[LLM Status] {msg}")
+                return llm_inst
+            else:
+                print(f"[LLM Status] {msg}")
+        except Exception as error:
+            print(f"[LLM Error] {provider}: {error}")
+
+    print("[LLM Status] ⚠️ ไม่สามารถเชื่อมต่อกับบริการ LM ใด ๆ ได้ — ใช้โหมดสกัดคำตอบอ้างอิงชั่วคราว (Fallback Mode)")
+    return NoLLM()
 
 
 class Generator:
-    def __init__(self, llm):
-        self.llm = llm
+    def __init__(self, llm=None):
+        self.llm = llm or get_llm()
 
     def generate(self, question, chunks, history=""):
-
         # ค้นไม่เจออะไรเลย — ตอบว่าไม่รู้ ดีกว่าให้ LLM เดา
         if not chunks:
             return {
                 "answer": config.NO_CONTEXT_MESSAGE,
                 "sources": [],
                 "no_context": True,
+                "llm_connected": False,
             }
 
         messages = build_messages(question, chunks, history)
+        is_connected, status_msg = self.llm.check_connection()
 
         try:
-            answer = self.llm.chat(messages)
+            if is_connected:
+                answer = self.llm.chat(messages)
+            else:
+                answer = self.llm.chat(messages)
         except Exception as error:
-            #print(f"[llm] เรียกไม่สำเร็จ ({error}) — แสดงข้อมูลที่ค้นได้แทน")
-            answer = chunks[0]["answer"]
+            print(f"[LLM Generate Error] {error}")
+            # Fallback format: ใช้เนื้อหาจาก chunk ที่ค้นได้ดีที่สุดพร้อมอ้างอิง [1]
+            top_answer = chunks[0].get("answer") or chunks[0].get("text", "")
+            answer = f"ข้อมูลที่เกี่ยวข้องจากฐานข้อมูลยานยนต์ [1]:\n{top_answer}"
 
         if config.DISCLAIMER not in answer:
             answer = f"{answer}\n\n{config.DISCLAIMER}"
@@ -98,16 +142,20 @@ class Generator:
             "answer": answer.strip(),
             "sources": self.build_sources(chunks),
             "no_context": False,
+            "llm_connected": is_connected,
+            "llm_status": status_msg,
         }
 
-    def build_sources(self, chunks):    #  สร้างรายการแหล่งอ้างอิง ให้เลข [1] [2] ตรงกับที่อยู่ใน prompt
+    def build_sources(self, chunks):
         sources = []
         for number, chunk in enumerate(chunks, start=1):
             sources.append({
                 "n": number,
-                "chunk_id": chunk["chunk_id"],
-                "question": chunk["question"],
-                "line_no": chunk["line_no"],
-                "score": round(float(chunk["score"]), 4),
+                "chunk_id": chunk.get("chunk_id", f"c{number}"),
+                "question": chunk.get("question", ""),
+                "line_no": chunk.get("line_no", 0),
+                "score": round(float(chunk.get("score", 0.0)), 4),
+                "bm25_score": round(float(chunk.get("bm25_score", 0.0)), 4) if chunk.get("bm25_score") is not None else None,
+                "dense_score": round(float(chunk.get("dense_score", 0.0)), 4) if chunk.get("dense_score") is not None else None,
             })
         return sources

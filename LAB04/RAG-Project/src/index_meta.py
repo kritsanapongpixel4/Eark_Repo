@@ -18,21 +18,24 @@ import config
 TRACKED_SETTINGS = ["CHUNK_SIZE", "CHUNK_OVERLAP", "EMBEDDING_MODEL_NAME"]
 
 
-def get_current_state():  #านสถานะปัจจุบันของ dataset และค่าตั้ง
+def get_current_state():  # อ่านสถานะปัจจุบันของ dataset และค่าตั้ง
     file_info = {}
-    if os.path.exists(config.SOURCE_FILE):
-        stat = os.stat(config.SOURCE_FILE)
-        file_info = {"size": stat.st_size, "mtime": int(stat.st_mtime)}
+    sources = config.SOURCE_FILE if isinstance(config.SOURCE_FILE, list) else [config.SOURCE_FILE]
+    for src in sources:
+        if os.path.exists(src):
+            stat = os.stat(src)
+            file_info[os.path.basename(src)] = {"size": stat.st_size, "mtime": int(stat.st_mtime)}
 
-    settings = {name: getattr(config, name) for name in TRACKED_SETTINGS}
+    settings = {name: getattr(config, name, None) for name in TRACKED_SETTINGS}
 
-    return {"file": file_info, "settings": settings}
+    return {"files": file_info, "settings": settings}
 
 
 def save(n_chunks):  # บันทึกสถานะ
     state = get_current_state()
     state["n_chunks"] = n_chunks
-    state["source_file"] = os.path.basename(config.SOURCE_FILE)
+    sources = config.SOURCE_FILE if isinstance(config.SOURCE_FILE, list) else [config.SOURCE_FILE]
+    state["source_files"] = [os.path.basename(s) for s in sources]
 
     with open(config.INDEX_META_FILE, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=2)
