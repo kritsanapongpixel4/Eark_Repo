@@ -20,7 +20,7 @@ I create this repository for submitting assignments and coursework in subject Ad
 | 02. | LAB2 | ✅ Complete |
 | 03. | LAB3 | ✅ Complete |
 | 04. | LAB4 | ✅ Complete |
-| 05. | LAB5 | 🔴 Pending |
+| 05. | LAB5 | ✅ Complete |
 | 06. | LAB6 | 🔴 Pending |
 | 07. | LAB7 | 🔴 Pending |
 | 08. | LAB8 | 🔴 Pending |
